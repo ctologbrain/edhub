@@ -89,90 +89,61 @@
         <div class="header-search-form-container">
           <form class="d-flex flex-column header-search-from px-3">
             <input
+              [formControl]="search"
               class="form-control search-input"
               type="search"
               placeholder="Search"
               aria-label="Search"
+              (focus)="isFocused.next(true)"
+              (blur)="focusBlur()"
             />
             <div
               id="searchResult"
               class="search-result-list"
-              style="display: none"
+              *ngIf="isFocused | async"
             >
-              <div class="list-group">
-                <a href="javascript:void(0);" class="list-group-item">
-                  <div class="list-content">
-                    <span class="list-icon">
-                      <i class="fas fa-search"></i>
-                    </span>
-                    <div class="list-text">html</div>
-                  </div>
-                </a>
-                <a href="javascript:void(0);" class="list-group-item">
-                  <div class="list-content">
-                    <span class="list-icon">
-                      <i class="fas fa-search"></i>
-                    </span>
-                    <div class="list-text">html</div>
-                  </div>
-                </a>
-                <a href="javascript:void(0);" class="list-group-item">
-                  <div class="list-content">
-                    <span class="list-course-icon">
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/en/e/e9/Crash_Course_logo.png"
-                        alt="Course Short Title"
-                      />
-                    </span>
-                    <div class="list-course-detail">
-                      <h6 class="list-item-course-title ellipsis-text">
-                        Complete course title
-                      </h6>
-                      <p class="course-author-details text-secondary">
-                        <b>Course Author</b
-                        ><span>Charalampos Kynigopoulos</span>
-                      </p>
+              <div class="list-group" *ngIf="searchData | async as data">
+                <ng-container *ngFor="let category of data.category">
+                  <a href="javascript:void(0);" class="list-group-item">
+                    <div class="list-content">
+                      <span class="list-icon">
+                        <i class="fas fa-search"></i>
+                      </span>
+                      <div class="list-course-detail">
+                        <h6 class="list-item-course-title ellipsis-text">
+                          {{ category.course_category.name }}
+                        </h6>
+                        <p class="course-author-details text-secondary">
+                          <b
+                            >Subject with
+                            {{ category.course_category.course_count || 0 }}
+                            courses</b
+                          >
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href="javascript:void(0);" class="list-group-item">
-                  <div class="list-content">
-                    <span class="list-course-icon">
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/en/e/e9/Crash_Course_logo.png"
-                        alt="Course Short Title"
-                      />
-                    </span>
-                    <div class="list-course-detail">
-                      <h6 class="list-item-course-title ellipsis-text">
-                        Complete course title
-                      </h6>
-                      <p class="course-author-details text-secondary">
-                        <b>Course Author</b
-                        ><span>Charalampos Kynigopoulos</span>
-                      </p>
+                  </a>
+                </ng-container>
+                <ng-container *ngFor="let course of data.data">
+                  <a href="javascript:void(0);" class="list-group-item">
+                    <div class="list-content">
+                      <span class="list-course-icon">
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/en/e/e9/Crash_Course_logo.png"
+                          alt="Course Short Title"
+                        />
+                      </span>
+                      <div class="list-course-detail">
+                        <h6 class="list-item-course-title ellipsis-text">
+                          {{ course.title }}
+                        </h6>
+                        <p class="course-author-details text-secondary">
+                          <b>{{ course.course_provider.name }}</b>
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href="javascript:void(0);" class="list-group-item">
-                  <div class="list-content">
-                    <span class="list-course-icon">
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/en/e/e9/Crash_Course_logo.png"
-                        alt="Course Short Title"
-                      />
-                    </span>
-                    <div class="list-course-detail">
-                      <h6 class="list-item-course-title ellipsis-text">
-                        Complete course title
-                      </h6>
-                      <p class="course-author-details text-secondary">
-                        <b>Course Author</b
-                        ><span>Charalampos Kynigopoulos</span>
-                      </p>
-                    </div>
-                  </div>
-                </a>
+                  </a>
+                </ng-container>
               </div>
             </div>
           </form>

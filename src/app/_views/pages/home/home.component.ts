@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/_core/services/common.service';
 declare let $: any;
 declare let jBox: any;
 @Component({
@@ -7,43 +8,49 @@ declare let jBox: any;
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor(private _common: CommonService) {}
+  sliders: any[] = [];
+  async ngOnInit() {
+    let res = await this._common.getHomeSliderData();
+    this.sliders = res.data;
+    console.log(res.data);
+    setTimeout(() => {
+      $('.course-slider').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: true,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            },
+          },
+          {
+            breakpoint: 575,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      });
+    }, 50);
+  }
 
   ngAfterContentInit() {
-    $('.course-slider').slick({
-      dots: true,
-      infinite: false,
-      speed: 300,
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true,
-          },
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 1,
-          },
-        },
-        {
-          breakpoint: 575,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          },
-        },
-      ],
-    });
     $('.ed-card').tooltip();
     new jBox('Tooltip', {
       attach: '.tooltip',

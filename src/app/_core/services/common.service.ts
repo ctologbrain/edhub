@@ -10,4 +10,12 @@ export class CommonService {
   getCategories() {
     return this._http.get('/homecategory').toPromise();
   }
+
+  getHomeSliderData() {
+    return this._http.get('/HomePagecategory').toPromise();
+  }
+
+  search(keyword: string) {
+    return this._http.post('/SerchByCourse', { keyword }).toPromise();
+  }
 }
