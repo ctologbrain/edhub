@@ -10,7 +10,7 @@
         <li class="nav-item">
           <a class="nav-link" href="javascript:void(0);">
             <img
-              width="42px"
+              width="32px"
               class="img-fluid"
               src="./assets/images/bookmark.png"
               alt="bookmark"
@@ -34,108 +34,62 @@
           <li class="nav-item dropdown" id="myDropdown">
             <a
               href="javascript:void(0);"
-              class="btn btn-primary-theme px-3"
+              class="btn btn-primary-theme px-3 dropdown-toggle"
               data-bs-toggle="dropdown"
               >Courses</a
             >
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="javascript:void(0);">
-                  <span class="flex-fill">Development</span>
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="javascript:void(0);">
-                  <span class="flex-fill">Development</span>
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-                <ul class="submenu dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);">
-                      <span class="flex-fill">Development</span>
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);">
-                      <span class="flex-fill">Development</span>
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);">
-                      <span class="flex-fill">Development</span>
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <ul class="submenu dropdown-menu">
+            <ul class="dropdown-menu" *ngIf="categories?.length">
+              <ng-container *ngFor="let category of categories">
+                <li>
+                  <a class="dropdown-item" href="javascript:void(0);">
+                    <span class="flex-fill">{{ category.name }}</span>
+                    <i class="fas fa-chevron-right"></i>
+                  </a>
+                  <ul
+                    class="submenu dropdown-menu"
+                    *ngIf="category.course_sub_categories?.length"
+                  >
+                    <ng-container
+                      *ngFor="let subcategory of category.course_sub_categories"
+                    >
                       <li>
                         <a class="dropdown-item" href="javascript:void(0);">
-                          <span class="flex-fill">Development</span>
+                          <span class="flex-fill">{{ subcategory.name }}</span>
                           <i class="fas fa-chevron-right"></i>
                         </a>
+                        <ul
+                          class="submenu dropdown-menu"
+                          *ngIf="subcategory.course_topics?.length"
+                        >
+                          <ng-container
+                            *ngFor="
+                              let coursetopics of subcategory.course_topics
+                            "
+                          >
+                            <li>
+                              <a
+                                class="dropdown-item"
+                                href="javascript:void(0);"
+                              >
+                                <span class="flex-fill">{{
+                                  coursetopics.name
+                                }}</span>
+                              </a>
+                            </li>
+                          </ng-container>
+                        </ul>
                       </li>
-                      <li>
-                        <a class="dropdown-item" href="javascript:void(0);">
-                          <span class="flex-fill">Development</span>
-                          <i class="fas fa-chevron-right"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);">
-                      <span class="flex-fill">Development</span>
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                    <ul class="submenu dropdown-menu">
-                      <li>
-                        <a class="dropdown-item" href="javascript:void(0);">
-                          <span class="flex-fill">Development</span>
-                          <i class="fas fa-chevron-right"></i>
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="javascript:void(0);">
-                          <span class="flex-fill">Development</span>
-                          <i class="fas fa-chevron-right"></i>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);">
-                      <span class="flex-fill">Development</span>
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="javascript:void(0);">
-                      <span class="flex-fill">Development</span>
-                      <i class="fas fa-chevron-right"></i>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a class="dropdown-item" href="javascript:void(0);">
-                  <span class="flex-fill">Development</span>
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="javascript:void(0);">
-                  <span class="flex-fill">Development</span>
-                  <i class="fas fa-chevron-right"></i>
-                </a>
-              </li>
+                    </ng-container>
+                  </ul>
+                </li>
+              </ng-container>
             </ul>
           </li>
         </ul>
-        <div class="d-flex">
+        <div class="header-search-form-container">
           <form class="d-flex flex-column header-search-from px-3">
             <input
-              class="form-control me-2"
+              class="form-control search-input"
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -146,27 +100,88 @@
               style="display: none"
             >
               <div class="list-group">
-                <a href="javascript:void(0);" class="list-group-item"
-                  >The current link item</a
-                >
-                <a href="javascript:void(0);" class="list-group-item"
-                  >A second link item</a
-                >
-                <a href="javascript:void(0);" class="list-group-item"
-                  >A third link item</a
-                >
-                <a href="javascript:void(0);" class="list-group-item"
-                  >A fourth link item</a
-                >
+                <a href="javascript:void(0);" class="list-group-item">
+                  <div class="list-content">
+                    <span class="list-icon">
+                      <i class="fas fa-search"></i>
+                    </span>
+                    <div class="list-text">html</div>
+                  </div>
+                </a>
+                <a href="javascript:void(0);" class="list-group-item">
+                  <div class="list-content">
+                    <span class="list-icon">
+                      <i class="fas fa-search"></i>
+                    </span>
+                    <div class="list-text">html</div>
+                  </div>
+                </a>
+                <a href="javascript:void(0);" class="list-group-item">
+                  <div class="list-content">
+                    <span class="list-course-icon">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/en/e/e9/Crash_Course_logo.png"
+                        alt="Course Short Title"
+                      />
+                    </span>
+                    <div class="list-course-detail">
+                      <h6 class="list-item-course-title ellipsis-text">
+                        Complete course title
+                      </h6>
+                      <p class="course-author-details text-secondary">
+                        <b>Course Author</b
+                        ><span>Charalampos Kynigopoulos</span>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="javascript:void(0);" class="list-group-item">
+                  <div class="list-content">
+                    <span class="list-course-icon">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/en/e/e9/Crash_Course_logo.png"
+                        alt="Course Short Title"
+                      />
+                    </span>
+                    <div class="list-course-detail">
+                      <h6 class="list-item-course-title ellipsis-text">
+                        Complete course title
+                      </h6>
+                      <p class="course-author-details text-secondary">
+                        <b>Course Author</b
+                        ><span>Charalampos Kynigopoulos</span>
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a href="javascript:void(0);" class="list-group-item">
+                  <div class="list-content">
+                    <span class="list-course-icon">
+                      <img
+                        src="https://upload.wikimedia.org/wikipedia/en/e/e9/Crash_Course_logo.png"
+                        alt="Course Short Title"
+                      />
+                    </span>
+                    <div class="list-course-detail">
+                      <h6 class="list-item-course-title ellipsis-text">
+                        Complete course title
+                      </h6>
+                      <p class="course-author-details text-secondary">
+                        <b>Course Author</b
+                        ><span>Charalampos Kynigopoulos</span>
+                      </p>
+                    </div>
+                  </div>
+                </a>
               </div>
             </div>
           </form>
         </div>
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a
               href="javascript:void(0);"
-              class="nav-link link-dark"
+              class="nav-link ed-nav-item dropdown-toggle"
               data-bs-toggle="dropdown"
               >Govt. Jobs</a
             >
@@ -185,20 +200,15 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a href="javascript:void(0);" class="nav-link link-dark">News</a>
+            <a href="javascript:void(0);" class="nav-link ed-nav-item">News</a>
           </li>
           <li class="nav-item">
-            <a href="javascript:void(0);" class="nav-link link-dark"
-              >Guide Me</a
-            >
-          </li>
-          <li class="nav-item">
-            <a href="javascript:void(0);" class="nav-link link-dark">Blogs</a>
+            <a href="javascript:void(0);" class="nav-link ed-nav-item">Blogs</a>
           </li>
           <li class="nav-item ed-menu-bookmark">
             <a class="nav-link" href="javascript:void(0);">
               <img
-                width="42px"
+                width="32px"
                 class="img-fluid"
                 src="./assets/images/bookmark.png"
                 alt="bookmark"
