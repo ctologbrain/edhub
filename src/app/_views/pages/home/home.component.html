@@ -207,7 +207,26 @@
                     <div class="row">
                       <div class="col d-flex align-items-center pe-0">
                         <div class="coursecard-footer">
-                          <img src="./assets/images/star0.png" alt="Star" />
+                          <i
+                            class="far fa-star"
+                            [class.text-warning.fas]="course.rating > 0"
+                          ></i>
+                          <i
+                            class="far fa-star"
+                            [class.text-warning]="course.rating > 1"
+                          ></i>
+                          <i
+                            class="far fa-star"
+                            [class.text-warning]="course.rating > 2"
+                          ></i>
+                          <i
+                            class="far fa-star"
+                            [class.text-warning]="course.rating > 3"
+                          ></i>
+                          <i
+                            class="far fa-star"
+                            [class.text-warning]="course.rating > 4"
+                          ></i>
                           <p class="review-text">
                             <b>{{ course.rating }} &nbsp; Reviews</b>
                           </p>
