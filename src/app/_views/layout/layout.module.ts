@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ComponentModule } from 'src/app/_components/component.module';
 
 const routes: Routes = [
   {
@@ -23,6 +24,11 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [LayoutComponent, HeaderComponent, FooterComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    ComponentModule,
+  ],
 })
 export class LayoutModule {}
