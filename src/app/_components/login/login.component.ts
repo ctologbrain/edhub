@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { BehaviorSubject } from 'rxjs';
 import { UserService } from 'src/app/_core/services/user.service';
-
+declare let $: any;
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,10 +12,10 @@ import { UserService } from 'src/app/_core/services/user.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  loggingIn = new BehaviorSubject(false);
   constructor(
     private _builder: FormBuilder,
     private _userService: UserService,
-    private _router: Router,
     private _toast: ToastrService
   ) {
     this.loginForm = this._builder.group({
@@ -33,10 +34,13 @@ export class LoginComponent implements OnInit {
     /* Check form is valid */
     if (this.loginForm.valid) {
       /* Start Loader */
+      this.loggingIn.next(true);
       let res = await this._userService.login(this.loginForm.value);
-      if (res.status == true) {
+      this.loggingIn.next(false);
+      if (res.status == 'true') {
         localStorage.setItem('xsrf', res.token);
-        this._router.navigate(['/']);
+        this._userService.authState.next(true);
+        $('.modal').modal('hide');
       } else if (res.status == 'false') {
         this._toast.error(res.msg);
       }

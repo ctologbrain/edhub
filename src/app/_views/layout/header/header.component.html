@@ -187,15 +187,20 @@
           </li>
         </ul>
         <ul class="navbar-nav ed-nav">
-          <li class="nav-item">
-            <button
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target=".login-popup"
-            >
-              Login
-            </button>
-          </li>
+          <ng-container *ngIf="_user.authState | async; else noAuth">
+            <button class="btn btn-primary" (click)="logout()">Logout</button>
+          </ng-container>
+          <ng-template #noAuth>
+            <li class="nav-item">
+              <button
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target=".login-popup"
+              >
+                Login
+              </button>
+            </li>
+          </ng-template>
         </ul>
       </div>
     </div>

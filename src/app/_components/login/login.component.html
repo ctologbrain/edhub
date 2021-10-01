@@ -83,7 +83,13 @@
           <button
             class="w-100 mb-2 btn btn-lg rounded-4 btn-primary-theme"
             type="submit"
+            [disabled]="loggingIn | async"
           >
+            <span
+              class="spinner-border spinner-border-sm"
+              *ngIf="loggingIn | async"
+              role="status"
+            ></span>
             Submit
           </button>
           <p class="text-center">

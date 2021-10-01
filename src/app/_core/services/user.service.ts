@@ -25,4 +25,12 @@ export class UserService {
   signup(user: object): Promise<any> {
     return this._http.post(`/Signup`, user).toPromise();
   }
+
+  /**
+   * @function register for register user
+   * @param {Auth} user user email & password to validare user
+   */
+  authuser(): Promise<any> {
+    return this._http.get(`/auth-user`).toPromise();
+  }
 }
