@@ -273,6 +273,10 @@ img[alt="Arrow"] {
   box-shadow: 0 0.5em 1.5em rgb(0 0 0 / 10%), 0 0.125em 0.5em rgb(0 0 0 / 15%);
 }
 
+.card.filtered-card {
+  margin-bottom: 1.5rem;
+}
+
 .course-banner {
   border-radius: 0.5rem;
   overflow: hidden;
@@ -291,13 +295,18 @@ img[alt="Arrow"] {
 }
 
 .ed-card-title {
-  font-family: var(--hn-font-light);
-  font-size: 1rem;
+  font-family: var(--hn-font-regular);
+  font-size: 0.9rem;
   margin: 0;
   color: #666;
   line-height: 1.5;
   font-weight: 600;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.07rem;
+}
+
+.ed-card-title:hover {
+  color: #222;
+  letter-spacing: 0.08rem;
 }
 
 .ed-card .compare-section {
@@ -341,7 +350,7 @@ img[alt="Arrow"] {
 
 .coursecard-footer .review-text {
   font-family: var(--hn-font-light);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   margin-bottom: 0;
   margin-left: 0.35rem;
   line-height: 1.45;
@@ -352,7 +361,15 @@ img[alt="Arrow"] {
 }
 
 .coursecard-footer img {
-  height: 0.75rem;
+  height: 0.9rem;
+}
+
+.filtered-card .coursecard-footer .review-text {
+  font-size: 1rem;
+}
+
+.filtered-card .coursecard-footer img {
+  height: 1rem;
 }
 
 .wishlist-section {
@@ -656,6 +673,7 @@ img[alt="Arrow"] {
   border-radius: 40px;
   height: 27rem;
 }
+
 .banner-content {
   min-height: 100%;
   align-items: center;
@@ -787,7 +805,7 @@ img[alt="Arrow"] {
 .dropdown-item > .flex-fill {
   font-family: var(--hn-font-light);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1.75rem;
   color: #333;
   letter-spacing: 0.05rem;
@@ -822,6 +840,127 @@ img[alt="Arrow"] {
   color: #000;
 }
 
+.nav-item .submenu {
+  min-height: 100%;
+}
+
+.filter-panel {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  position: sticky;
+  top: 5.5rem;
+}
+.filter-panel .card-body {
+}
+
+.filter-header {
+  background-color: #fff;
+  border: none;
+  padding-top: 1.25rem;
+}
+
+.filter-header h5 {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+.filter-panel .filter-label {
+  font-family: var(--hn-font-medium);
+  color: #333;
+}
+
+input[type="range"].common-range-input {
+  background: linear-gradient(
+    to right,
+    #f05454 0%,
+    #f05454 50%,
+    #b5b5b5 50%,
+    #b5b5b5 100%
+  );
+  border-radius: 7px;
+  height: 8px;
+  width: 100%;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+input[type="range"].common-range-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #fe8787;
+}
+input[type="range"].common-range-input::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -moz-border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #fe8787;
+}
+.accordion {
+  padding-left: 0;
+  padding-right: 0;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+.accordion-button,
+.accordion-button:not(.collapsed),
+.accordion-button:focus {
+  font-family: var(--hn-font-medium);
+  background-color: #f7f7f7;
+  color: #333;
+}
+.accordion-button::after,
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.accordion-body {
+  padding: 0;
+}
+.accordion-list-group .list-group-item {
+  border: none;
+}
+.list-group-item {
+  cursor: pointer;
+  font-family: var(--hn-font-light);
+}
+.accordion-list-group .list-group-item:hover {
+  background-color: #fcfcfc;
+}
+.quick-option {
+  margin: 0;
+  border-radius: 0.25rem;
+  background-color: #fefefe;
+  padding-top: 1rem;
+}
+.quick-option-bg {
+}
+.quick-option-title {
+  font-family: var(--hn-font-medium);
+}
+.quick-option-item {
+  display: flex;
+  justify-content: center;
+  margin-right: 1.5rem;
+  font-family: var(--hn-font-medium);
+  margin-bottom: 1rem;
+}
+.sign-gender-label {
+  flex: 1 1 auto;
+}
+.modal-header {
+  font-family: var(--hn-font-medium);
+}
+.modal-body {
+  font-family: var(--hn-font-medium);
+}
 /* ============ desktop view ============ */
 
 @media (max-width: 768px) {
