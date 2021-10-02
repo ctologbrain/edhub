@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProfileComponent } from './Account/profile/profile.component';
 import { CompareComponent } from './compare/compare.component';
 import { ComponentModule } from 'src/app/_components/component.module';
+import { AuthGuard } from 'src/app/_core/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -12,12 +13,14 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'profile',
-    component: ProfileComponent,
-  },
-  {
     path: 'compare',
     component: CompareComponent,
+  },
+  {
+    path: 'account',
+    canLoad: [AuthGuard],
+    loadChildren: () =>
+      import('./Account/account.module').then((m) => m.AccountModule),
   },
   {
     path: ':category',

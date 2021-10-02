@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { ProductService } from 'src/app/_core/services/product.service';
 
 @Component({
@@ -14,6 +15,8 @@ export class ProductsComponent implements OnInit {
     course_topic: null,
     start: 1,
   };
+  count = 0;
+  loading = new BehaviorSubject(false);
   products: any[] = [];
   constructor(
     private _activated: ActivatedRoute,
@@ -28,7 +31,16 @@ export class ProductsComponent implements OnInit {
       this.params.start = 1;
       let res = await this._product.getCourses(this.params);
       this.products = res.data.rows;
+      this.count = res.data.count;
       console.log(this.products);
     });
+  }
+
+  async loadMore() {
+    this.params.start = this.params.start + 1;
+    this.loading.next(true);
+    let res = await this._product.getCourses(this.params);
+    this.products.push(...res.data.rows);
+    this.loading.next(false);
   }
 }
