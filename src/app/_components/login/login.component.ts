@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
 import { UserService } from 'src/app/_core/services/user.service';
+import { environment } from 'src/environments/environment';
 declare let $: any;
 @Component({
   selector: 'app-login',
@@ -38,7 +39,7 @@ export class LoginComponent implements OnInit {
       let res = await this._userService.login(this.loginForm.value);
       this.loggingIn.next(false);
       if (res.status == 'true') {
-        localStorage.setItem('xsrf', res.token);
+        localStorage.setItem(environment.tokenType, res.token);
         this._userService.authState.next(true);
         $('.modal').modal('hide');
       } else if (res.status == 'false') {

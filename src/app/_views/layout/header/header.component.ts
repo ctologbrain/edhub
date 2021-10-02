@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { CommonService } from 'src/app/_core/services/common.service';
 import { UserService } from 'src/app/_core/services/user.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -41,6 +42,6 @@ export class HeaderComponent implements OnInit {
   logout() {
     this._user.authState.next(false);
     this._user.authUser.next({});
-    localStorage.removeItem('xsrf');
+    localStorage.removeItem(environment.tokenType);
   }
 }

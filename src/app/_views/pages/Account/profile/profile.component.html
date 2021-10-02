@@ -1,315 +1,483 @@
 <section class="profile-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-3">
-                <div class="card ed-ng-profile-card">
-                    <div class="card-body ed-ng-profile-card-body">
-                        <div class="profile-container">
-                            <div class="profile-pic-circle">
-                                <div class="profile-image"
-                                    style="background-image: url('https://www.uniaktuell.unibe.ch/unibe/portal/uniaktuell/content/e1036084/e1086660/e1086661/20210608_Interview_Emma_Hodcroft_OliverHochstrasser_1200px_ger.jpg');">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="input-group my-3">
-                                <label class="btn btn-success mx-auto" for="uploadProfilePic">
-                                    <input type="file" class="form-control d-none" id="uploadProfilePic">
-                                    Upload Profile Image
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer ed-ng-profile-card-footer">
-                        <div class="row">
-                            <ul class="nav nav-tabs ed-ng-nav" id="myTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="basic-details-tab" data-bs-toggle="tab"
-                                        data-bs-target="#basic-details" type="button" role="tab"
-                                        aria-controls="basic-details" aria-selected="true">
-                                        <span>Basic Details</span>
-                                        <i class="fas fa-chevron-right ms-auto"></i>
-                                    </button>
-
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="my-courses-tab" data-bs-toggle="tab"
-                                        data-bs-target="#my-courses" type="button" role="tab" aria-controls="my-courses"
-                                        aria-selected="false">
-                                        <span>My Courses</span>
-                                        <i class="fas fa-chevron-right ms-auto"></i>
-                                    </button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="wishlist-tab" data-bs-toggle="tab"
-                                        data-bs-target="#wishlist" type="button" role="tab" aria-controls="wishlist"
-                                        aria-selected="false">
-                                        <span>Wishlist</span>
-                                        <i class="fas fa-chevron-right ms-auto"></i>
-                                    </button>
-
-                                </li>
-                                <li class="nav-item">
-                                    <button class="nav-link">
-                                        <span>Logout</span>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="card ed-ng-profile-card">
+          <div class="card-body ed-ng-profile-card-body">
+            <div class="profile-container">
+              <div class="profile-pic-circle">
+                <div
+                  class="profile-image"
+                  style="
+                    background-image: url('https://www.uniaktuell.unibe.ch/unibe/portal/uniaktuell/content/e1036084/e1086660/e1086661/20210608_Interview_Emma_Hodcroft_OliverHochstrasser_1200px_ger.jpg');
+                  "
+                ></div>
+              </div>
             </div>
-            <div class="col-9">
-                <div class="tab-content profile-detail-tab" id="myTabContent">
-                    <div class="tab-pane fade show active" id="basic-details" role="tabpanel"
-                        aria-labelledby="basic-details-tab">
-                        <div class="card profile-detail-card">
-                            <div class="card-body px-5 py-4">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h4 class="mb-4">Basic Information</h4>
-                                    </div>
-                                </div>
-                                <form>
-                                    <div class="row">
-                                        <div class="col-6">
-                                            <div class="form-floating mb-4">
-                                                <input type="email" class="form-control rounded-5 profile-input-control"
-                                                    id="fisrtName" placeholder="name@example.com">
-                                                <label for="fisrtName">First Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="form-floating mb-4">
-                                                <input type="email" class="form-control rounded-5 profile-input-control"
-                                                    id="lastName" placeholder="name@example.com">
-                                                <label for="lastName">Last Name</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="form-floating mb-4">
-                                                <input type="email" class="form-control rounded-5 profile-input-control"
-                                                    id="emailId" placeholder="name@example.com">
-                                                <label for="emailId">Email id</label>
-                                            </div>
-                                        </div>
-                                        <div class="col-6">
-                                            <div class="form-floating mb-4">
-                                                <input type="email" class="form-control rounded-5 profile-input-control"
-                                                    id="mobileNumber" placeholder="name@example.com">
-                                                <label for="mobileNumber">Mobile No.</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="my-courses" role="tabpanel" aria-labelledby="my-courses-tab">
-                        <div class="card course-card-group">
-                            <div class="card-body px-5 py-4">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h4 class="mb-4">My Courses</h4>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="card cdc-card">
-                                            <div class="p-4">
-                                                <div class="row">
-                                                    <div class="col-2">
-                                                        <img class="img-fluid" src="./assets/images/cart1.png" alt="Course Image" />
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <div class="profile-course-detail">
-                                                            <div class="pcd-title">
-                                                                <h6>The complete Android R + Java Developer Course<sup>TM</sup> : 2021</h6>
-                                                                <p class="">Course by : <b>Dr. Makn vjyvhj</b></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card cdc-card">
-                                            <div class="p-4">
-                                                <div class="row">
-                                                    <div class="col-2">
-                                                        <img class="img-fluid" src="./assets/images/cart1.png" alt="Course Image" />
-                                                    </div>
-                                                    <div class="col-10">
-                                                        <div class="profile-course-detail">
-                                                            <div class="pcd-title">
-                                                                <h6>The complete Android R + Java Developer Course<sup>TM</sup> : 2021</h6>
-                                                                <p class="">Course by : <b>Dr. Makn vjyvhj</b></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
-                        <div class="card wishlist-card-group">
-                            <div class="card-body px-5 py-4">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <h4 class="mb-4">Wishlist</h4>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-4">
-                                        <div class="card ed-card">
-                                            <button class="delete-section">
-                                                <img src="./assets/images/cross.png" alt="bookmark">
-                                            </button>
-                                            <div class="card-body">
-                                                <div class="course-banner">
-                                                    <img class="img-fluid"
-                                                        src="https://img-c.udemycdn.com/course/480x270/3847440_86ae.jpg"
-                                                        alt="Book Paid Speaking Engagements in 2021" />
-                                                </div>
-                                                <div class="row pt-3">
-                                                    <div class="col-6 d-flex align-items-center">
-                                                        <img class="course-provider-logo"
-                                                            src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
-                                                            alt="course-provider">
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <h5 class="course-price">$ 19.99</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="row pt-2">
-                                                    <div class="col">
-                                                        <a href="javascript:void(0);">
-                                                            <h4 class="ed-card-title ellipsis-text-two-line course-title">Book Paid Speaking Engagements in
-                                                                2021</h4>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="row pt-3">
-                                                    <div class="col">
-                                                        <div class="compare-section">
-                                                            <img src="./assets/images/addcompare.png" alt="addcompare">
-                                                            <h5>Add to compare</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr class="mb-2" />
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <button type="button" class="btn btn-light btn-fluid mb-2">Add to Cart</button>
-                                                        <button type="button" class="btn btn-primary-theme btn-fluid">Buy Now</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="card ed-card">
-                                            <button class="delete-section">
-                                                <img src="./assets/images/cross.png" alt="bookmark">
-                                            </button>
-                                            <div class="card-body">
-                                                <div class="course-banner">
-                                                    <img class="img-fluid"
-                                                        src="https://img-c.udemycdn.com/course/480x270/3847440_86ae.jpg"
-                                                        alt="Book Paid Speaking Engagements in 2021" />
-                                                </div>
-                                                <div class="row pt-3">
-                                                    <div class="col-6 d-flex align-items-center">
-                                                        <img class="course-provider-logo"
-                                                            src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
-                                                            alt="course-provider">
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <h5 class="course-price">$ 19.99</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="row pt-2">
-                                                    <div class="col">
-                                                        <a href="javascript:void(0);">
-                                                            <h4 class="ed-card-title ellipsis-text-two-line course-title">Book Paid Speaking Engagements in
-                                                                2021</h4>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="row pt-3">
-                                                    <div class="col">
-                                                        <div class="compare-section">
-                                                            <img src="./assets/images/addcompare.png" alt="addcompare">
-                                                            <h5>Add to compare</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr class="mb-2" />
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <button type="button" class="btn btn-light btn-fluid mb-2">Add to Cart</button>
-                                                        <button type="button" class="btn btn-primary-theme btn-fluid">Buy Now</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="card ed-card">
-                                            <button class="delete-section">
-                                                <img src="./assets/images/cross.png" alt="bookmark">
-                                            </button>
-                                            <div class="card-body">
-                                                <div class="course-banner">
-                                                    <img class="img-fluid"
-                                                        src="https://img-c.udemycdn.com/course/480x270/3847440_86ae.jpg"
-                                                        alt="Book Paid Speaking Engagements in 2021" />
-                                                </div>
-                                                <div class="row pt-3">
-                                                    <div class="col-6 d-flex align-items-center">
-                                                        <img class="course-provider-logo"
-                                                            src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
-                                                            alt="course-provider">
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <h5 class="course-price">$ 19.99</h5>
-                                                    </div>
-                                                </div>
-                                                <div class="row pt-2">
-                                                    <div class="col">
-                                                        <a href="javascript:void(0);">
-                                                            <h4 class="ed-card-title ellipsis-text-two-line course-title">Book Paid Speaking Engagements in
-                                                                2021</h4>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="row pt-3">
-                                                    <div class="col">
-                                                        <div class="compare-section">
-                                                            <img src="./assets/images/addcompare.png" alt="addcompare">
-                                                            <h5>Add to compare</h5>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <hr class="mb-2" />
-                                                <div class="row">
-                                                    <div class="col-12">
-                                                        <button type="button" class="btn btn-light btn-fluid mb-2">Add to Cart</button>
-                                                        <button type="button" class="btn btn-primary-theme btn-fluid">Buy Now</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="d-flex">
+              <div class="input-group my-3">
+                <label class="btn btn-success mx-auto" for="uploadProfilePic">
+                  <input
+                    type="file"
+                    class="form-control d-none"
+                    id="uploadProfilePic"
+                  />
+                  Upload Profile Image
+                </label>
+              </div>
             </div>
+          </div>
+          <div class="card-footer ed-ng-profile-card-footer">
+            <div class="row">
+              <ul class="nav nav-tabs ed-ng-nav" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="basic-details-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#basic-details"
+                    type="button"
+                    role="tab"
+                    aria-controls="basic-details"
+                    aria-selected="true"
+                  >
+                    <span>Basic Details</span>
+                    <i class="fas fa-chevron-right ms-auto"></i>
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="my-courses-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#my-courses"
+                    type="button"
+                    role="tab"
+                    aria-controls="my-courses"
+                    aria-selected="false"
+                  >
+                    <span>My Courses</span>
+                    <i class="fas fa-chevron-right ms-auto"></i>
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="wishlist-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#wishlist"
+                    type="button"
+                    role="tab"
+                    aria-controls="wishlist"
+                    aria-selected="false"
+                  >
+                    <span>Wishlist</span>
+                    <i class="fas fa-chevron-right ms-auto"></i>
+                  </button>
+                </li>
+                <li class="nav-item" (click)="logout()">
+                  <button class="nav-link">
+                    <span>Logout</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="col-9">
+        <div class="tab-content profile-detail-tab" id="myTabContent">
+          <div
+            class="tab-pane fade show active"
+            id="basic-details"
+            role="tabpanel"
+            aria-labelledby="basic-details-tab"
+          >
+            <div class="card profile-detail-card">
+              <div class="card-body px-5 py-4">
+                <div class="row">
+                  <div class="col-12">
+                    <h4 class="mb-4">Basic Information</h4>
+                  </div>
+                </div>
+                <form>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-floating mb-4">
+                        <input
+                          type="text"
+                          class="form-control rounded-5 profile-input-control"
+                          id="fisrtName"
+                          placeholder="Name"
+                          [value]="user?.name"
+                        />
+                        <label for="fisrtName">Name</label>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating mb-4">
+                        <input
+                          type="text"
+                          class="form-control rounded-5 profile-input-control"
+                          id="emailId"
+                          placeholder="name@example.com"
+                          [value]="user?.email"
+                        />
+                        <label for="emailId">Email id</label>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="form-floating mb-4">
+                        <input
+                          type="tel"
+                          class="form-control rounded-5 profile-input-control"
+                          id="mobileNumber"
+                          placeholder="name@example.com"
+                        />
+                        <label for="mobileNumber">Mobile No.</label>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between mb-3 col-6">
+                      <div class="sign-gender-label">
+                        <h6>Gender</h6>
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="genderType"
+                          id="genderMale"
+                          value="Male"
+                          [checked]="user?.gender == 'Male'"
+                        />
+                        <label class="form-check-label" for="genderMale"
+                          >Male</label
+                        >
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="genderType"
+                          id="genderFemale"
+                          value="Female"
+                          [checked]="user?.gender == 'Female'"
+                        />
+                        <label class="form-check-label" for="genderFemale"
+                          >Female</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="my-courses"
+            role="tabpanel"
+            aria-labelledby="my-courses-tab"
+          >
+            <div class="card course-card-group">
+              <div class="card-body px-5 py-4">
+                <div class="row">
+                  <div class="col-12">
+                    <h4 class="mb-4">My Courses</h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="card cdc-card">
+                      <div class="p-4">
+                        <div class="row">
+                          <div class="col-2">
+                            <img
+                              class="img-fluid"
+                              src="./assets/images/cart1.png"
+                              alt="Course Image"
+                            />
+                          </div>
+                          <div class="col-10">
+                            <div class="profile-course-detail">
+                              <div class="pcd-title">
+                                <h6>
+                                  The complete Android R + Java Developer
+                                  Course<sup>TM</sup> : 2021
+                                </h6>
+                                <p class="">
+                                  Course by : <b>Dr. Makn vjyvhj</b>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card cdc-card">
+                      <div class="p-4">
+                        <div class="row">
+                          <div class="col-2">
+                            <img
+                              class="img-fluid"
+                              src="./assets/images/cart1.png"
+                              alt="Course Image"
+                            />
+                          </div>
+                          <div class="col-10">
+                            <div class="profile-course-detail">
+                              <div class="pcd-title">
+                                <h6>
+                                  The complete Android R + Java Developer
+                                  Course<sup>TM</sup> : 2021
+                                </h6>
+                                <p class="">
+                                  Course by : <b>Dr. Makn vjyvhj</b>
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="wishlist"
+            role="tabpanel"
+            aria-labelledby="wishlist-tab"
+          >
+            <div class="card wishlist-card-group">
+              <div class="card-body px-5 py-4">
+                <div class="row">
+                  <div class="col-12">
+                    <h4 class="mb-4">Wishlist</h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-4">
+                    <div class="card ed-card">
+                      <button class="delete-section">
+                        <img src="./assets/images/cross.png" alt="bookmark" />
+                      </button>
+                      <div class="card-body">
+                        <div class="course-banner">
+                          <img
+                            class="img-fluid"
+                            src="https://img-c.udemycdn.com/course/480x270/3847440_86ae.jpg"
+                            alt="Book Paid Speaking Engagements in 2021"
+                          />
+                        </div>
+                        <div class="row pt-3">
+                          <div class="col-6 d-flex align-items-center">
+                            <img
+                              class="course-provider-logo"
+                              src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
+                              alt="course-provider"
+                            />
+                          </div>
+                          <div class="col-6">
+                            <h5 class="course-price">$ 19.99</h5>
+                          </div>
+                        </div>
+                        <div class="row pt-2">
+                          <div class="col">
+                            <a href="javascript:void(0);">
+                              <h4
+                                class="
+                                  ed-card-title
+                                  ellipsis-text-two-line
+                                  course-title
+                                "
+                              >
+                                Book Paid Speaking Engagements in 2021
+                              </h4>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="row pt-3">
+                          <div class="col">
+                            <div class="compare-section">
+                              <img
+                                src="./assets/images/addcompare.png"
+                                alt="addcompare"
+                              />
+                              <h5>Add to compare</h5>
+                            </div>
+                          </div>
+                        </div>
+                        <hr class="mb-2" />
+                        <div class="row">
+                          <div class="col-12">
+                            <button
+                              type="button"
+                              class="btn btn-light btn-fluid mb-2"
+                            >
+                              Add to Cart
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary-theme btn-fluid"
+                            >
+                              Buy Now
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="card ed-card">
+                      <button class="delete-section">
+                        <img src="./assets/images/cross.png" alt="bookmark" />
+                      </button>
+                      <div class="card-body">
+                        <div class="course-banner">
+                          <img
+                            class="img-fluid"
+                            src="https://img-c.udemycdn.com/course/480x270/3847440_86ae.jpg"
+                            alt="Book Paid Speaking Engagements in 2021"
+                          />
+                        </div>
+                        <div class="row pt-3">
+                          <div class="col-6 d-flex align-items-center">
+                            <img
+                              class="course-provider-logo"
+                              src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
+                              alt="course-provider"
+                            />
+                          </div>
+                          <div class="col-6">
+                            <h5 class="course-price">$ 19.99</h5>
+                          </div>
+                        </div>
+                        <div class="row pt-2">
+                          <div class="col">
+                            <a href="javascript:void(0);">
+                              <h4
+                                class="
+                                  ed-card-title
+                                  ellipsis-text-two-line
+                                  course-title
+                                "
+                              >
+                                Book Paid Speaking Engagements in 2021
+                              </h4>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="row pt-3">
+                          <div class="col">
+                            <div class="compare-section">
+                              <img
+                                src="./assets/images/addcompare.png"
+                                alt="addcompare"
+                              />
+                              <h5>Add to compare</h5>
+                            </div>
+                          </div>
+                        </div>
+                        <hr class="mb-2" />
+                        <div class="row">
+                          <div class="col-12">
+                            <button
+                              type="button"
+                              class="btn btn-light btn-fluid mb-2"
+                            >
+                              Add to Cart
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary-theme btn-fluid"
+                            >
+                              Buy Now
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4">
+                    <div class="card ed-card">
+                      <button class="delete-section">
+                        <img src="./assets/images/cross.png" alt="bookmark" />
+                      </button>
+                      <div class="card-body">
+                        <div class="course-banner">
+                          <img
+                            class="img-fluid"
+                            src="https://img-c.udemycdn.com/course/480x270/3847440_86ae.jpg"
+                            alt="Book Paid Speaking Engagements in 2021"
+                          />
+                        </div>
+                        <div class="row pt-3">
+                          <div class="col-6 d-flex align-items-center">
+                            <img
+                              class="course-provider-logo"
+                              src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
+                              alt="course-provider"
+                            />
+                          </div>
+                          <div class="col-6">
+                            <h5 class="course-price">$ 19.99</h5>
+                          </div>
+                        </div>
+                        <div class="row pt-2">
+                          <div class="col">
+                            <a href="javascript:void(0);">
+                              <h4
+                                class="
+                                  ed-card-title
+                                  ellipsis-text-two-line
+                                  course-title
+                                "
+                              >
+                                Book Paid Speaking Engagements in 2021
+                              </h4>
+                            </a>
+                          </div>
+                        </div>
+                        <div class="row pt-3">
+                          <div class="col">
+                            <div class="compare-section">
+                              <img
+                                src="./assets/images/addcompare.png"
+                                alt="addcompare"
+                              />
+                              <h5>Add to compare</h5>
+                            </div>
+                          </div>
+                        </div>
+                        <hr class="mb-2" />
+                        <div class="row">
+                          <div class="col-12">
+                            <button
+                              type="button"
+                              class="btn btn-light btn-fluid mb-2"
+                            >
+                              Add to Cart
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary-theme btn-fluid"
+                            >
+                              Buy Now
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
