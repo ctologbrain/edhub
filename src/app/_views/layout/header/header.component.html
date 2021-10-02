@@ -43,7 +43,10 @@
                 <li>
                   <a class="dropdown-item" href="javascript:void(0);">
                     <span class="flex-fill">{{ category.name }}</span>
-                    <i class="fas fa-chevron-right"></i>
+                    <i
+                      *ngIf="category.course_sub_categories?.length"
+                      class="fas fa-chevron-right"
+                    ></i>
                   </a>
                   <ul
                     class="submenu dropdown-menu"
@@ -55,7 +58,10 @@
                       <li>
                         <a class="dropdown-item" href="javascript:void(0);">
                           <span class="flex-fill">{{ subcategory.name }}</span>
-                          <i class="fas fa-chevron-right"></i>
+                          <i
+                            *ngIf="subcategory.course_topics?.length"
+                            class="fas fa-chevron-right"
+                          ></i>
                         </a>
                         <ul
                           class="submenu dropdown-menu"

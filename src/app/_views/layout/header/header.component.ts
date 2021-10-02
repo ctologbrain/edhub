@@ -25,12 +25,11 @@ export class HeaderComponent implements OnInit {
       .pipe(debounceTime(500))
       .subscribe(async (keyword) => {
         const { category, data } = await this._common.search(keyword);
-        console.log(category, data);
         this.searchData.next({ category, data });
-        console.log(this.searchData.getValue());
       });
     this._common.getCategories().then((res) => {
       this.categories = res.data;
+      console.log(this.categories);
     });
   }
 

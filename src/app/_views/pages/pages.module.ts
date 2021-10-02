@@ -19,6 +19,11 @@ const routes: Routes = [
     path: 'compare',
     component: CompareComponent,
   },
+  {
+    path: ':category',
+    loadChildren: () =>
+      import('./products/products.module').then((m) => m.ProductsModule),
+  },
 ];
 
 @NgModule({
