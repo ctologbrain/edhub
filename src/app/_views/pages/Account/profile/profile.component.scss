@@ -1,0 +1,94 @@
+.rounded-5{
+    border-radius: 1rem;
+}
+.profile-section{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.ed-ng-nav {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 2rem;
+}
+.ed-ng-nav .nav-link{
+    width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+.ed-ng-profile-card-body{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+.profile-container{
+    display: flex;
+    width: 10rem;
+    height: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.ed-ng-profile-card-footer{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.profile-pic-circle{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile-image{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+.ed-ng-nav .nav-link{
+    font-family: var(--hn-font-light);
+    font-size: 1rem;
+    color: #888;
+    line-height: 2.5rem;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: .05 rem;
+}
+.profile-detail-tab,
+.profile-detail-tab .tab-pane{
+    min-height: 100%;
+}
+.ed-ng-nav .nav-link.active,
+.ed-ng-nav .nav-link:hover{
+    color: #f80007;
+    // background-color: rgba(248, 0, 8, 0.05);
+    border-color: transparent;
+    border-radius: 0;
+}
+.profile-input-control{
+    background-color: #eee;
+}
+.course-detail-card .cdc-card{
+    margin-bottom: 1rem;
+}
+.delete-section{
+    position: absolute;
+    background: #fff;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    box-shadow: 2px 2px 2px 2px #0000003d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -1.25rem;
+    right: -1.05rem;
+}
+@media (min-width: 992px){
+    
+
+}
