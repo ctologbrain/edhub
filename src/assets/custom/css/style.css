@@ -375,11 +375,11 @@ img[alt="Arrow"] {
 .wishlist-section {
   position: absolute;
   background: #fff;
-  height: 50px;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
   border: none;
   outline: none;
-  border-radius: 50%;
-  width: 50px;
   box-shadow: 2px 2px 2px 2px #0000003d;
   display: flex;
   align-items: center;
@@ -960,6 +960,9 @@ input[type="range"].common-range-input::-moz-range-thumb {
 }
 .modal-body {
   font-family: var(--hn-font-medium);
+}
+.btn-fluid{
+  width: 100%;
 }
 /* ============ desktop view ============ */
 
