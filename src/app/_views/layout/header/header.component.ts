@@ -29,7 +29,6 @@ export class HeaderComponent implements OnInit {
       });
     this._common.getCategories().then((res) => {
       this.categories = res.data;
-      console.log(this.categories);
     });
   }
 

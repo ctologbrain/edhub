@@ -12,7 +12,4 @@ export class ProductComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  eror() {
-    console.log('deepesh');
-  }
 }
