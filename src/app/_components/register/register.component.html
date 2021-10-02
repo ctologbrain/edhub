@@ -1,0 +1,181 @@
+<div class="modal fade sign-up-popup" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-5 shadow">
+      <div class="modal-header p-5 pb-3 border-bottom-0">
+        <!-- <h5 class="modal-title">Modal title</h5> -->
+        <h2 class="fw-bold mb-0">
+          Welcome to <span class="theme-color-text">EdHub</span>
+        </h2>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body p-5 pt-0">
+        <h3 class="mb-4">Sign Up</h3>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <ng-container *ngIf="registerForm.get('name') as control">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control rounded-4"
+                id="name"
+                placeholder="Name"
+                [class.is-invalid]="control.touched && control.errors"
+                [formControl]="control"
+              />
+              <label for="name">Name</label>
+              <ng-container *ngIf="control.touched && control.errors">
+                <small
+                  *ngIf="control.hasError('required')"
+                  class="invalid-feedback mb-2"
+                  >Please enter your name.</small
+                >
+              </ng-container>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="registerForm.get('email') as control">
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control rounded-4"
+                id="userEmail"
+                placeholder="name@example.com"
+                [class.is-invalid]="control.touched && control.errors"
+                [formControl]="control"
+              />
+              <label for="userEmail">Email address</label>
+              <ng-container *ngIf="control.touched && control.errors">
+                <small
+                  *ngIf="control.hasError('required')"
+                  class="invalid-feedback mb-2"
+                  >Please enter email address.</small
+                >
+                <small
+                  *ngIf="control.hasError('email')"
+                  class="invalid-feedback mb-2"
+                  >Please enter valid email address.</small
+                >
+              </ng-container>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="registerForm.get('password') as control">
+            <div class="form-floating mb-3">
+              <input
+                type="password"
+                class="form-control rounded-4"
+                id="password"
+                placeholder="Password"
+                [class.is-invalid]="control.touched && control.errors"
+                [formControl]="control"
+              />
+              <label for="password">Password</label>
+              <ng-container *ngIf="control.touched && control.errors">
+                <small
+                  *ngIf="control.hasError('required')"
+                  class="invalid-feedback mb-2"
+                  >Please enter password.</small
+                >
+              </ng-container>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="registerForm.get('cpassword') as control">
+            <div class="form-floating mb-3">
+              <input
+                type="password"
+                class="form-control rounded-4"
+                id="cpassword"
+                placeholder="Confirm Password"
+                [class.is-invalid]="control.touched && control.errors"
+                [formControl]="control"
+              />
+              <label for="cpassword">Confirm Password</label>
+              <ng-container *ngIf="control.touched && control.errors">
+                <small
+                  *ngIf="control.hasError('required')"
+                  class="invalid-feedback mb-2"
+                  >Please enter confirm password.</small
+                >
+                <small
+                  *ngIf="control.hasError('mustMatch')"
+                  class="invalid-feedback mb-2"
+                  >Password & Confirm password must be match.</small
+                >
+              </ng-container>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="registerForm.get('gender') as control">
+            <div class="d-flex justify-content-between mb-3">
+              <div class="sign-gender-label">
+                <h6>Gender</h6>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="genderType"
+                  id="genderMale"
+                  value="Male"
+                  [formControl]="control"
+                />
+                <label class="form-check-label" for="genderMale">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="genderType"
+                  id="genderFemale"
+                  value="Female"
+                  [formControl]="control"
+                />
+                <label class="form-check-label" for="genderFemale"
+                  >Female</label
+                >
+              </div>
+            </div>
+          </ng-container>
+          <button
+            class="w-100 mb-2 btn btn-lg rounded-4 btn-primary-theme"
+            type="submit"
+            [disabled]="registering | async"
+          >
+            <span
+              class="spinner-border spinner-border-sm"
+              *ngIf="registering | async"
+              role="status"
+            ></span>
+            Submit
+          </button>
+          <p class="text-center">
+            Already have an account?
+            <b>
+              <a
+                class="theme-color-text"
+                href="javascript:void(0);"
+                data-bs-toggle="modal"
+                data-bs-target=".login-popup"
+                >Login</a
+              >
+            </b>
+          </p>
+          <hr />
+          <p class="text-center">Register With Your Social Account</p>
+          <a
+            href="javascript:void(0);"
+            class="w-50 d-flex mx-auto"
+            type="submit"
+          >
+            <img
+              class="img-fluid"
+              src="./assets/images/signInGoogle.png"
+              alt="signInGoogle"
+            />
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
