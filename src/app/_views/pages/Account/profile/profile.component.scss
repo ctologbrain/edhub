@@ -6,29 +6,62 @@
     padding-bottom: 1rem;
 }
 .ed-ng-nav {
+    flex-direction: row;
     padding-left: 0;
     padding-right: 0;
-    padding-bottom: 2rem;
 }
 .ed-ng-nav .nav-link{
     width: 100%;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
 }
+.ed-ng-profile-card{
+    overflow: hidden;
+}
 .ed-ng-profile-card-body{
     padding-top: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
 }
 .profile-container{
+    position: relative;
     display: flex;
     width: 10rem;
     height: 10rem;
     margin-left: auto;
     margin-right: auto;
 }
-.ed-ng-profile-card-footer{
-    padding-top: 0;
-    padding-bottom: 0;
+.change-profile-pic{
+    position: absolute;
+    z-index: 111;
+    top: .6rem;
+    right: .2rem;
+    border-radius: 50%;
+}
+.profile-pic-trigger{
+    display: flex;
+    cursor: pointer;
+    min-width: 2rem;
+    width: 2rem;
+    height: 2rem;
+    min-height: 2rem;
+    padding:.5rem;
+    border-radius: 50%;
+    fill: var(--bs-primary);
+    color: var(--bs-primary);
+    background-color: #fff;
+    box-shadow: 0 0.5em 1.5em rgb(0 0 0 / 10%), 0 0.125em 0.5em rgb(0 0 0 / 15%);
+    border: solid 1px var(--bs-primary);
+    transition: all .3s ease;
+}
+.profile-pic-trigger svg,
+.edit-profile-button svg{
+    min-width: 1rem;
+    width: 1rem;
+    height: 1rem;
+    min-height: 1rem;
+}
+.profile-pic-trigger > input[type=file]{
+    visibility: hidden;
 }
 .profile-pic-circle{
     display: block;
@@ -36,6 +69,8 @@
     height: 100%;
     border-radius: 50%;
     overflow: hidden;
+    border: solid 2px var(--bs-light);
+    transition: all .2s ease;
 }
 .profile-image{
     background-repeat: no-repeat;
@@ -44,17 +79,76 @@
     width: 100%;
     height: 100%;
 }
+.profile-container:hover .profile-pic-circle{
+    border-color: var(--bs-primary);
+}
+.profile-pic-trigger:hover{
+    min-width: 2.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    min-height: 2.2rem;
+    padding:.6rem;
+    fill: var(--bs-white);
+    color: var(--bs-white);
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+.ed-ng-profile-card-footer{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.profile-detail-list{
+    padding: 0;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    background-color: var(--bs-white);
+}
+.profile-detail-list .list-group-item{
+    border: none;
+}
+.profile-detail-list .user-name{
+    text-align: center;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    font-family: var(--hn-font-light);
+}
+.edit-profile-option{
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    bottom: 1px;
+    max-width: max-content;
+}
+.edit-profile-button{
+    display: none;
+    padding: .4rem .4rem .5rem .5rem;
+    fill: var(--bs-primary);
+    color: var(--bs-primary);
+    background-color: #fff;
+    border: solid 1px transparent;
+    transition: all .3s ease;
+}
+
+.profile-detail-list:hover .edit-profile-button{
+    display: flex;
+}
+.edit-profile-button:hover{
+    fill: var(--bs-white);
+    color: var(--bs-white);
+    background-color: var(--bs-primary);
+    border: solid 1px var(--bs-primary);
+}
 .ed-ng-nav .nav-link{
     font-family: var(--hn-font-light);
     font-size: 1rem;
-    color: #888;
-    line-height: 2.5rem;
+    color: #606060;
     text-align: left;
     display: flex;
     flex-direction: row;
     align-items: center;
     font-weight: 600;
-    letter-spacing: .05 rem;
+    letter-spacing: .05rem;
 }
 .profile-detail-tab,
 .profile-detail-tab .tab-pane{
@@ -64,13 +158,13 @@
 .ed-ng-nav .nav-link:hover{
     color: #f80007;
     // background-color: rgba(248, 0, 8, 0.05);
-    border-color: transparent;
-    border-radius: 0;
+    // border-color: transparent;
+    // border-radius: 0;
 }
 .profile-input-control{
     background-color: #eee;
 }
-.course-detail-card .cdc-card{
+.course-card-group .cdc-card{
     margin-bottom: 1rem;
 }
 .delete-section{
@@ -81,14 +175,59 @@
     border-radius: 50%;
     border: none;
     outline: none;
-    box-shadow: 2px 2px 2px 2px #0000003d;
+    box-shadow: 0 0.5em 1.5em rgb(0 0 0 / 10%), 0 0.125em 0.5em rgb(0 0 0 / 15%);
     display: flex;
     align-items: center;
     justify-content: center;
     top: -1.25rem;
     right: -1.05rem;
 }
+.profile-detail-list .profile-icon{
+    margin-right: .85rem;
+    display: inline-flex;
+    min-width: 1.5rem;
+    justify-content: center;
+}
+.profile-detail-list .profile-text{
+    display: inline-flex;
+    font-size: .85rem;
+    line-height: 1.75rem;
+    font-family: var(--hn-font-light);
+    letter-spacing: .04rem;
+    color: #888;
+    font-weight: 600;
+}
+.wishlist-card-group .ed-card{
+    margin-bottom: 2rem;
+}
+.profile-course-detail .pcd-title{
+    font-family: var(--hn-font-medium);
+    font-weight: 600;
+    letter-spacing: .025rem;
+    line-height: 2.1rem;
+}
+.profile-course-detail .pcd-course-by{
+    font-family: var(--hn-font-medium);
+    color: #555;
+    letter-spacing: .03rem;
+    margin-bottom: 0;
+}
+.sticky-on-mobile .ed-ng-nav{
+    background-color: var(--bs-white);
+}
+@media (min-width: 576px){
+    .ed-ng-profile-card{
+        position: inherit;
+    }
+    .sticky-on-mobile{
+        position: sticky;
+        top: 3.8rem;
+        z-index: 999;
+    }
+}
 @media (min-width: 992px){
-    
-
+    .ed-ng-profile-card{
+        position: sticky;
+        top: 5rem;
+    }
 }
