@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
   async ngOnInit() {
     let res = await this._common.getHomeSliderData();
     this.sliders = res.data;
-    console.log(res.data);
     setTimeout(() => {
       $('.course-slider').slick({
         dots: true,

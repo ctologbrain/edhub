@@ -6,7 +6,7 @@ import { HttpClientInterceptor } from '../interceptors/http-client.interceptor';
   providedIn: 'root',
 })
 export class UserService {
-  authUser = new BehaviorSubject<any>({});
+  authUser = new BehaviorSubject<any>(null);
   authState = new BehaviorSubject<boolean>(false);
   constructor(private _http: HttpClientInterceptor) {}
 
@@ -31,6 +31,6 @@ export class UserService {
    * @param {Auth} user user email & password to validare user
    */
   authuser(): Promise<any> {
-    return this._http.get(`/auth-user`).toPromise();
+    return this._http.post(`/UserDetails`, {}).toPromise();
   }
 }

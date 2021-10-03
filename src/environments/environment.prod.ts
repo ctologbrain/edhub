@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://45.79.127.225:8081',
+  server_url: 'http://45.79.127.225:8081',
+  tokenType: 'x-access-token',
 };

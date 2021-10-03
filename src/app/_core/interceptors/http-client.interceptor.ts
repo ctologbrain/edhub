@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 // import { environment } from '@environments/environment';
-
+const serverUrl = environment.server_url;
 @Injectable()
 export class HttpClientInterceptor {
   /**
@@ -56,7 +56,7 @@ export class HttpClientInterceptor {
    */
   get(path: string, params: HttpParams = new HttpParams()): Observable<any> {
     return this.http
-      .get(`${environment.apiUrl}${path}`, { params })
+      .get(`${serverUrl}${path}`, { params })
       .pipe(catchError((err) => this.formatErrors(err)));
   }
 
@@ -84,7 +84,7 @@ export class HttpClientInterceptor {
    */
   put(path: string, body: Object = {}, header?: any): Observable<any> {
     return this.http
-      .put(`${environment.apiUrl}${path}`, body, header)
+      .put(`${serverUrl}${path}`, body, header)
       .pipe(catchError((err) => this.formatErrors(err)));
   }
 
@@ -97,7 +97,7 @@ export class HttpClientInterceptor {
    */
   post(path: string, body: Object = {}, header?: any): Observable<any> {
     return this.http
-      .post(`${environment.apiUrl}${path}`, body, header)
+      .post(`${serverUrl}${path}`, body, header)
       .pipe(catchError((err) => this.formatErrors(err)));
   }
 
@@ -110,7 +110,7 @@ export class HttpClientInterceptor {
    */
   patch(path: string, body: Object = {}, header?: any): Observable<any> {
     return this.http
-      .patch(`${environment.apiUrl}${path}`, body, header)
+      .patch(`${serverUrl}${path}`, body, header)
       .pipe(catchError((err) => this.formatErrors(err)));
   }
 
@@ -121,7 +121,7 @@ export class HttpClientInterceptor {
    */
   delete(path: string): Observable<any> {
     return this.http
-      .delete(`${environment.apiUrl}${path}`)
+      .delete(`${serverUrl}${path}`)
       .pipe(catchError((err) => this.formatErrors(err)));
   }
 
