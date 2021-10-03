@@ -1,0 +1,17 @@
+.accordion-list-group .list-group-item {
+    display: flex;
+    align-items: center;
+    border: none;
+}
+.accordion-list-group .form-check-input{
+    margin: 0;
+    margin-right: .75rem;
+}
+.list-group-item {
+    cursor: pointer;
+    font-family: var(--hn-font-light);
+}
+
+.accordion-list-group .list-group-item:hover {
+    background-color: #fcfcfc;
+}

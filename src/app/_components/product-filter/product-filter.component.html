@@ -1,8 +1,8 @@
-<div class="card filter-panel">
+<div class="card filter-panel sticky-top">
   <div class="card-header filter-header">
     <h5>Filter</h5>
   </div>
-  <div class="card-body">
+  <div class="card-body overflow-auto">
     <div class="row mb-2">
       <div class="col-12">
         <span class="filter-label">Pricing</span>
@@ -52,7 +52,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="accordion accordion-flush" id="CourseAccordian">
+      <div class="accordion accordion-flush open" id="CourseAccordian">
         <div class="accordion-item">
           <h2 class="accordion-header" id="typeOfCourseAccordian">
             <button
@@ -60,7 +60,7 @@
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#typeOfCourseAccordian-collapse"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="typeOfCourseAccordian-collapse"
             >
               Type of Course
@@ -76,7 +76,7 @@
               <div class="list-group accordion-list-group">
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -84,7 +84,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -92,7 +92,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -117,7 +117,7 @@
           </h2>
           <div
             id="studentsRating-collapse"
-            class="accordion-collapse collapse"
+            class="accordion-collapse collapse show"
             aria-labelledby="studentsRating"
             data-bs-parent="#CourseAccordian"
           >
@@ -125,7 +125,7 @@
               <div class="list-group accordion-list-group">
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -133,7 +133,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -141,7 +141,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -149,7 +149,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -174,7 +174,7 @@
           </h2>
           <div
             id="providedByAaccordion-collapse"
-            class="accordion-collapse collapse"
+            class="accordion-collapse collapse show"
             aria-labelledby="providedByAaccordion"
             data-bs-parent="#CourseAccordian"
           >
@@ -182,7 +182,7 @@
               <div class="list-group accordion-list-group">
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -194,7 +194,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -206,7 +206,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -218,7 +218,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -247,7 +247,7 @@
           </h2>
           <div
             id="offersDiscounts-collapse"
-            class="accordion-collapse collapse"
+            class="accordion-collapse collapse show"
             aria-labelledby="offersDiscountsAccordian"
             data-bs-parent="#CourseAccordian"
           >
@@ -255,7 +255,7 @@
               <div class="list-group accordion-list-group">
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -263,7 +263,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -271,7 +271,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -279,7 +279,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -304,7 +304,7 @@
           </h2>
           <div
             id="languageAccordian-collapse"
-            class="accordion-collapse collapse"
+            class="accordion-collapse collapse show"
             aria-labelledby="languageAccordian"
             data-bs-parent="#CourseAccordian"
           >
@@ -312,7 +312,7 @@
               <div class="list-group accordion-list-group">
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -320,7 +320,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -328,7 +328,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -336,7 +336,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -361,7 +361,7 @@
           </h2>
           <div
             id="certificationAccordian-collapse"
-            class="accordion-collapse collapse"
+            class="accordion-collapse collapse show"
             aria-labelledby="certificationAccordian"
             data-bs-parent="#CourseAccordian"
           >
@@ -369,7 +369,7 @@
               <div class="list-group accordion-list-group">
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />
@@ -377,7 +377,7 @@
                 </label>
                 <label class="list-group-item">
                   <input
-                    class="form-check-input me-1"
+                    class="form-check-input"
                     type="checkbox"
                     value=""
                   />

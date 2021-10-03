@@ -4,20 +4,13 @@
   </button>
   <div class="card-body" *ngIf="product as course">
     <div class="course-banner">
-      <img
-        class="fix-image"
-        [src]="course.image"
-        onerror="this.src='/assets/images/placeholder-image.png'"
-        [alt]="course.title"
-      />
+      <img class="fix-image" [src]="course.image" onerror="this.src='/assets/images/placeholder-image.png'"
+        [alt]="course.title" />
     </div>
     <div class="row pt-2">
       <div class="col-6 d-flex align-items-center">
-        <img
-          class="course-provider-logo"
-          src="{{ serverUrl }}{{ course.course_provider.image }}"
-          alt="course-provider"
-        />
+        <img class="course-provider-logo" src="{{ serverUrl }}{{ course.course_provider.image }}"
+          alt="course-provider" />
       </div>
       <div class="col-6">
         <h5 class="course-price">
@@ -64,16 +57,15 @@
     <div class="row">
       <div class="col d-flex align-items-center pe-0">
         <div class="coursecard-footer">
-          <i
-            class="far fa-star"
-            [class.text-warning.fas]="course.rating > 0"
-          ></i>
-          <i class="far fa-star" [class.text-warning]="course.rating > 1"></i>
-          <i class="far fa-star" [class.text-warning]="course.rating > 2"></i>
-          <i class="far fa-star" [class.text-warning]="course.rating > 3"></i>
-          <i class="far fa-star" [class.text-warning]="course.rating > 4"></i>
+          <div class="rating-stars">
+            <i class="far fa-star" [class.text-warning.fas]="course.rating > 0"></i>
+            <i class="far fa-star" [class.text-warning]="course.rating > 1"></i>
+            <i class="far fa-star" [class.text-warning]="course.rating > 2"></i>
+            <i class="far fa-star" [class.text-warning]="course.rating > 3"></i>
+            <i class="far fa-star" [class.text-warning]="course.rating > 4"></i>
+          </div>
           <p class="review-text">
-            <b>{{ course.rating }} &nbsp; Reviews</b>
+            <b>{{ course.rating }} Reviews</b>
           </p>
         </div>
       </div>

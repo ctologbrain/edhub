@@ -15,7 +15,6 @@
 
 body {
   text-rendering: optimizelegibility;
-  padding-top: 4rem;
   background-color: #eeeeee;
   overflow-x: hidden;
 }
@@ -119,6 +118,17 @@ a:hover {
 .slick-prev:before, .slick-next:before {
   font-size: 1.5rem;
   color: #323232;
+}
+
+.common-button {
+  display: block;
+  font-size: 1rem;
+  align-items: center;
+  font-weight: 400;
+  letter-spacing: 0.03rem;
+  line-height: 2rem;
+  padding: 0.3rem 0.75rem 0.1rem;
+  font-family: var(--hn-font-medium);
 }
 
 .ellipsis-text {
@@ -304,18 +314,17 @@ img[alt="Arrow"] {
 }
 
 .ed-card-title {
-  font-family: var(--hn-font-regular);
+  font-family: var(--hn-font-medium);
   font-size: 0.9rem;
   margin: 0;
-  color: #666;
+  color: #555;
   line-height: 1.5;
-  font-weight: 600;
-  letter-spacing: 0.07rem;
+  font-weight: 400;
+  min-height: 2.5rem;
 }
 
 .ed-card-title:hover {
   color: #222;
-  letter-spacing: 0.08rem;
 }
 
 .ed-card .compare-section {
@@ -360,11 +369,11 @@ img[alt="Arrow"] {
   font-size: 0.9rem;
   margin-bottom: 0;
   margin-left: 0.35rem;
-  line-height: 1.45;
+  line-height: 1.5;
   font-weight: 600;
   color: #555;
   letter-spacing: 0.06rem;
-  padding-top: 0.125rem;
+  padding-top: 0.135rem;
 }
 
 .coursecard-footer img {
@@ -800,7 +809,7 @@ img[alt="Arrow"] {
 .dropdown-item>.flex-fill {
   font-family: var(--hn-font-light);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 1rem;
   line-height: 1.75rem;
   color: #333;
   letter-spacing: 0.05rem;
@@ -840,16 +849,23 @@ img[alt="Arrow"] {
 }
 
 .filter-panel {
+  height: calc(100vh - 6rem);
   border-radius: 0.75rem;
   overflow: hidden;
-  position: sticky;
   top: 5rem;
+  z-index: 999;
+  padding-top: 3.4rem;
 }
 
 .filter-header {
-  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: #f1f1f1;
   border: none;
-  padding-top: 1.25rem;
+  padding: .75rem 1rem;
 }
 
 .filter-header h5 {
@@ -916,25 +932,13 @@ input[type="range"].common-range-input::-moz-range-thumb {
   padding: 0;
 }
 
-.accordion-list-group .list-group-item {
-  border: none;
-}
-
-.list-group-item {
-  cursor: pointer;
-  font-family: var(--hn-font-light);
-}
-
-.accordion-list-group .list-group-item:hover {
-  background-color: #fcfcfc;
-}
-
 .quick-option {
   margin: 0;
   border-radius: 0.25rem;
   background-color: #fefefe;
   padding-top: 1rem;
 }
+
 .quick-option-title {
   font-family: var(--hn-font-medium);
 }
