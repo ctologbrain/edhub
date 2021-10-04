@@ -2,6 +2,8 @@
   --background-theme-color: #f05454;
   --border-theme-color: #e34343;
   --white-color: #fff;
+  --ed-blue-color: #3c64b1;
+  --ed-blue-hover-color: #264c97;
   --hn-font-regular: "HelveticaNeueRegular";
   --hn-font-light: "HelveticaNeueLight";
   --hn-font-medium: "HelveticaNeueMedium";
@@ -22,7 +24,38 @@ body {
 a {
   text-decoration: none;
 }
+/* Common Class */
+.ragular-text_1{
+  font-size: 1rem;
+  line-height: 1.35;
+}
+.ragular-text-125{
+  font-size: 1.25rem;
+  line-height: 1.5;
+  letter-spacing: .04rem;
+}
+.ragular-text-150{
+  font-size: 1.5rem;
+  line-height: 1.75;
+  letter-spacing: .04rem;
+}
+.ragular-text-175{
+  font-size: 1.75rem;
+  line-height: 1.5;
+  letter-spacing: .04rem;
+}
+.ed-common-blue-btn{
+  color: #fff;
+  background-color: var(--ed-blue-color);
+  border: solid 1px var(--ed-blue-color);
+}
+.ed-common-blue-btn:hover{
+  color: #fff;
+  background-color: var(--ed-blue-color);
+  border: solid 1px var(--ed-blue-color);
+}
 
+/* End of Common Class */
 button:focus, button:visited {
   border: none;
   outline: none;
@@ -269,8 +302,6 @@ img[alt="Arrow"] {
 
 .popular-choice-section .pc-sec-caption {
   font-family: var(--hn-font-light);
-  font-size: 1rem;
-  letter-spacing: 0.04rem;
   color: #000;
 }
 
@@ -315,10 +346,8 @@ img[alt="Arrow"] {
 
 .ed-card-title {
   font-family: var(--hn-font-medium);
-  font-size: 0.9rem;
   margin: 0;
   color: #555;
-  line-height: 1.5;
   font-weight: 400;
   min-height: 2.5rem;
 }
@@ -589,7 +618,6 @@ img[alt="Arrow"] {
   right: 0;
   padding: 1.2rem 0.75rem 1rem;
   margin: auto;
-  background-color: #3c64b1;
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
   height: fit-content;
@@ -660,7 +688,7 @@ img[alt="Arrow"] {
 }
 
 .landing-page-section {
-  padding: 30px 0;
+  padding: 1rem 0;
 }
 
 .landing-page-text {
@@ -839,8 +867,6 @@ img[alt="Arrow"] {
 
 .feature .card-text {
   font-family: var(--hn-font-light);
-  font-size: 1rem;
-  letter-spacing: 0.04rem;
   color: #000;
 }
 

@@ -38,8 +38,8 @@
             ],
             "scripts": [
               "src/assets/vender/js/jquery-3.6.0.min.js",
+              "src/assets/vender/js/jquery-ui.min.js",
               "src/assets/vender/js/bootstrap.bundle.min.js",
-              "src/assets/vender/js/jBox.all.min.js",
               "src/assets/vender/slick/slick.min.js",
               "src/assets/custom/js/script.js"
             ]
