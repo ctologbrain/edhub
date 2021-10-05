@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
     data: [],
   });
   isFocused = new BehaviorSubject(false);
+  serverUrl = environment.server_url;
   constructor(private _common: CommonService, public _user: UserService) {}
 
   ngOnInit(): void {

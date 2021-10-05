@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private _builder: FormBuilder,
     private _userService: UserService,
-    private _toast: ToastrService
+    private _toast: ToastrService,
+    private _router: Router
   ) {
     this.loginForm = this._builder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -40,8 +41,9 @@ export class LoginComponent implements OnInit {
       this.loggingIn.next(false);
       if (res.status == 'true') {
         localStorage.setItem(environment.tokenType, res.token);
-        this._userService.authState.next(true);
+        // this._userService.authState.next(true);
         $('.modal').modal('hide');
+        this._router.navigate(['/account']);
       } else if (res.status == 'false') {
         this._toast.error(res.msg);
       }

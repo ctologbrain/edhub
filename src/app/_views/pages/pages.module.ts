@@ -23,6 +23,7 @@ const routes: Routes = [
   {
     path: 'account',
     canLoad: [AuthGuard],
+    canActivateChild: [AuthGuard],
     loadChildren: () =>
       import('./Account/account.module').then((m) => m.AccountModule),
   },
@@ -31,7 +32,6 @@ const routes: Routes = [
     loadChildren: () =>
       import('./products/products.module').then((m) => m.ProductsModule),
   },
-
 ];
 
 @NgModule({

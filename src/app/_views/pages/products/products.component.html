@@ -2,7 +2,11 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <img class="img-fluid" src="./assets/images/headerImg.png" alt="Filter Banner" />
+        <img
+          class="img-fluid"
+          src="./assets/images/headerImg.png"
+          alt="Filter Banner"
+        />
       </div>
     </div>
   </div>
@@ -16,39 +20,71 @@
       </div>
       <div class="col-lg-9 col-md-8 col-sm-12">
         <div class="row sticky-top ed-breadcrump">
-          <div class="alert alert-light " role="alert">
+          <div class="alert alert-light" role="alert">
             <div class="d-flex justify-content-between">
               <nav
-                style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);"
-                aria-label="breadcrumb">
+                style="
+                  --bs-breadcrumb-divider: url(
+                    &#34;data:image/svg + xml,
+                    %3Csvgxmlns='http://www.w3.org/2000/svg'width='8'height='8'%3E%3Cpathd='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z'fill='currentColor'/%3E%3C/svg%3E&#34;
+                  );
+                "
+                aria-label="breadcrumb"
+              >
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="#">{{
+                  <li class="breadcrumb-item">
+                    <a [routerLink]="[params.category, '']">{{
                       params.category.replaceAll("-", " ").replace("1", "")
-                      | uppercase
-                      }}</a></li>
-                  <li class="breadcrumb-item" *ngIf="params.subcategory"><a href="#">{{
+                        | uppercase
+                    }}</a>
+                  </li>
+                  <li class="breadcrumb-item" *ngIf="params.subcategory">
+                    <a href="#">{{
                       params.subcategory.replaceAll("-", " ").replace("1", "")
-                      | uppercase
-                      }}</a></li>
-                  <li class="breadcrumb-item active" aria-current="page" *ngIf="params.course_topic">{{
-                    params.course_topic.replaceAll("-", " ").replace("1", "")
-                    | uppercase
-                    }}</li>
+                        | uppercase
+                    }}</a>
+                  </li>
+                  <li
+                    class="breadcrumb-item active"
+                    aria-current="page"
+                    *ngIf="params.course_topic"
+                  >
+                    {{
+                      params.course_topic.replaceAll("-", " ").replace("1", "")
+                        | uppercase
+                    }}
+                  </li>
                 </ol>
               </nav>
               <div class="result-count d-none d-md-flex">
-                <p><b>73</b> matching results</p>
+                <p>
+                  <b>{{ count }}</b> matching results
+                </p>
               </div>
             </div>
           </div>
           <div class="col-12 pt-3">
             <div class="mobile-filter-btn d-md-none">
-              <button type="button" class="btn ed-common-blue-btn" data-bs-toggle="modal"
-                data-bs-target=".filter-mobile-view">Filter
+              <button
+                type="button"
+                class="btn ed-common-blue-btn"
+                data-bs-toggle="modal"
+                data-bs-target=".filter-mobile-view"
+              >
+                Filter
                 <i class="fas fa-sliders-h ms-2"></i>
               </button>
-              <div class="result-count d-sm-inline-flex align-items-center d-md-none">
-                <p><b>73</b> matching results</p>
+              <div
+                class="
+                  result-count
+                  d-sm-inline-flex
+                  align-items-center
+                  d-md-none
+                "
+              >
+                <p>
+                  <b>{{ count }}</b> matching results
+                </p>
               </div>
             </div>
           </div>
@@ -61,9 +97,18 @@
           </ng-container>
         </div>
         <div class="text-center" *ngIf="count > products.length">
-          <button class="btn btn-primary" type="button" [disabled]="loading | async" (click)="loadMore()">
-            <span *ngIf="loading | async" class="spinner-border spinner-border-sm" role="status"
-              aria-hidden="true"></span>
+          <button
+            class="btn btn-primary"
+            type="button"
+            [disabled]="loading | async"
+            (click)="loadMore()"
+          >
+            <span
+              *ngIf="loading | async"
+              class="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            ></span>
             Load More
           </button>
         </div>
@@ -151,6 +196,7 @@
     </div>
   </div>
 </section>
+<<<<<<< HEAD =======
 
 <div class="modal fade filter-mobile-view" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -158,7 +204,12 @@
       <div class="modal-header p-4 border-bottom-0">
         <!-- <h5 class="modal-title">Modal title</h5> -->
         <h4 class="fw-bold mb-0">Filter</h4>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
       </div>
       <div class="modal-body">
         <form>
@@ -170,9 +221,26 @@
               <div class="col-12">
                 <div class="selector">
                   <div class="price-slider-container">
-                    <div class="slider-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content">
-                      <span tabindex="0" class="ui-slider-handle  ui-state-default" value=0></span>
-                      <span tabindex="0" class="ui-slider-handle  ui-state-default" value=150000></span>
+                    <div
+                      class="
+                        slider-range
+                        ui-slider
+                        ui-corner-all
+                        ui-slider-horizontal
+                        ui-widget
+                        ui-widget-content
+                      "
+                    >
+                      <span
+                        tabindex="0"
+                        class="ui-slider-handle ui-state-default"
+                        value="0"
+                      ></span>
+                      <span
+                        tabindex="0"
+                        class="ui-slider-handle ui-state-default"
+                        value="150000"
+                      ></span>
                     </div>
                     <div class="slider_bg"></div>
                   </div>
@@ -186,8 +254,17 @@
                 <div class="row">
                   <div class="col-5">
                     <div class="mb-3">
-                      <label for="min-price-input" class="form-label filter-label">Min</label>
-                      <input type="text" class="form-control" id="min-price-input" value="" />
+                      <label
+                        for="min-price-input"
+                        class="form-label filter-label"
+                        >Min</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="min-price-input"
+                        value=""
+                      />
                     </div>
                   </div>
                   <div class="col-2 d-flex align-items-center">
@@ -195,8 +272,17 @@
                   </div>
                   <div class="col-5">
                     <div class="mb-3">
-                      <label for="max-price-input" class="form-label filter-label">Max</label>
-                      <input type="text" class="form-control" id="max-price-input" value="" />
+                      <label
+                        for="max-price-input"
+                        class="form-label filter-label"
+                        >Max</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="max-price-input"
+                        value=""
+                      />
                     </div>
                   </div>
                 </div>
@@ -206,26 +292,47 @@
               <div class="accordion accordion-flush open" id="CourseAccordian">
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="typeOfCourseAccordian">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#typeOfCourseAccordian-collapse" aria-expanded="false"
-                      aria-controls="typeOfCourseAccordian-collapse">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#typeOfCourseAccordian-collapse"
+                      aria-expanded="false"
+                      aria-controls="typeOfCourseAccordian-collapse"
+                    >
                       Type of Course
                     </button>
                   </h2>
-                  <div id="typeOfCourseAccordian-collapse" class="accordion-collapse collapse show"
-                    aria-labelledby="typeOfCourseAccordian" data-bs-parent="#CourseAccordian">
+                  <div
+                    id="typeOfCourseAccordian-collapse"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="typeOfCourseAccordian"
+                    data-bs-parent="#CourseAccordian"
+                  >
                     <div class="accordion-body">
                       <div class="list-group accordion-list-group">
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           Guided Course
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           Mentored Course
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           Tutored Course
                         </label>
                       </div>
@@ -234,30 +341,55 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="studentsRating">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#studentsRating-collapse" aria-expanded="false"
-                      aria-controls="studentsRating-collapse">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#studentsRating-collapse"
+                      aria-expanded="false"
+                      aria-controls="studentsRating-collapse"
+                    >
                       Student's Rating
                     </button>
                   </h2>
-                  <div id="studentsRating-collapse" class="accordion-collapse collapse show"
-                    aria-labelledby="studentsRating" data-bs-parent="#CourseAccordian">
+                  <div
+                    id="studentsRating-collapse"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="studentsRating"
+                    data-bs-parent="#CourseAccordian"
+                  >
                     <div class="accordion-body">
                       <div class="list-group accordion-list-group">
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           4 * & above
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           3 * & above
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           2 * & above
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           1 * & above
                         </label>
                       </div>
@@ -266,35 +398,72 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="providedByAaccordion">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#providedByAaccordion-collapse" aria-expanded="false"
-                      aria-controls="providedByAaccordion-collapse">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#providedByAaccordion-collapse"
+                      aria-expanded="false"
+                      aria-controls="providedByAaccordion-collapse"
+                    >
                       Provided by
                     </button>
                   </h2>
-                  <div id="providedByAaccordion-collapse" class="accordion-collapse collapse show"
-                    aria-labelledby="providedByAaccordion" data-bs-parent="#CourseAccordian">
+                  <div
+                    id="providedByAaccordion-collapse"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="providedByAaccordion"
+                    data-bs-parent="#CourseAccordian"
+                  >
                     <div class="accordion-body">
                       <div class="list-group accordion-list-group">
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
-                          <img class="course-provider-logo"
-                            src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="course-provider" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <img
+                            class="course-provider-logo"
+                            src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
+                            alt="course-provider"
+                          />
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
-                          <img class="course-provider-logo"
-                            src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="course-provider" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <img
+                            class="course-provider-logo"
+                            src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
+                            alt="course-provider"
+                          />
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
-                          <img class="course-provider-logo"
-                            src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="course-provider" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <img
+                            class="course-provider-logo"
+                            src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
+                            alt="course-provider"
+                          />
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
-                          <img class="course-provider-logo"
-                            src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" alt="course-provider" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
+                          <img
+                            class="course-provider-logo"
+                            src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg"
+                            alt="course-provider"
+                          />
                         </label>
                       </div>
                     </div>
@@ -302,30 +471,55 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="offersDiscountsAccordian">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#offersDiscounts-collapse" aria-expanded="false"
-                      aria-controls="offersDiscounts-collapse">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#offersDiscounts-collapse"
+                      aria-expanded="false"
+                      aria-controls="offersDiscounts-collapse"
+                    >
                       Offers / Discounts
                     </button>
                   </h2>
-                  <div id="offersDiscounts-collapse" class="accordion-collapse collapse show"
-                    aria-labelledby="offersDiscountsAccordian" data-bs-parent="#CourseAccordian">
+                  <div
+                    id="offersDiscounts-collapse"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="offersDiscountsAccordian"
+                    data-bs-parent="#CourseAccordian"
+                  >
                     <div class="accordion-body">
                       <div class="list-group accordion-list-group">
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           20% off
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           20% off
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           20% off
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           20% off
                         </label>
                       </div>
@@ -334,30 +528,55 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="languageAccordian">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#languageAccordian-collapse" aria-expanded="false"
-                      aria-controls="languageAccordian-collapse">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#languageAccordian-collapse"
+                      aria-expanded="false"
+                      aria-controls="languageAccordian-collapse"
+                    >
                       Language
                     </button>
                   </h2>
-                  <div id="languageAccordian-collapse" class="accordion-collapse collapse show"
-                    aria-labelledby="languageAccordian" data-bs-parent="#CourseAccordian">
+                  <div
+                    id="languageAccordian-collapse"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="languageAccordian"
+                    data-bs-parent="#CourseAccordian"
+                  >
                     <div class="accordion-body">
                       <div class="list-group accordion-list-group">
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           English
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           Hindi
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           Marathi
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           Punjabi
                         </label>
                       </div>
@@ -366,22 +585,39 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="certificationAccordian">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#certificationAccordian-collapse" aria-expanded="false"
-                      aria-controls="certificationAccordian-collapse">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#certificationAccordian-collapse"
+                      aria-expanded="false"
+                      aria-controls="certificationAccordian-collapse"
+                    >
                       Certification
                     </button>
                   </h2>
-                  <div id="certificationAccordian-collapse" class="accordion-collapse collapse show"
-                    aria-labelledby="certificationAccordian" data-bs-parent="#CourseAccordian">
+                  <div
+                    id="certificationAccordian-collapse"
+                    class="accordion-collapse collapse show"
+                    aria-labelledby="certificationAccordian"
+                    data-bs-parent="#CourseAccordian"
+                  >
                     <div class="accordion-body">
                       <div class="list-group accordion-list-group">
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           Yes
                         </label>
                         <label class="list-group-item">
-                          <input class="form-check-input" type="checkbox" value="" />
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                          />
                           No
                         </label>
                       </div>
@@ -394,7 +630,13 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="submit" class="col btn btn-secondary me-3" data-bs-dismiss="modal">Cancel</button>
+        <button
+          type="submit"
+          class="col btn btn-secondary me-3"
+          data-bs-dismiss="modal"
+        >
+          Cancel
+        </button>
         <button type="button" class="col btn ed-common-blue-btn">Apply</button>
       </div>
     </div>
