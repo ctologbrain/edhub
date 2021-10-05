@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-md bg-light ed-navbar">
     <!-- if dev wants to fixed top header add "fixed-top" class with navbar -->
     <div class="container position-relative">
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand" routerLink="/">
         <img src="./assets/images/edhub.png" alt="Eduhub" />
       </a>
       <ul class="nav ms-auto ed-bookmark">
@@ -108,7 +108,7 @@
               placeholder="Search"
               aria-label="Search"
               (focus)="isFocused.next(true)"
-              (blur)="focusBlur()"
+              (blue)="focusBlur()"
             />
             <div
               id="searchResult"
@@ -142,7 +142,9 @@
                     <div class="list-content">
                       <span class="list-course-icon">
                         <img
-                          src="https://upload.wikimedia.org/wikipedia/en/e/e9/Crash_Course_logo.png"
+                          src="{{ serverUrl }}/{{
+                            course.course_provider.image
+                          }}"
                           alt="Course Short Title"
                         />
                       </span>
