@@ -108,7 +108,7 @@
               placeholder="Search"
               aria-label="Search"
               (focus)="isFocused.next(true)"
-              (blue)="focusBlur()"
+              (blur)="focusBlur()"
             />
             <div
               id="searchResult"
@@ -117,7 +117,11 @@
             >
               <div class="list-group" *ngIf="searchData | async as data">
                 <ng-container *ngFor="let category of data.category">
-                  <a href="javascript:void(0);" class="list-group-item">
+                  <a
+                    href="javascript:void(0);"
+                    class="list-group-item"
+                    [routerLink]="[category.course_category.slug]"
+                  >
                     <div class="list-content">
                       <span class="list-icon">
                         <i class="fas fa-search"></i>

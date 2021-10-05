@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
   focusBlur() {
     setTimeout(() => {
       this.isFocused.next(false);
-    }, 100);
+    }, 200);
   }
 
   logout() {

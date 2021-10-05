@@ -32,7 +32,6 @@ export class ProductsComponent implements OnInit {
       let res = await this._product.getCourses(this.params);
       this.products = res.data.rows;
       this.count = res.data.count;
-      console.log(this.products);
     });
   }
 
