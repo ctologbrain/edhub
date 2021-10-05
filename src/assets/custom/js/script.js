@@ -39,3 +39,32 @@ $("#pricingRange").on("input", function () {
     value +
     "%, #b5b5b5 100%)";
 });
+$(document).ready(function () {
+  $(".slider-range").slider({
+    range: true,
+    min: 0,
+    max: 150000,
+    step: 100,
+    slide: function (event, ui) {
+      $("#min-price").html($(this).slider("values", 0));
+      $("#max-price").html($(this).slider("values", 1));
+      $('#min-price-input').val($(this).slider("values", 0));
+      $('#max-price-input').val($(this).slider("values", 1));
+    },
+    change: function (event, ui) {
+      $("#min-price").html($(this).slider("values", 0));
+      $("#max-price").html($(this).slider("values", 1));
+      $('#min-price-input').val($(this).slider("values", 0));
+      $('#max-price-input').val($(this).slider("values", 1));
+    },
+    create: function (event, ui) {
+      $(this).slider('values', 0, 0);
+      $(this).slider('values', 1, 150000);
+    },
+  });
+
+  $('input').change(function (e) {
+    var setIndex = (this.id == "max-price-input") ? 1 : 0;
+    $('.slider-range').slider("values", setIndex, $(this).val());
+  });
+});

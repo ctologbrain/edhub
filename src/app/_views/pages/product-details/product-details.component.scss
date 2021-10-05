@@ -1,0 +1,42 @@
+.product-banner{
+    position: relative;
+}
+.product-banner-info{
+    position: absolute;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.certification-badge p{
+    color: var(--bs-white);
+    margin-bottom: 0;
+}
+.certification-badge i{
+    color: var(--bs-yellow);
+    margin-bottom: 0;
+}
+.pd-course-title{
+    color: var(--bs-white);
+}
+.pd-course-by{
+    color: var(--bs-white);
+    margin-bottom: 0;
+}
+.pd-course-subtitles{
+    margin-bottom: 0;
+    color: var(--bs-white);
+}
+.pd-course-language{
+    color: var(--bs-white);
+    margin-bottom: 0;
+}
+.product-details-tab-pane{
+    padding: 0;
+}
+@media (min-width: 576px){
+    .nav {
+        flex-direction: row;
+    }
+}

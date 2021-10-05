@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CompareComponent } from './compare/compare.component';
 import { ComponentModule } from 'src/app/_components/component.module';
 import { AuthGuard } from 'src/app/_core/guard/auth.guard';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 const routes: Routes = [
   {
@@ -16,8 +17,13 @@ const routes: Routes = [
     component: CompareComponent,
   },
   {
+    path: 'product-details',
+    component: ProductDetailsComponent,
+  },
+  {
     path: 'account',
     canLoad: [AuthGuard],
+    canActivateChild: [AuthGuard],
     loadChildren: () =>
       import('./Account/account.module').then((m) => m.AccountModule),
   },
@@ -29,7 +35,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomeComponent, CompareComponent],
+  declarations: [HomeComponent, CompareComponent, ProductDetailsComponent],
   imports: [CommonModule, RouterModule.forChild(routes), ComponentModule],
 })
 export class PagesModule {}

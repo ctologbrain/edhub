@@ -5,6 +5,10 @@
     padding: 1.2rem 1.5rem;
     background-color: #eee;
 }
+.product-container{
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
 .ed-breadcrump .breadcrumb{
     margin-bottom: 0;
 }
@@ -20,4 +24,21 @@
 }
 .result-count p{
     margin-bottom: 0;
+}
+.mobile-filter-btn{
+    display: flex;
+    justify-content: space-between;
+    margin-left: -.8rem;
+    margin-right: -.8rem;
+}
+.list-group-item .form-check-input{
+    margin: 0;
+    margin-right: .5rem;
+}
+.filter-mobile-view .list-group-item{
+    border: none;
+    padding: 0.75rem 1.25rem;
+    display: flex;
+    font-size: 1rem;
+    line-height: 1.2;
 }

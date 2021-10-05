@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
       this.loggingIn.next(false);
       if (res.status == 'true') {
         localStorage.setItem(environment.tokenType, res.token);
-        this._userService.authState.next(true);
+        // this._userService.authState.next(true);
         $('.modal').modal('hide');
         this._router.navigate(['/account']);
       } else if (res.status == 'false') {
