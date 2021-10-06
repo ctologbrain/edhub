@@ -41,12 +41,12 @@
               <input
                 type="email"
                 class="form-control rounded-4"
-                id="userEmail"
+                id="email"
                 placeholder="name@example.com"
                 [class.is-invalid]="control.touched && control.errors"
                 [formControl]="control"
               />
-              <label for="userEmail">Email address</label>
+              <label for="email">Email address</label>
               <ng-container *ngIf="control.touched && control.errors">
                 <small
                   *ngIf="control.hasError('required')"
