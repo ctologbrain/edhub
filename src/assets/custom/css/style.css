@@ -4,6 +4,8 @@
     --white-color: #fff;
     --ed-blue-color: #3c64b1;
     --ed-blue-hover-color: #264c97;
+    --ed-light-gray-color: #999;
+    --ed-gray-color:#333333;
     --hn-font-regular: "HelveticaNeueRegular";
     --hn-font-light: "HelveticaNeueLight";
     --hn-font-medium: "HelveticaNeueMedium";
@@ -27,6 +29,28 @@ a {
 
 
 /* Common Class */
+.hn-light{
+    font-family: var(--hn-font-light);
+}
+.hn-medium{
+    font-family: var(--hn-font-medium);
+}
+.hn-regular{
+    font-family: var(--hn-font-regular);
+}
+.hn-bold{
+    font-family: var(--hn-font-bold);
+}
+.ed-text-light-gray-color {
+    color: var(--ed-light-gray-color);
+}
+.ed-text-gray-color {
+    color: var(--ed-gray-color);
+}
+
+.ed-text-blue-color {
+    color: var(--ed-blue-color);
+}
 
 .ed-text-red-color {
     color: var(--background-theme-color);
@@ -355,7 +379,8 @@ img[alt="Arrow"] {
 }
 
 .course-provider-logo {
-    height: 20px;
+    max-height: .75rem;
+    margin-top: .19rem;
 }
 
 .course-price {
