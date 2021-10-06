@@ -27,7 +27,17 @@
     </div>
     <div class="row pt-2">
       <div class="col">
-        <a href="javascript:void(0);">
+        <a
+          [routerLink]="
+            course.course_category && [
+              '/',
+              course.course_category.slug,
+              course.course_sub_category.slug,
+              'course-topic',
+              course.slug
+            ]
+          "
+        >
           <h4 class="ed-card-title ragular-text_1 ellipsis-text-two-line">
             {{ course.title }}
           </h4>

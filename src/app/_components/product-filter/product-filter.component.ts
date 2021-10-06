@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 declare let $: any;
 @Component({
   selector: 'app-product-filter',
@@ -6,9 +6,11 @@ declare let $: any;
   styleUrls: ['./product-filter.component.scss'],
 })
 export class ProductFilterComponent implements OnInit {
-  constructor() {}
+  @Input() mobile = false;
   minPrice = 0;
   maxPrice = 150000;
+  constructor() {}
+
   ngOnInit(): void {
     const current = this;
     $('.slider-range').slider({
