@@ -41,7 +41,7 @@
             <ul class="dropdown-menu" *ngIf="categories?.length">
               <ng-container *ngFor="let category of categories">
                 <li>
-                  <a class="dropdown-item" [routerLink]="[category.slug]">
+                  <a class="dropdown-item" [routerLink]="['/', category.slug]">
                     <span class="flex-fill">{{ category.name }}</span>
                     <i
                       *ngIf="category.course_sub_categories?.length"
@@ -58,7 +58,7 @@
                       <li>
                         <a
                           class="dropdown-item"
-                          [routerLink]="[category.slug, subcategory.slug]"
+                          [routerLink]="['/', category.slug, subcategory.slug]"
                         >
                           <span class="flex-fill">{{ subcategory.name }}</span>
                           <i
@@ -79,6 +79,7 @@
                               <a
                                 class="dropdown-item"
                                 [routerLink]="[
+                                  '/',
                                   category.slug,
                                   subcategory.slug,
                                   coursetopics.slug
@@ -116,11 +117,15 @@
               *ngIf="isFocused | async"
             >
               <div class="list-group" *ngIf="searchData | async as data">
-                <ng-container *ngFor="let category of data.category">
+                <ng-container *ngFor="let subcategory of data.SubCategory">
                   <a
                     href="javascript:void(0);"
                     class="list-group-item"
-                    [routerLink]="[category.course_category.slug]"
+                    [routerLink]="[
+                      '/',
+                      subcategory.course_sub_category?.course_category.slug,
+                      subcategory.course_sub_category.slug
+                    ]"
                   >
                     <div class="list-content">
                       <span class="list-icon">
@@ -128,12 +133,14 @@
                       </span>
                       <div class="list-course-detail">
                         <h6 class="list-item-course-title ellipsis-text">
-                          {{ category.course_category.name }}
+                          {{ subcategory.course_sub_category.name }}
                         </h6>
                         <p class="course-author-details text-secondary">
                           <b
                             >Subject with
-                            {{ category.course_category.course_count || 0 }}
+                            {{
+                              subcategory.course_sub_category.course_count || 0
+                            }}
                             courses</b
                           >
                         </p>
@@ -142,7 +149,17 @@
                   </a>
                 </ng-container>
                 <ng-container *ngFor="let course of data.data">
-                  <a href="javascript:void(0);" class="list-group-item">
+                  <a
+                    class="list-group-item"
+                    [routerLink]="[
+                      '/',
+                      course.course_category.slug,
+                      course.course_sub_category.slug,
+                      course.course_sub_category?.course_topics.slug ||
+                        'course-topics',
+                      course.slug
+                    ]"
+                  >
                     <div class="list-content">
                       <span class="list-course-icon">
                         <img

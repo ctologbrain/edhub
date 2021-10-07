@@ -26,8 +26,8 @@ export class HeaderComponent implements OnInit {
     this.search.valueChanges
       .pipe(debounceTime(500))
       .subscribe(async (keyword) => {
-        const { category, data } = await this._common.search(keyword);
-        this.searchData.next({ category, data });
+        const { SubCategory, data } = await this._common.search(keyword);
+        this.searchData.next({ SubCategory, data });
       });
     this._common.getCategories().then((res) => {
       this.categories = res.data;
@@ -37,7 +37,7 @@ export class HeaderComponent implements OnInit {
   focusBlur() {
     setTimeout(() => {
       this.isFocused.next(false);
-    }, 200);
+    }, 300);
   }
 
   logout() {

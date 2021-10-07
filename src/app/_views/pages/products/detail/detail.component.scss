@@ -19,6 +19,10 @@
   background-image: url("../../../../../assets/images/courseDetailHeader.png");
 }
 
+.product-details-card {
+  z-index: 1;
+}
+
 .certification-badge p {
   color: var(--bs-white);
 }
