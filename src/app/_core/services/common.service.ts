@@ -16,6 +16,6 @@ export class CommonService {
   }
 
   search(keyword: string) {
-    return this._http.post('/SerchByCourse', { keyword }).toPromise();
+    return this._http.post('/SerchByCourseV2', { keyword }).toPromise();
   }
 }

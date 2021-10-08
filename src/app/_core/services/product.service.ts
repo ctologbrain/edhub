@@ -11,4 +11,8 @@ export class ProductService {
   getCourses(params: HttpParams): Promise<any> {
     return this._http.post('/CourseByCategory', params).toPromise();
   }
+
+  getCourseDetails(params: any): Promise<any> {
+    return this._http.post('/ProductDetails', params).toPromise();
+  }
 }

@@ -1,0 +1,143 @@
+.product-banner {
+  position: relative;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-banner-info {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../../../../../assets/images/courseDetailHeader.png");
+}
+
+.product-details-card {
+  z-index: 1;
+}
+
+.certification-badge p {
+  color: var(--bs-white);
+}
+
+.certification-badge i {
+  color: var(--bs-yellow);
+}
+
+.pd-course-title {
+  color: var(--bs-white);
+}
+
+.pd-course-by {
+  color: var(--bs-white);
+}
+
+.pd-course-subtitles {
+  color: var(--bs-white);
+}
+
+.pd-course-language {
+  color: var(--bs-white);
+}
+
+.product-details-tab-pane {
+  padding: 0;
+  border-bottom: none;
+}
+.product-details-tab-pane .nav-link {
+  position: relative;
+  letter-spacing: 0.06rem;
+  font-family: var(--hn-font-light);
+  font-weight: 400;
+  color: var(--ed-dark-gray-color);
+  background-color: transparent;
+  border: none;
+}
+.product-details-tab-pane .nav-link .active-tab {
+  position: absolute;
+  width: 0%;
+  height: 0.15rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease;
+  background-color: var(--ed-blue-color);
+}
+.product-details-tab-pane .nav-link:hover,
+.product-details-tab-pane .nav-link.active {
+  font-weight: 600;
+  color: var(--ed-blue-color);
+}
+.product-details-tab-pane .nav-link:hover .active-tab,
+.product-details-tab-pane .nav-link.active .active-tab {
+  width: 60%;
+}
+.product-details-card {
+  top: 6rem;
+}
+.course-content-accordion .accordion-item {
+  border: none;
+}
+.course-content-accordion .accordion-button {
+  background-color: transparent;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.course-content-accordion .accordion-button::after {
+  margin-left: 1.5rem;
+}
+.prerequisties-tab-panel,
+.review-tab-panel {
+  padding-bottom: 4rem;
+}
+.faqs-tab-panel {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+.instrutor-tab-panel .list-group-item,
+.course-content-accordion .list-group-item,
+.prerequisties-tab-panel .list-group-item,
+.product-details-card .list-group-item {
+  border: none;
+}
+.prerequisties-tab-panel .list-group-item {
+  background-color: transparent;
+}
+.total-time-duration {
+  font-family: var(--hn-font-light);
+}
+.review-tab-panel .rating-stars i {
+  font-size: 0.75rem;
+}
+.product-details-menu {
+  top: 3.75rem;
+  margin: 0 -1rem;
+  padding: 0.25rem 1rem;
+  background-color: #eee;
+  z-index: 9;
+}
+.review-tab-panel .progress {
+  background-color: #d7d7d7;
+}
+@media (min-width: 576px) {
+  .nav {
+    flex-direction: row;
+  }
+}
+.max-width {
+  max-width: 100px;
+}
+
+.c-pointer {
+  cursor: pointer;
+}

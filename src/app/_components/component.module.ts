@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { ProductComponent } from './product/product.component';
 import { ProductFilterComponent } from './product-filter/product-filter.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,7 @@ import { ProductFilterComponent } from './product-filter/product-filter.componen
     ProductComponent,
     ProductFilterComponent,
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   exports: [
     LoginComponent,
     RegisterComponent,
