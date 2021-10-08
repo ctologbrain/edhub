@@ -81,6 +81,9 @@
 .product-details-card{
     top: 6rem;
 }
+.product-details-card .ed-card{
+    margin-bottom: 1.5rem;
+}
 .course-content-accordion .accordion-item{
     border: none;
 }
@@ -124,6 +127,49 @@
 }
 .review-tab-panel .progress {
     background-color: #d7d7d7;
+}
+.feedback-card{
+    border-radius: .25rem;
+    margin-bottom: 1.5rem;
+    background-color: #fbf6c0;
+    border: none;
+    margin-top: 2rem;
+}
+.feedback-card .card-body{
+    padding: 2rem;
+}
+.feedback-by{
+    padding-left: 2rem;
+    margin-bottom: 1rem;
+}
+.feedback-text{}
+.feedback-text>span{}
+.feedback-card .card-body .divider{
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: 2px solid rgb(255 0 0);
+}
+.feedback-card-rating{
+    padding-left: 4rem;
+    margin-top: -2rem;
+}
+.feedback-card-profile{
+    min-width: 7rem;
+    width: 7rem;
+    height: 7rem;
+    min-height: 7rem;
+    position: absolute;
+    top: -2.5rem;
+    left: -2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.fb-card-img{
+    display: block;
+}
+.fb-card-img > img{
+    display: block;
+    max-width: 100%;
 }
 @media (min-width: 576px) {
     .nav {
