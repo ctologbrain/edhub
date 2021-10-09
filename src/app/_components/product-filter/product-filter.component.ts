@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CommonService } from 'src/app/_core/services/common.service';
 declare let $: any;
 @Component({
   selector: 'app-product-filter',
@@ -9,9 +10,29 @@ export class ProductFilterComponent implements OnInit {
   @Input() mobile = false;
   minPrice = 0;
   maxPrice = 150000;
-  constructor() {}
+  filterData = {
+    languages: null,
+    providers: null,
+  };
+  constructor(private _common: CommonService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.getLanguages();
+    this.getProviders();
+    this.initSlider();
+  }
+
+  async getLanguages() {
+    let res = await this._common.languages();
+    this.filterData.languages = res.data;
+  }
+
+  async getProviders() {
+    let res = await this._common.courseProviders();
+    this.filterData.providers = res.data;
+  }
+
+  initSlider() {
     const current = this;
     $('.slider-range').slider({
       range: true,
@@ -27,7 +48,6 @@ export class ProductFilterComponent implements OnInit {
         $(this).slider('values', 1, current.maxPrice);
       },
     });
-
     $('.min-max-input').change(function (e: any) {
       var setIndex = e.currentTarget.id == 'max-price-input' ? 1 : 0;
       $('.slider-range').slider('values', setIndex, $(e.currentTarget).val());

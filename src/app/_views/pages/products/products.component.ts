@@ -14,6 +14,12 @@ export class ProductsComponent implements OnInit {
     subcategory: null,
     course_topic: null,
     start: 1,
+    price_start: 0,
+    prince_end: 1000,
+    course_provider: '',
+    rating: '',
+    language: '',
+    certification: '',
   };
   count = 0;
   loading = new BehaviorSubject(false);
