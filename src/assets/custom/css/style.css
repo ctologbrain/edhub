@@ -214,16 +214,23 @@ a:hover {
     text-overflow: ellipsis;
 }
 
-.ellipsis-text-two-line {
+.ellipsis-text-two-line,
+.ellipsis-text-three-line {
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
     overflow: hidden;
 }
+.ellipsis-text-two-line {
+    -webkit-line-clamp: 2;
+}
+.ellipsis-text-three-line {
+    -webkit-line-clamp: 3;
+}
 
 .ed-navbar {
+    z-index: 9999;
     box-shadow: 0 0.5em 1.5em rgb(0 0 0 / 10%), 0 0.125em 0.5em rgb(0 0 0 / 15%);
 }
 
