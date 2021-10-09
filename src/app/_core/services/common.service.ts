@@ -18,4 +18,12 @@ export class CommonService {
   search(keyword: string) {
     return this._http.post('/SerchByCourseV2', { keyword }).toPromise();
   }
+
+  languages() {
+    return this._http.get('/language').toPromise();
+  }
+
+  courseProviders() {
+    return this._http.get('/CourseProvider').toPromise();
+  }
 }
