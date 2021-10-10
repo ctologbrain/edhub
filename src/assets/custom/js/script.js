@@ -39,3 +39,39 @@ $("#pricingRange").on("input", function () {
     value +
     "%, #b5b5b5 100%)";
 });
+
+$(window).on('load', function() {
+  
+  let cpRowOneAllHeights = []
+  var rowIndex = $(".compare-part").length;
+  var maxHeight = 0;
+  var compareColumnWidth = 0;
+  var compareParentContainerWidth = $(".compare-product-panel").parent(".col-9").outerWidth();
+
+
+  if(compareParentContainerWidth == 720){
+    compareColumnWidth = compareParentContainerWidth / 2.25;
+  }else  if(compareParentContainerWidth == 540){
+    compareColumnWidth = compareParentContainerWidth / 1.8;
+  }else if(compareParentContainerWidth == 405){
+    compareColumnWidth = compareParentContainerWidth / 1.65;
+  }else if(compareParentContainerWidth < 405){
+    compareColumnWidth = compareParentContainerWidth / 1.65;
+  }else{
+    compareColumnWidth = compareParentContainerWidth / 3.25;
+  }
+
+
+  for(var i = 1; i <= rowIndex; i++) {
+    $('.cp-row-' + i ).each(function () {
+      $('.comp-pro-item').css("width", compareColumnWidth);
+      cpRowOneAllHeights.push($(this).outerHeight());
+    });
+    maxHeight = Math.max.apply(Math, cpRowOneAllHeights);
+    $('.cp-row-' + i ).css("height", maxHeight);
+    // console.log(compareParentContainerWidth)
+    cpRowOneAllHeights = []
+  }
+
+
+})

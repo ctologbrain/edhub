@@ -56,6 +56,10 @@ a {
     color: var(--background-theme-color);
 }
 
+.ragular-text_85 {
+    font-size: .85rem;
+    line-height: 1.35;
+}
 .ragular-text_1 {
     font-size: 1rem;
     line-height: 1.35;
@@ -334,6 +338,16 @@ a:hover {
     color: var(--white-color);
     background-color: var(--border-theme-color);
     border-color: var(--border-theme-color);
+}
+.btn-outline-primary-theme{
+    color: var(--ed-blue-color);
+    background-color: transparent;
+    border-color: var(--ed-blue-color);
+}
+.btn-outline-primary-theme:hover{
+    color: var(--white-color);
+    background-color: var(--ed-blue-hover-color);
+    border-color: var(--ed-blue-hover-color);
 }
 
 img[alt="Arrow"] {

@@ -1,0 +1,25 @@
+.course-card-group{
+    margin-bottom: 2rem;
+}
+.course-card-group .cdc-card{
+    margin-bottom: 1rem;
+}
+.course-card-group .cdc-card:last-child{
+    margin-bottom: 0;
+}
+.pcd-title{
+    font-weight: 700;
+}
+.pcd-course-by{
+    margin-bottom: 0;
+}
+.d-j-c-c{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.price-details p,
+.price-details h5,
+.price-details h6{
+    margin-bottom: 0;
+}

@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CompareComponent } from './compare/compare.component';
 import { ComponentModule } from 'src/app/_components/component.module';
 import { AuthGuard } from 'src/app/_core/guard/auth.guard';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'compare',
     component: CompareComponent,
+  },
+  {
+    path: 'cart',
+    component: CartComponent,
   },
   {
     path: 'account',
@@ -30,7 +35,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomeComponent, CompareComponent],
+  declarations: [HomeComponent, CompareComponent, CartComponent],
   imports: [CommonModule, RouterModule.forChild(routes), ComponentModule],
 })
 export class PagesModule {}
