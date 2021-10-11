@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HttpClientInterceptor } from './_core/interceptors/http-client.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpTokenInterceptor } from './_core/interceptors/http-token.interceptor';
+import { HttpLogInterceptor } from './_core/interceptors/http-log.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { HttpTokenInterceptor } from './_core/interceptors/http-token.intercepto
     ToastrModule.forRoot(),
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpLogInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
     HttpClientInterceptor,
   ],

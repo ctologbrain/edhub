@@ -19,7 +19,7 @@ export class UserService {
   }
 
   /**
-   * @function register for register user
+   * @function signup for register user
    * @param {Auth} user user email & password to validare user
    */
   signup(user: object): Promise<any> {
@@ -27,10 +27,23 @@ export class UserService {
   }
 
   /**
-   * @function register for register user
-   * @param {Auth} user user email & password to validare user
+   * @function authuser for get authenticated user user
    */
   authuser(): Promise<any> {
     return this._http.post(`/UserDetails`, {}).toPromise();
+  }
+
+  /**
+   * @function addToWishList
+   */
+  addToWishList(course_id: number): Promise<any> {
+    return this._http.post(`/AddToWishList`, { course_id }).toPromise();
+  }
+
+  /**
+   * @function removeToWishList for get authenticated user user
+   */
+  removeToWishList(): Promise<any> {
+    return this._http.post(`/DeletedWishList`, {}).toPromise();
   }
 }

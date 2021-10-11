@@ -90,7 +90,18 @@
         </div>
       </div>
       <div class="col-3">
-        <a class="d-flex justify-content-end" href="javascript:void(0);">
+        <a
+          class="d-flex justify-content-end"
+          [routerLink]="
+            course.course_category && [
+              '/',
+              course.course_category.slug,
+              course.course_sub_category.slug,
+              'course-topic',
+              course.slug
+            ]
+          "
+        >
           <img src="./assets/images/reviewArrow.png" alt="reviewArrow" />
         </a>
       </div>
