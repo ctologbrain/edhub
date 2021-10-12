@@ -1,82 +1,39 @@
 .accordion-list-group .list-group-item {
-    display: flex;
-    align-items: center;
-    border: none;
+  display: flex;
+  align-items: center;
+  border: none;
 }
-.accordion-list-group .form-check-input{
-    margin: 0;
-    margin-right: .75rem;
+.accordion-list-group .form-check-input {
+  margin: 0;
+  margin-right: 0.75rem;
 }
 .list-group-item {
-    cursor: pointer;
-    font-family: var(--hn-font-light);
+  cursor: pointer;
+  font-family: var(--hn-font-light);
 }
 
 .accordion-list-group .list-group-item:hover {
-    background-color: #fcfcfc;
+  background-color: #fcfcfc;
 }
 .selector {
-    position: relative;
-    padding: 0;
-    color: #505D6F;
+  position: relative;
+  padding: 0;
+  color: #505d6f;
 }
 
-.selector .price-slider-container {
-    position: relative;
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding-top: 15px;
-}
-
-.selector .slider-range {
-    width: 100%;
-    margin-bottom: 6px;
-    border: none;
-    background: #c2c6cd;
-    height: 5px;
-    margin-left: 8px;
-    margin-right: 8px;
-    border-radius: 3px;
-}
-
-.slider_bg {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    border: none;
-    background: #c2c6cd;
-    height: 5px;
-    border-radius: 3px;
-    display: none;
-}
-
-.selector .ui-slider-handle {
-    position: absolute;
-    border-radius: 50%;
-    top: -7px;
-    width: 18px;
-    height: 18px;
-    outline: none;
-    background: #FFFFFF;
+// We need to use ::ng-deep to overcome view encapsulation
+::ng-deep {
+  .ngx-slider .ngx-slider-pointer {
+    width: 18px !important;
+    height: 18px !important;
+    background: #ffffff !important;
     border: 4px solid var(--ed-blue-color);
-}
-
-.selector .ui-slider-range {
-    background-color: #505D6F
-}
-
-.price-slider-container>.slider-price {
-    color: #333;
-    font-size: .8rem;
-    font-weight: 500;
+    top: -8px !important;
+  }
+  .ngx-slider .ngx-slider-selection {
+    background: #e9e9e9 !important;
+  }
+  .ngx-slider .ngx-slider-pointer:after {
+    display: none !important;
+  }
 }

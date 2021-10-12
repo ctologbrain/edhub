@@ -59,9 +59,10 @@ export class ProductsComponent implements OnInit {
     this.params.language = filter.language;
     this.params.certification = filter.certification;
     this.params.start = 1;
-    let res = await this._product.getCourses(this.params);
-    this.products = res.data.rows;
-    this.count = res.data.count;
+    this._product.getCourses(this.params).then((res) => {
+      this.products = res.data.rows;
+      this.count = res.data.count;
+    });
   }
 
   resetFilter() {

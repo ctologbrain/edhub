@@ -1,8 +1,12 @@
-<div class="card ed-card">
+<div class="card ed-card" *ngIf="product as course">
   <button class="wishlist-section">
-    <img src="./assets/images/bookmark.png" alt="bookmark" />
+    <img
+      src="./assets/images/bookmark.png"
+      alt="bookmark"
+      (click)="addToWishlist(course.id)"
+    />
   </button>
-  <div class="card-body" *ngIf="product as course">
+  <div class="card-body">
     <div class="course-banner">
       <img
         class="fix-image"
@@ -90,7 +94,18 @@
         </div>
       </div>
       <div class="col-3">
-        <a class="d-flex justify-content-end" href="javascript:void(0);">
+        <a
+          class="d-flex justify-content-end"
+          [routerLink]="
+            course.course_category && [
+              '/',
+              course.course_category.slug,
+              course.course_sub_category.slug,
+              'course-topic',
+              course.slug
+            ]
+          "
+        >
           <img src="./assets/images/reviewArrow.png" alt="reviewArrow" />
         </a>
       </div>
