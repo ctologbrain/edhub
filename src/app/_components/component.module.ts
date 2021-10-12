@@ -8,6 +8,7 @@ import { ProductFilterComponent } from './product-filter/product-filter.componen
 import { RouterModule } from '@angular/router';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,13 @@ import { MyCoursesComponent } from './my-courses/my-courses.component';
     WishListComponent,
     MyCoursesComponent,
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    NgxSliderModule,
+  ],
   exports: [
     LoginComponent,
     RegisterComponent,

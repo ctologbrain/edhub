@@ -1,8 +1,12 @@
-<div class="card ed-card">
+<div class="card ed-card" *ngIf="product as course">
   <button class="wishlist-section">
-    <img src="./assets/images/bookmark.png" alt="bookmark" />
+    <img
+      src="./assets/images/bookmark.png"
+      alt="bookmark"
+      (click)="addToWishlist(course.id)"
+    />
   </button>
-  <div class="card-body" *ngIf="product as course">
+  <div class="card-body">
     <div class="course-banner">
       <img
         class="fix-image"

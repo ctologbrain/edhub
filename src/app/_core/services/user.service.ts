@@ -43,7 +43,14 @@ export class UserService {
   /**
    * @function removeToWishList for get authenticated user user
    */
-  removeToWishList(): Promise<any> {
-    return this._http.post(`/DeletedWishList`, {}).toPromise();
+  removeToWishList(course_id: number): Promise<any> {
+    return this._http.post(`/DeletedWishList`, { course_id }).toPromise();
+  }
+
+  /**
+   * @function removeToWishList for get authenticated user user
+   */
+  getWishList(): Promise<any> {
+    return this._http.get(`/GetWishList`).toPromise();
   }
 }

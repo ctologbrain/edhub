@@ -14,7 +14,11 @@ export class ProductComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  addToWishlist() {}
+  async addToWishlist(course_id: number) {
+    await this._user.addToWishList(course_id);
+  }
 
-  removeToWishlist() {}
+  async removeToWishlist(course_id: number) {
+    await this._user.addToWishList(course_id);
+  }
 }
