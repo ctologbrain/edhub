@@ -20,7 +20,19 @@
   padding: 0;
   color: #505d6f;
 }
-
+.rating-stars{
+  text-align: center;
+  color: #aaaaaa;
+  font-size: 1.25rem;
+}
+.full-active{
+  color: #ffbb00;
+}
+.half-active{
+  background: -webkit-linear-gradient(#ffbb00 50%, #aaaaaa 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 // We need to use ::ng-deep to overcome view encapsulation
 ::ng-deep {
   .ngx-slider .ngx-slider-pointer {

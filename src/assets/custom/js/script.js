@@ -72,6 +72,4 @@ $(window).on('load', function() {
     // console.log(compareParentContainerWidth)
     cpRowOneAllHeights = []
   }
-
-
 })
