@@ -1,0 +1,38 @@
+<!-- half-active  full-active-->
+<div class="rupee-scales">
+  <i
+    class="fas fa-rupee-sign me-2"
+    [ngClass]="{
+      'half-active': scale > 0 && scale < 1,
+      'full-active': scale >= 1
+    }"
+  ></i>
+  <i
+    class="fas fa-rupee-sign me-2"
+    [ngClass]="{
+      'half-active': scale > 1 && scale < 2,
+      'full-active': scale >= 2
+    }"
+  ></i>
+  <i
+    class="fas fa-rupee-sign me-2"
+    [ngClass]="{
+      'half-active': scale > 2 && scale < 3,
+      'full-active': scale >= 3
+    }"
+  ></i>
+  <i
+    class="fas fa-rupee-sign me-2"
+    [ngClass]="{
+      'half-active': scale > 3 && scale < 4,
+      'full-active': scale >= 4
+    }"
+  ></i>
+  <i
+    class="fas fa-rupee-sign"
+    [ngClass]="{
+      'half-active': scale > 4 && scale < 5,
+      'full-active': scale >= 5
+    }"
+  ></i>
+</div>

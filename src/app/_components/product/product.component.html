@@ -1,9 +1,16 @@
 <div class="card ed-card" *ngIf="product as course">
-  <button class="wishlist-section">
+  <button class="wishlist-section" [class.bg-danger]="course?.wish_list">
     <img
+      *ngIf="!course?.wish_list"
       src="./assets/images/bookmark.png"
       alt="bookmark"
       (click)="addToWishlist(course.id)"
+    />
+    <img
+      *ngIf="course?.wish_list"
+      src="./assets/images/bookmark_white.png"
+      alt="bookmark"
+      (click)="removeToWishlist(course.id)"
     />
   </button>
   <div class="card-body">
@@ -24,9 +31,8 @@
         />
       </div>
       <div class="col-6">
-        <h5 class="course-price">
-          {{ course.price | currency: "INR" }}
-        </h5>
+        <!-- {{ course.Pscale }} -->
+        <rupee-scale [scale]="product.Pscale"></rupee-scale>
       </div>
     </div>
     <div class="row pt-2">
@@ -89,7 +95,7 @@
             <i class="far fa-star" [class.text-warning]="course.rating > 4"></i>
           </div>
           <p class="review-text">
-            <b>{{ course.rating }} Reviews</b>
+            <b>{{ course.Reviews }} Reviews</b>
           </p>
         </div>
       </div>

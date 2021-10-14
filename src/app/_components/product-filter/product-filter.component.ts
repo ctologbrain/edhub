@@ -12,8 +12,8 @@ export class ProductFilterComponent implements OnInit {
   @Output() applyFilter = new EventEmitter();
   options: Options = {
     floor: 0,
-    ceil: 150000,
-    step: 100,
+    ceil: 5,
+    step: 0.001,
   };
   minPrice = 0;
   maxPrice = 150000;

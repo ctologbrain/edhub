@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { RupeeScaleComponent } from './rupee-scale/rupee-scale.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     ProductFilterComponent,
     WishListComponent,
     MyCoursesComponent,
+    RupeeScaleComponent,
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,7 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     ProductFilterComponent,
     WishListComponent,
     MyCoursesComponent,
+    RupeeScaleComponent,
   ],
 })
 export class ComponentModule {}

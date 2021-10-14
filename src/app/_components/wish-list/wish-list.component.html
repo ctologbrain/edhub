@@ -5,78 +5,12 @@
         class="col-sm-12 col-md-6 col-lg-4 mb-4"
         *ngFor="let item of wishlistData"
       >
-        <div class="card ed-card" *ngIf="item.course as course; index as i">
-          <button
-            class="delete-section"
-            (click)="removeToWishlist(item.course_id, i)"
-          >
-            <img src="./assets/images/cross.png" alt="bookmark" />
-          </button>
-          <div class="card-body">
-            <div class="course-banner">
-              <img
-                class="fix-image"
-                [src]="course.image"
-                onerror="this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081'"
-                [alt]="course.title"
-              />
-            </div>
-            <div class="row pt-2">
-              <div class="col-6 d-flex align-items-center">
-                <img
-                  class="course-provider-logo"
-                  src="{{ serverUrl }}/{{ course.course_provider.image }}"
-                  alt="course-provider"
-                />
-              </div>
-              <div class="col-6">
-                <h5 class="course-price">
-                  {{ course.price | currency: "INR" }}
-                </h5>
-              </div>
-            </div>
-            <div class="row pt-2">
-              <div class="col">
-                <a
-                  [routerLink]="
-                    course.course_category && [
-                      '/',
-                      course.course_category.slug,
-                      course.course_sub_category.slug,
-                      'course-topic',
-                      course.slug
-                    ]
-                  "
-                >
-                  <h4
-                    class="ed-card-title ragular-text_1 ellipsis-text-two-line"
-                  >
-                    {{ course.title }}
-                  </h4>
-                </a>
-              </div>
-            </div>
-            <div class="row pt-3">
-              <div class="col">
-                <div class="compare-section">
-                  <img src="./assets/images/addcompare.png" alt="addcompare" />
-                  <h5>Add to compare</h5>
-                </div>
-              </div>
-            </div>
-            <hr class="mb-2" />
-            <div class="row">
-              <div class="col-12">
-                <button type="button" class="btn btn-light btn-fluid mb-2">
-                  Add to Cart
-                </button>
-                <button type="button" class="btn btn-primary-theme btn-fluid">
-                  Buy Now
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ng-container *ngIf="item.course as course; index as i">
+          <app-product
+            [product]="course"
+            (removeWishlist)="removeToWishlist(item.course_id, i)"
+          ></app-product>
+        </ng-container>
       </div>
       <div class="col-12 text-center" *ngIf="!wishlistData?.length">
         No Items Found in your wishlist
