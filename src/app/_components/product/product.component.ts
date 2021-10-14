@@ -12,7 +12,9 @@ export class ProductComponent implements OnInit {
   serverUrl = `${environment.server_url}/`;
   constructor(private _user: UserService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.product);
+  }
 
   async addToWishlist(course_id: number) {
     if (!this._user.authState.getValue()) {

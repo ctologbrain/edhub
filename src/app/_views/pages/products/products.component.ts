@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
     course_topic: null,
     start: 1,
     price_start: 0,
-    prince_end: 150000,
+    prince_end: 5,
     course_provider: '',
     rating: '',
     language: '',

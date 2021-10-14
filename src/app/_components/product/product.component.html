@@ -102,18 +102,54 @@
       <div class="col-3">
         <a
           class="d-flex justify-content-end"
-          [routerLink]="
-            course.course_category && [
-              '/',
-              course.course_category.slug,
-              course.course_sub_category.slug,
-              'course-topic',
-              course.slug
-            ]
-          "
+          href="javascript:void(0)"
+          data-bs-toggle="modal"
+          [attr.data-bs-target]="'#detail_' + product?.id"
         >
           <img src="./assets/images/reviewArrow.png" alt="reviewArrow" />
         </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="modal fade"
+  tabindex="1000"
+  role="dialog"
+  [id]="'detail_' + product?.id"
+  [attr.aria-labelledby]="'detail_' + product?.id"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="d-grid gap-2">
+          <a
+            class="btn btn-outline-danger btn-sm"
+            type="button"
+            [routerLink]="
+              product.course_category && [
+                '/',
+                product.course_category.slug,
+                product.course_sub_category.slug,
+                'course-topic',
+                product.slug
+              ]
+            "
+            data-bs-dismiss="modal"
+          >
+            Go to details
+          </a>
+          <a
+            class="btn btn-outline-warning btn-sm"
+            type="button"
+            [href]="product?.url"
+            target="_blank"
+          >
+            Go to classes
+          </a>
+        </div>
       </div>
     </div>
   </div>
