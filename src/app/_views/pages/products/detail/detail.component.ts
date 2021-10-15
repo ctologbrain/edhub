@@ -31,8 +31,6 @@ export class DetailComponent implements OnInit {
         this.courseDetails.outcome = this.courseDetails.outcome
           ? JSON.parse(this.courseDetails.outcome)
           : [];
-        // console.log(this.courseDetails);
-      } else {
       }
     });
   }

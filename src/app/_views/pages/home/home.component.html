@@ -54,7 +54,9 @@
           </div>
           <div class="p-2">
             <h5 class="card-title">BROWSE</h5>
-            <p class="card-text ragular-text-125">Search from the world's best courses</p>
+            <p class="card-text ragular-text-125">
+              Search from the world's best courses
+            </p>
           </div>
         </div>
       </div>
@@ -142,7 +144,11 @@
           <div class="course-slider">
             <ng-container *ngFor="let data of slide.lpcat_courses">
               <div class="my-4 mx-3">
-                <app-product [product]="data.course"></app-product>
+                <app-product
+                  [product]="data.course"
+                  (addWishlist)="data.course.wish_list = data.course.id"
+                  (removeWishlist)="data.course.wish_list = null"
+                ></app-product>
               </div>
             </ng-container>
           </div>

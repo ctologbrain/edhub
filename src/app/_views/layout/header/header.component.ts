@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { CommonService } from 'src/app/_core/services/common.service';
@@ -20,7 +21,11 @@ export class HeaderComponent implements OnInit {
   });
   isFocused = new BehaviorSubject(false);
   serverUrl = environment.server_url;
-  constructor(private _common: CommonService, public _user: UserService) {}
+  constructor(
+    private _common: CommonService,
+    public _user: UserService,
+    private _router: Router
+  ) {}
 
   ngOnInit(): void {
     this.search.valueChanges
@@ -44,5 +49,6 @@ export class HeaderComponent implements OnInit {
     this._user.authState.next(false);
     this._user.authUser.next({});
     localStorage.removeItem(environment.tokenType);
+    this._router.navigate(['/']);
   }
 }

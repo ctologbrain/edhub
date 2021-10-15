@@ -22,8 +22,7 @@ export class WishListComponent implements OnInit {
     console.log(this.wishlistData);
   }
 
-  async removeToWishlist(course_id: number, index: number) {
-    await this._user.removeToWishList(course_id);
+  async removeToWishlist(index: number) {
     this.wishlistData.splice(index, 1);
   }
 }

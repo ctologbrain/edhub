@@ -1,17 +1,22 @@
 <div class="card ed-card" *ngIf="product as course">
   <button class="wishlist-section" [class.bg-danger]="course?.wish_list">
-    <img
-      *ngIf="!course?.wish_list"
-      src="./assets/images/bookmark.png"
-      alt="bookmark"
-      (click)="addToWishlist(course.id)"
-    />
-    <img
-      *ngIf="course?.wish_list"
-      src="./assets/images/bookmark_white.png"
-      alt="bookmark"
-      (click)="removeToWishlist(course.id)"
-    />
+    <ng-container *ngIf="type == 'product'; else wishlist">
+      <img
+        *ngIf="!course?.wish_list"
+        src="./assets/images/bookmark.png"
+        alt="bookmark"
+        (click)="addToWishlist(course.id)"
+      />
+      <img
+        *ngIf="course?.wish_list"
+        src="./assets/images/bookmark_white.png"
+        alt="bookmark"
+        (click)="removeToWishlist(course.id)"
+      />
+    </ng-container>
+    <ng-template #wishlist>
+      <i class="fa fa-times" (click)="removeToWishlist(course.id)"></i>
+    </ng-template>
   </button>
   <div class="card-body">
     <div class="course-banner">

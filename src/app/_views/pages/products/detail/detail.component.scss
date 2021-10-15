@@ -122,49 +122,51 @@
 }
 .product-details-menu {
   top: 3.75rem;
-  margin: 0 -.5rem 0 -1rem;
-  padding: 0.5rem .5rem 0.5rem 1rem;
+  margin: 0 -0.5rem 0 -1rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
   background-color: #eee;
   z-index: 9;
 }
 .review-tab-panel .progress {
   background-color: #d7d7d7;
 }
-.provider-logo{
+.provider-logo {
   display: flex;
   margin-left: auto;
-  padding: .35rem .65rem;
+  padding: 0.35rem 0.65rem;
   line-height: 1rem;
 }
-.provider-logo img{
+.provider-logo img {
   max-height: 1rem;
 }
-.feedback-card{
-  border-radius: .25rem;
+.feedback-card {
+  border-radius: 0.25rem;
   margin-bottom: 1.5rem;
   background-color: #fbf6c0;
   border: none;
   margin-top: 2rem;
 }
-.feedback-card .card-body{
+.feedback-card .card-body {
   padding: 2rem;
 }
-.feedback-by{
+.feedback-by {
   padding-left: 2rem;
   margin-bottom: 1rem;
 }
-.feedback-text{}
-.feedback-text>span{}
-.feedback-card .card-body .divider{
+.feedback-text {
+}
+.feedback-text > span {
+}
+.feedback-card .card-body .divider {
   margin: 0.5rem 0;
   overflow: hidden;
   border-top: 2px solid rgb(255 0 0);
 }
-.feedback-card-rating{
+.feedback-card-rating {
   padding-left: 4rem;
   margin-top: -2rem;
 }
-.feedback-card-profile{
+.feedback-card-profile {
   min-width: fit-content;
   width: fit-content;
   height: fit-content;
@@ -174,10 +176,10 @@
   left: -1rem;
   border-radius: 50%;
 }
-.fb-card-img{
+.fb-card-img {
   display: block;
 }
-.fb-card-img > img{
+.fb-card-img > img {
   display: inline-block;
   max-width: 100%;
   margin: 0;
@@ -190,4 +192,19 @@
 
 .c-pointer {
   cursor: pointer;
+}
+
+.rating-stars i {
+  color: #fff;
+  margin-right: 4px;
+  font-size: 25px;
+}
+.far.text-warning {
+  font-weight: 900;
+}
+
+.coursecard-footer .rating-stars i {
+  color: #fff;
+  margin-right: 4px;
+  font-size: 16px;
 }

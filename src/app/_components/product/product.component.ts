@@ -10,6 +10,9 @@ declare let $: any;
 })
 export class ProductComponent implements OnInit {
   @Input() product: any = '';
+  @Input() type = 'product';
+  @Output() removeWishlist = new EventEmitter();
+  @Output() addWishlist = new EventEmitter();
   serverUrl = `${environment.server_url}/`;
   constructor(private _user: UserService, private _product: ProductService) {}
 
@@ -27,11 +30,13 @@ export class ProductComponent implements OnInit {
     }
     if (confirm('Add this item to wishlist ?')) {
       await this._user.addToWishList(course_id);
+      this.addWishlist.next(course_id);
     }
   }
 
   async removeToWishlist(course_id: number) {
     await this._user.removeToWishList(course_id);
+    this.removeWishlist.next(course_id);
   }
 
   setLinks(course: any) {

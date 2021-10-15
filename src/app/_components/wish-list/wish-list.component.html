@@ -8,7 +8,8 @@
         <ng-container *ngIf="item.course as course; index as i">
           <app-product
             [product]="course"
-            (removeWishlist)="removeToWishlist(item.course_id, i)"
+            (removeWishlist)="removeToWishlist(i)"
+            type="wishlist"
           ></app-product>
         </ng-container>
       </div>
