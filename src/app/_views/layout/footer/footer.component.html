@@ -169,3 +169,41 @@
 
 <app-login></app-login>
 <app-register></app-register>
+
+<div
+  class="modal fade"
+  tabindex="1000"
+  role="dialog"
+  id="product_detail"
+  aria-labelledby="product_detail"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div
+          class="d-grid gap-2"
+          *ngIf="_product.productDetailLinks | async as links"
+        >
+          <button
+            class="btn btn-outline-danger btn-sm"
+            type="button"
+            data-bs-dismiss="modal"
+            [disabled]="!links.internal?.length"
+            [routerLink]="links.internal"
+          >
+            Go to details
+          </button>
+          <a
+            class="btn btn-outline-warning btn-sm"
+            type="button"
+            target="_blank"
+            [href]="links.external"
+          >
+            Go to classes
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
