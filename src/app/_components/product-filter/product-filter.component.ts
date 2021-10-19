@@ -13,7 +13,7 @@ export class ProductFilterComponent implements OnInit {
   options: Options = {
     floor: 0,
     ceil: 5,
-    step: 0.001,
+    step: 0.5,
   };
   minPrice = 0;
   maxPrice = 150000;

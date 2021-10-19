@@ -25,7 +25,7 @@
             <div class="row mb-4">
               <div class="col-12">
                 <p class="pd-course-by ragular-text-125 mb-0">
-                  Course by - {{ courseDetails?.subtitle }}
+                  Course by - {{ courseDetails?.course_provider?.name }}
                 </p>
               </div>
             </div>
@@ -136,7 +136,11 @@
                 <span class="active-tab"></span>
               </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li
+              class="nav-item"
+              role="presentation"
+              *ngIf="courseDetails?.CourseDetail?.content"
+            >
               <button
                 class="nav-link"
                 id="course-content-tab"
@@ -166,7 +170,11 @@
                 <span class="active-tab"></span>
               </button>
             </li> -->
-            <li class="nav-item" role="presentation">
+            <li
+              class="nav-item"
+              role="presentation"
+              *ngIf="courseDetails?.CourseDetail?.Instructer"
+            >
               <button
                 class="nav-link"
                 id="instrutortab"
@@ -374,19 +382,17 @@
               role="tabpanel"
               aria-labelledby="course-content-tab"
             >
-              <div class="card-body px-2 pt-3">
-                <div class="row">
-                  <div class="col-12">
-                    <h2 class="ragular-text-150 mb-0">Course Content</h2>
-                  </div>
-                  <div class="col-12">
+              <div class="card rounded-4 mb-3">
+                <div class="card-body px-5 py-4">
+                  <div [innerHTML]="courseDetails?.CourseDetail?.content"></div>
+                  <!-- <div class="col-12">
                     <p class="ed-text-red-color ragular-text_1 mb-0">
                       41 sections - 692 lectures - 173h 31m total
                     </p>
-                  </div>
+                  </div> -->
                 </div>
               </div>
-              <div
+              <!-- <div
                 class="accordion course-content-accordion"
                 id="courseContentAccordion"
               >
@@ -672,7 +678,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div
               class="tab-pane fade"
@@ -725,6 +731,12 @@
             >
               <div class="instrutor-tab-panel">
                 <div class="card rounded-4 mb-3">
+                  <div
+                    class="card-body px-5 py-4"
+                    [innerHTML]="courseDetails?.CourseDetail?.Instructer"
+                  ></div>
+                </div>
+                <!-- <div class="card rounded-4 mb-3">
                   <div class="card-body px-5 py-4">
                     <div class="row mb-3">
                       <div class="col-12">
@@ -735,9 +747,7 @@
                       <div class="col-12 mb-2">
                         <div class="row mb-3">
                           <div class="col-12">
-                            <h5 class="mb-0">
-                              {{ courseDetails?.CourseDetail?.Instructer }}
-                            </h5>
+                            <h5 class="mb-0"></h5>
                           </div>
                           <div class="col-12">
                             <p class="mb-0">Instructor caption line</p>
@@ -861,7 +871,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
             <div
