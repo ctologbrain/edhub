@@ -1087,7 +1087,6 @@ input[type="range"].common-range-input::-moz-range-thumb {
 .filter-mobile-view .overflow-auto {
   overflow: inherit !important;
 }
-/* ============ Desktop View ============ */
 
 @media (max-width: 768px) {
   .popular-choice-section .pc-sec-heading {
