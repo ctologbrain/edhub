@@ -1087,7 +1087,41 @@ input[type="range"].common-range-input::-moz-range-thumb {
 .filter-mobile-view .overflow-auto {
   overflow: inherit !important;
 }
-
+.udlite-heading-md{
+  font-size: 1rem;
+  color: #6c757d;
+}
+.udlite-block-list{
+  padding-left: 1.25rem;
+}
+.udlite-block-list-item-content{
+  font-size: .9rem;
+}
+.profile-detail-tab .udlite-heading-xl{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.profile-detail-tab .udlite-block-list-item-content{
+  line-height: 1.5rem;
+}
+.instrutor-tab-panel .udlite-block-list{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.udlite-heading-lg{
+  margin-bottom: .75rem;
+}
+.udlite-text-md{
+  margin-bottom: .75rem;
+}
+.filter-card .rupee-scales{
+  font-size: 1.25rem;
+}
+.breadcrumb-item{
+  font-size: .85rem;
+  letter-spacing: .025rem;
+  font-weight: 400;
+}
 @media (max-width: 768px) {
   .popular-choice-section .pc-sec-heading {
     text-align: center;
@@ -1412,7 +1446,7 @@ input[type="range"].common-range-input::-moz-range-thumb {
   display: none !important;
 }
 .filter-panel .rupee-scales {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 @media (min-width: 1200px) {
 }

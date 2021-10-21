@@ -22,7 +22,7 @@
         ></app-product-filter>
       </div>
       <div class="col-lg-9 col-md-8 col-sm-12">
-        <div class="row sticky-top ed-breadcrump">
+        
           <div class="text-center" *ngIf="!products; else productItems">
             <span
               class="spinner-border spinner-border-sm"
@@ -31,6 +31,7 @@
             ></span>
           </div>
           <ng-template #productItems>
+            <div class="row sticky-top ed-breadcrump">
             <div class="alert alert-light" role="alert">
               <div class="d-flex justify-content-between">
                 <nav
@@ -75,8 +76,8 @@
                 </div>
               </div>
             </div>
-            <div class="col-12 pt-3">
-              <div class="mobile-filter-btn d-md-none">
+            <div class="col-12">
+              <div class="mobile-filter-btn pt-3 d-md-none">
                 <button
                   type="button"
                   class="btn ed-common-blue-btn"
@@ -100,6 +101,9 @@
                 </div>
               </div>
             </div>
+          </div>
+            <div class="row">
+            <div class="col-12">
             <div class="row product-container">
               <ng-container *ngFor="let product of products">
                 <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
@@ -111,9 +115,10 @@
                 </div>
               </ng-container>
             </div>
+          </div>
             <div class="text-center" *ngIf="count > products?.length">
               <button
-                class="btn btn-primary"
+                class="btn ed-common-blue-btn"
                 type="button"
                 [disabled]="loading | async"
                 (click)="loadMore()"
@@ -207,8 +212,8 @@
               </div>
             </div>
           </div> -->
-          </ng-template>
         </div>
+          </ng-template>
       </div>
     </div>
   </div>

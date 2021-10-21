@@ -1,11 +1,13 @@
 .accordion-list-group .list-group-item {
-  display: flex;
+  display: initial;
   align-items: center;
   border: none;
+  font-weight: 600;
+  line-height: 1.25rem;
 }
 .accordion-list-group .form-check-input {
   margin: 0;
-  margin-right: 0.75rem;
+  margin-right: 0.5rem;
 }
 .list-group-item {
   cursor: pointer;

@@ -22,9 +22,9 @@
                 </h2>
               </div>
             </div>
-            <div class="row mb-4">
+            <div class="row mb-2">
               <div class="col-12">
-                <p class="pd-course-by ragular-text-125 mb-0">
+                <p class="pd-course-by ragular-text_1 mb-0">
                   Course by - {{ courseDetails?.course_provider?.name }}
                 </p>
               </div>
@@ -692,15 +692,15 @@
             >
               <div class="prerequisties-tab-panel">
                 <div class="card rounded-4 mb-3">
-                  <div class="card-body px-1">
+                  <!-- <div class="card-body px-5 py-4">
                     <div class="row">
                       <div class="col-12">
                         <h2 class="ragular-text-150 mb-0">Prerequisties</h2>
                       </div>
                     </div>
-                  </div>
+                  </div> -->
                   <div
-                    class="card-body px-0 py-1"
+                    class="card-body px-5 py-4"
                     [innerHTML]="courseDetails?.CourseDetail?.prerequisites"
                   ></div>
                 </div>
@@ -1182,7 +1182,7 @@
     <div class="col-lg-3">
       <div class="row sticky-top product-details-card">
         <div class="col-12">
-          <div class="card ed-card">
+          <div class="card ed-card details-ed-card">
             <button class="wishlist-section">
               <img src="./assets/images/bookmark.png" alt="bookmark" />
             </button>
@@ -1205,23 +1205,23 @@
               <div class="row pt-2">
                 <div class="col">
                   <a href="javascript:void(0);">
-                    <h4 class="text-dark ragular-text_1 ellipsis-text-two-line">
+                    <h4 class="text-dark ragular-text_1 ellipsis-text-two-line mb-0">
                       {{ courseDetails?.title }}
                     </h4>
                   </a>
                 </div>
               </div>
               <div class="row pt-2">
-                <div class="col-12 d-flex align-items-center">
+                <div class="col-12 d-flex align-items-center course-html">
                   <ul
                     [innerHTML]="courseDetails?.CourseDetail?.PurchaseDetails"
                   ></ul>
                 </div>
               </div>
-              <div class="row">
+              <div class="row mb-4">
                 <div class="col-12 d-flex align-items-center pe-0">
                   <div class="coursecard-footer">
-                    <div class="rating-stars mt-3">
+                    <div class="rating-stars">
                       <i
                         class="far fa-star"
                         [class.text-warning.fas]="courseDetails?.rating > 0"
@@ -1252,21 +1252,21 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row mb-2">
                 <div class="col-12">
                   <p class="ragular-text_1 mb-2">Powered By...</p>
                 </div>
                 <div class="col-12">
-                  <button type="button" class="btn btn-light">
+                  <span>
                     <img
                       src="{{ serverUrl }}/{{
                         courseDetails?.course_provider?.image
                       }}"
                       class="img-fluid"
-                      width="100px"
+                      width="75px"
                       [alt]="courseDetails?.course_provider?.name"
                     />
-                  </button>
+                    </span>
                 </div>
               </div>
               <!-- <hr />

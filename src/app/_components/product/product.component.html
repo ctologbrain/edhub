@@ -1,4 +1,4 @@
-<div class="card ed-card" *ngIf="product as course">
+<div class="card ed-card filter-card" *ngIf="product as course">
   <button class="wishlist-section" [class.bg-danger]="course?.wish_list">
     <ng-container *ngIf="type == 'product'; else wishlist">
       <img
@@ -59,7 +59,7 @@
         </a>
       </div>
     </div>
-    <div class="row pt-3">
+    <div class="row pt-2">
       <div class="col-6" *ngIf="course.CourseContent">
         <div class="card-overview">
           <div class="d-flex justify-content-start">
@@ -109,15 +109,21 @@
         </div>
       </div>
       <div class="col-3">
+        <div class="btn-group dropend">
         <a
           class="d-flex justify-content-end"
           href="javascript:void(0)"
-          data-bs-toggle="modal"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
           (click)="setLinks(course)"
-          data-bs-target="#product_detail"
         >
           <img src="./assets/images/reviewArrow.png" alt="reviewArrow" />
         </a>
+        <ul class="dropdown-menu p-1">
+          <li class="mb-1"><a class="btn btn-outline-danger btn-sm w-100" href="javascript:void(0)">Go to details</a></li>
+          <li><a class="btn btn-outline-warning btn-sm w-100" href="javascript:void(0)">Go to classes</a></li>
+        </ul>
+      </div>
       </div>
     </div>
   </div>
