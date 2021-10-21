@@ -110,63 +110,43 @@
       </div>
       <div class="col-3">
         <div class="btn-group dropend">
-        <a
-          class="d-flex justify-content-end"
-          href="javascript:void(0)"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          (click)="setLinks(course)"
-        >
-          <img src="./assets/images/reviewArrow.png" alt="reviewArrow" />
-        </a>
-        <ul class="dropdown-menu p-1">
-          <li class="mb-1"><a class="btn btn-outline-danger btn-sm w-100" href="javascript:void(0)">Go to details</a></li>
-          <li><a class="btn btn-outline-warning btn-sm w-100" href="javascript:void(0)">Go to classes</a></li>
-        </ul>
-      </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- 
-<div
-  class="modal fade"
-  tabindex="1000"
-  role="dialog"
-  [id]="'detail_' + product?.id"
-  [attr.aria-labelledby]="'detail_' + product?.id"
-  aria-hidden="true"
->
-  <div class="modal-dialog modal-sm modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-body">
-        <div class="d-grid gap-2">
           <a
-            class="btn btn-outline-danger btn-sm"
-            type="button"
-            [routerLink]="
-              product.course_category && [
-                '/',
-                product.course_category.slug,
-                product.course_sub_category.slug,
-                'course-topic',
-                product.slug
-              ]
-            "
-            data-bs-dismiss="modal"
+            class="d-flex justify-content-end"
+            href="javascript:void(0)"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            (click)="setLinks(course)"
           >
-            Go to details
+            <img src="./assets/images/reviewArrow.png" alt="reviewArrow" />
           </a>
-          <a
-            class="btn btn-outline-warning btn-sm"
-            type="button"
-            [href]="product?.url"
-            target="_blank"
-          >
-            Go to classes
-          </a>
+          <ul class="dropdown-menu p-1">
+            <li class="mb-1">
+              <a
+                class="btn btn-outline-danger btn-sm w-100"
+                [routerLink]="
+                  (course.course_category && [
+                    '/',
+                    course.course_category.slug,
+                    course.course_sub_category.slug,
+                    'course-topic',
+                    course.slug
+                  ]) ||
+                  []
+                "
+                >Go to details</a
+              >
+            </li>
+            <li>
+              <a
+                class="btn btn-outline-warning btn-sm w-100"
+                target="_blank"
+                [href]="course.url"
+                >Go to classes</a
+              >
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </div>
-</div> -->
+</div>

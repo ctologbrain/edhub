@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ProductService } from 'src/app/_core/services/product.service';
 import { UserService } from 'src/app/_core/services/user.service';
 import { environment } from 'src/environments/environment';
 declare let $: any;
@@ -14,12 +13,7 @@ export class ProductComponent implements OnInit {
   @Output() removeWishlist = new EventEmitter();
   @Output() addWishlist = new EventEmitter();
   serverUrl = `${environment.server_url}/`;
-  constructor(private _user: UserService, private _product: ProductService) {}
-
-  links = {
-    internal: [],
-    external: '',
-  };
+  constructor(private _user: UserService) {}
 
   ngOnInit(): void {}
 
@@ -37,20 +31,5 @@ export class ProductComponent implements OnInit {
   async removeToWishlist(course_id: number) {
     await this._user.removeToWishList(course_id);
     this.removeWishlist.next(course_id);
-  }
-
-  setLinks(course: any) {
-    let internal =
-      (course.course_category && [
-        '/',
-        course.course_category.slug,
-        course.course_sub_category.slug,
-        'course-topic',
-        course.slug,
-      ]) ||
-      [];
-    this.links.internal = internal;
-    this.links.external = course.url;
-    this._product.productDetailLinks.next(this.links);
   }
 }

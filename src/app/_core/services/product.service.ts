@@ -7,7 +7,6 @@ import { HttpClientInterceptor } from '../interceptors/http-client.interceptor';
   providedIn: 'root',
 })
 export class ProductService {
-  productDetailLinks = new BehaviorSubject({ internal: [], external: '' });
   constructor(private _http: HttpClientInterceptor) {}
 
   getCourses(params: HttpParams): Promise<any> {
