@@ -59,6 +59,7 @@ export class ProductsComponent implements OnInit {
     this.params.language = filter.language;
     this.params.certification = filter.certification;
     this.params.start = 1;
+    this.params.freeCourses = filter.freeCourses;
     this._product.getCourses(this.params).then((res) => {
       this.products = res.data.rows;
       this.count = res.data.count;
@@ -72,6 +73,7 @@ export class ProductsComponent implements OnInit {
     this.params.rating = '';
     this.params.language = '';
     this.params.certification = '';
+    this.params.freeCourses = 0;
     this.applyFilter(this.params);
   }
 }

@@ -20,7 +20,13 @@
       <div class="col-12">
         <div class="list-group accordion-list-group">
           <label class="list-group-item fw-bold ps-0">
-            <input class="form-check-input" type="checkbox" value="0" />
+            <input
+              class="form-check-input"
+              type="checkbox"
+              (change)="changeFilter()"
+              [(ngModel)]="freeCourses"
+              value="0"
+            />
             Free Courses
           </label>
         </div>

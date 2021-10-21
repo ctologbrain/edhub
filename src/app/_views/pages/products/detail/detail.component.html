@@ -66,7 +66,7 @@
                   target="_blank"
                   class="btn btn-secondary me-3"
                 >
-                  Got Class
+                  Go to Class
                 </a>
                 <button type="button" class="btn ed-common-blue-btn">
                   Add to Compare
@@ -155,7 +155,11 @@
                 <span class="active-tab"></span>
               </button>
             </li>
-            <!-- <li class="nav-item" role="presentation">
+            <li
+              class="nav-item"
+              role="presentation"
+              *ngIf="courseDetails?.CourseDetail?.prerequisites"
+            >
               <button
                 class="nav-link"
                 id="prerequisties-tab"
@@ -169,7 +173,7 @@
                 <span class="ragular-text_1">Prerequisties</span>
                 <span class="active-tab"></span>
               </button>
-            </li> -->
+            </li>
             <li
               class="nav-item"
               role="presentation"
@@ -687,39 +691,18 @@
               aria-labelledby="prerequisties-tab"
             >
               <div class="prerequisties-tab-panel">
-                <div class="card-body px-1">
-                  <div class="row">
-                    <div class="col-12">
-                      <h2 class="ragular-text-150 mb-0">Prerequisties</h2>
+                <div class="card rounded-4 mb-3">
+                  <div class="card-body px-1">
+                    <div class="row">
+                      <div class="col-12">
+                        <h2 class="ragular-text-150 mb-0">Prerequisties</h2>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="card-body px-0 py-1">
-                  <ul class="list-group">
-                    <ng-container
-                      *ngFor="let item of courseDetails?.prerequisites"
-                    >
-                      <li
-                        class="
-                          list-group-item
-                          d-flex
-                          justify-content-between
-                          align-items-center
-                          px-0
-                        "
-                      >
-                        <span>
-                          <img
-                            class="me-2"
-                            width="16px"
-                            src="./assets/images/red-dot.png"
-                            alt=""
-                          />
-                          {{ item }}
-                        </span>
-                      </li>
-                    </ng-container>
-                  </ul>
+                  <div
+                    class="card-body px-0 py-1"
+                    [innerHTML]="courseDetails?.CourseDetail?.prerequisites"
+                  ></div>
                 </div>
               </div>
             </div>
@@ -1220,10 +1203,19 @@
                 </div>
               </div>
               <div class="row pt-2">
+                <div class="col">
+                  <a href="javascript:void(0);">
+                    <h4 class="text-dark ragular-text_1 ellipsis-text-two-line">
+                      {{ courseDetails?.title }}
+                    </h4>
+                  </a>
+                </div>
+              </div>
+              <div class="row pt-2">
                 <div class="col-12 d-flex align-items-center">
-                  <p class="ed-text-red-color">
-                    Get <b>5% extra cashback</b> if you buy through us
-                  </p>
+                  <ul
+                    [innerHTML]="courseDetails?.CourseDetail?.PurchaseDetails"
+                  ></ul>
                 </div>
               </div>
               <div class="row">
@@ -1258,15 +1250,6 @@
                       <b>course</b>
                     </p> -->
                   </div>
-                </div>
-              </div>
-              <div class="row pt-2">
-                <div class="col">
-                  <a href="javascript:void(0);">
-                    <h4 class="text-dark ragular-text_1 ellipsis-text-two-line">
-                      {{ courseDetails?.title }}
-                    </h4>
-                  </a>
                 </div>
               </div>
               <div class="row">

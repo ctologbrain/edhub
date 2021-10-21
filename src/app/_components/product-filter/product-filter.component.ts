@@ -17,6 +17,7 @@ export class ProductFilterComponent implements OnInit {
   };
   minPrice = 0;
   maxPrice = 150000;
+  freeCourses = false;
   serverurl = environment.server_url;
   filterData: { languages: any; providers: any } = {
     languages: null,
@@ -26,6 +27,7 @@ export class ProductFilterComponent implements OnInit {
   filters: any = {
     price_start: this.minPrice,
     prince_end: this.maxPrice,
+    freeCourses: this.freeCourses,
     course_provider: [],
     rating: [],
     language: [],
@@ -49,7 +51,6 @@ export class ProductFilterComponent implements OnInit {
   }
 
   setFilter(e: any, type: string) {
-    console.log(e, type);
     let index = this.filters[type].indexOf(e.target.value.trim());
     if (index == -1) {
       this.filters[type].push(e.target.value.trim());
@@ -63,6 +64,7 @@ export class ProductFilterComponent implements OnInit {
     let filter: any = {};
     this.filters.price_start = this.minPrice;
     this.filters.prince_end = this.maxPrice;
+    this.filters.freeCourses = this.freeCourses ? 1 : 0;
     for (const key in this.filters) {
       if (Object.prototype.hasOwnProperty.call(this.filters, key)) {
         const element = this.filters[key];

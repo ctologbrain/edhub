@@ -189,7 +189,7 @@
             class="btn btn-outline-danger btn-sm"
             type="button"
             data-bs-dismiss="modal"
-            [disabled]="!links.internal?.length"
+            *ngIf="links.internal?.length"
             [routerLink]="links.internal"
           >
             Go to details
