@@ -41,7 +41,7 @@
           </div>
           <div class="card-footer ed-ng-profile-card-footer">
             <ul class="list-group list-group-flush profile-detail-list">
-              <li class="list-group-item position-relative pb-3 pt-3">
+              <li class="list-group-item position-relative pb-2 pt-3">
                 <h6 class="user-name ellipsis-text-two-line px-4">
                   {{ user?.name }}
                 </h6>
@@ -73,20 +73,20 @@
                 </div>
               </li>
               <li class="list-group-item d-flex align-items-center">
-                <span class="text-primary profile-icon">
+                <span class="ed-text-blue-color profile-icon">
                   <i class="fas fa-envelope"></i>
                 </span>
                 <span class="profile-text ellipsis-text">{{
                   user?.email
                 }}</span>
               </li>
-              <li class="list-group-item d-flex align-items-center">
-                <span class="text-primary profile-icon">
+              <li class="list-group-item d-flex align-items-center mb-4">
+                <span class="ed-text-blue-color profile-icon">
                   <i class="fas fa-mobile"></i>
                 </span>
                 <span class="profile-text">9090909900</span>
               </li>
-              <li class="list-group-item pt-4 pb-3">
+              <li class="list-group-item pt-4 d-none">
                 <button class="btn btn-secondary btn-fluid" (click)="logout()">
                   <span>Logout</span>
                 </button>
