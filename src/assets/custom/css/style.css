@@ -861,9 +861,10 @@ img[alt="Arrow"] {
   outline: none;
   padding: 10px 15px;
   color: #fff;
-  border-radius: 10px;
+  border-radius: 6px;
   right: 5px;
   top: 5px;
+  bottom: 5px;
 }
 
 .ed-bookmark {
@@ -1167,6 +1168,18 @@ input[type="range"].common-range-input::-moz-range-thumb {
   font-size: .85rem;
   letter-spacing: .025rem;
   font-weight: 400;
+}
+
+input.form-control.search-input.ng-pristine.ng-valid.ng-touched {
+  width: 70% !important;
+}
+
+form.d-flex.flex-column.header-search-from.px-3 {
+  width: 70% !important;
+}
+
+.ed-nav-item {
+  display: none !important;
 }
 
 @media (max-width: 768px) {
