@@ -20,7 +20,7 @@
             <div class="form-floating mb-3">
               <input
                 type="text"
-                class="form-control rounded-4"
+                class="form-control rounded-3"
                 id="name"
                 placeholder="Name"
                 [class.is-invalid]="control.touched && control.errors"
@@ -40,7 +40,7 @@
             <div class="form-floating mb-3">
               <input
                 type="email"
-                class="form-control rounded-4"
+                class="form-control rounded-3"
                 id="email"
                 placeholder="name@example.com"
                 [class.is-invalid]="control.touched && control.errors"
@@ -65,7 +65,7 @@
             <div class="form-floating mb-3">
               <input
                 type="password"
-                class="form-control rounded-4"
+                class="form-control rounded-3"
                 id="password"
                 placeholder="Password"
                 [class.is-invalid]="control.touched && control.errors"
@@ -85,7 +85,7 @@
             <div class="form-floating mb-3">
               <input
                 type="password"
-                class="form-control rounded-4"
+                class="form-control rounded-3"
                 id="cpassword"
                 placeholder="Confirm Password"
                 [class.is-invalid]="control.touched && control.errors"
@@ -138,7 +138,7 @@
             </div>
           </ng-container>
           <button
-            class="w-100 mb-2 btn btn-lg rounded-4 btn-primary-theme"
+            class="w-100 mb-2 btn btn-lg rounded-3 btn-primary-theme"
             type="submit"
             [disabled]="registering | async"
           >
