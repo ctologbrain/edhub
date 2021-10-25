@@ -30,3 +30,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+let oldUrl = '';
+
+setInterval(() => {
+  let currentUrl = window.location.href;
+  if(currentUrl != oldUrl){
+    setTimeout(function(){
+      let htmlData = $("._1nhfz2");
+      for (let i = 0; i < htmlData.length; i++) {
+        let matches = htmlData[i].src.split('imageproxy/')[1]
+        let matches2 = matches.split('?')[0]
+        htmlData[i].src = matches2
+      }
+    }, 3000);
+    oldUrl = currentUrl;
+  }
+}, 1000);
