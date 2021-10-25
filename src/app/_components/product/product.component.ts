@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/_core/services/user.service';
 import { environment } from 'src/environments/environment';
 declare let $: any;
@@ -13,7 +14,7 @@ export class ProductComponent implements OnInit {
   @Output() removeWishlist = new EventEmitter();
   @Output() addWishlist = new EventEmitter();
   serverUrl = `${environment.server_url}/`;
-  constructor(private _user: UserService) {}
+  constructor(private _user: UserService, private _toast: ToastrService) {}
 
   ngOnInit(): void {}
 
@@ -31,5 +32,14 @@ export class ProductComponent implements OnInit {
   async removeToWishlist(course_id: number) {
     await this._user.removeToWishList(course_id);
     this.removeWishlist.next(course_id);
+  }
+
+  async addToCompare(course_id: number) {
+    if (!this._user.authState.getValue()) {
+      $('.login-popup').modal('show');
+      return;
+    }
+    await this._user.addToCompare(course_id);
+    this._toast.success('added to compare.');
   }
 }

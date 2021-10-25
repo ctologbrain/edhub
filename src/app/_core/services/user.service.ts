@@ -53,4 +53,25 @@ export class UserService {
   getWishList(): Promise<any> {
     return this._http.get(`/GetWishList`).toPromise();
   }
+
+  /**
+   * @function AddToCompare
+   */
+  addToCompare(course_id: number): Promise<any> {
+    return this._http.post(`/AddToCompare`, { course_id }).toPromise();
+  }
+
+  /**
+   * @function removeToCompare for get authenticated user user
+   */
+  removeToCompare(course_id: number): Promise<any> {
+    return this._http.post(`/DeletedCompare`, { course_id }).toPromise();
+  }
+
+  /**
+   * @function removeToWishList for get authenticated user user
+   */
+  getCompare(): Promise<any> {
+    return this._http.get(`/GetCompare`).toPromise();
+  }
 }

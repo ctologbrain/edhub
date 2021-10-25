@@ -223,18 +223,53 @@
         <ul class="navbar-nav ed-nav ps-lg-0">
           <ng-container *ngIf="_user.authState | async; else noAuth">
             <div class="btn-group profile-btn-group">
-              <button type="button" class="btn btn-light dropdown-toggle" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="true">
+              <button
+                type="button"
+                class="btn btn-light dropdown-toggle"
+                data-bs-toggle="dropdown"
+                data-bs-display="static"
+                aria-expanded="true"
+              >
                 <div class="profile-options">
                   <div class="profile-holder">
-                    <div class="profile-avtar" style="background-image: url('https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659651_960_720.png');"></div>
+                    <div
+                      class="profile-avtar"
+                      style="
+                        background-image: url('https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659651_960_720.png');
+                      "
+                    ></div>
                   </div>
                 </div>
               </button>
-              <ul class="dropdown-menu dropdown-menu-lg-end" data-bs-popper="static">
-                <li><div class="dropdown-item cursor-pointer">Profile</div></li>
-                <li><div class="dropdown-item cursor-pointer">Wish List</div></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><div class="dropdown-item cursor-pointer" (click)="logout()">Logout</div></li>
+              <ul
+                class="dropdown-menu dropdown-menu-lg-end"
+                data-bs-popper="static"
+              >
+                <li>
+                  <a
+                    [routerLink]="['/account/my-courses']"
+                    class="dropdown-item"
+                    >Profile</a
+                  >
+                </li>
+                <li>
+                  <a
+                    [routerLink]="['/account/wishlist']"
+                    href=""
+                    class="dropdown-item cursor-pointer"
+                    >Wish List</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a
+                    href=""
+                    class="dropdown-item cursor-pointer"
+                    (click)="logout()"
+                  >
+                    Logout
+                  </a>
+                </li>
               </ul>
             </div>
           </ng-container>

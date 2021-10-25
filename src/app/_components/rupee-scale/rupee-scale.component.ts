@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RupeeScaleComponent implements OnInit {
   @Input() scale = 0;
+  @Input() type = 'rupees';
   constructor() {}
 
   ngOnInit(): void {}

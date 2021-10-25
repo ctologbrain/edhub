@@ -1,5 +1,5 @@
 <!-- half-active  full-active-->
-<div class="rupee-scales">
+<div class="rupee-scales" *ngIf="type == 'rupees'">
   <i
     class="fas fa-rupee-sign me-2"
     [ngClass]="{
@@ -35,4 +35,11 @@
       'full-active': scale >= 5
     }"
   ></i>
+</div>
+<div class="rating-stars" *ngIf="type == 'ratings'">
+  <i class="far fa-star" [class.text-warning.fas]="scale > 0"></i>
+  <i class="far fa-star" [class.text-warning]="scale > 1"></i>
+  <i class="far fa-star" [class.text-warning]="scale > 2"></i>
+  <i class="far fa-star" [class.text-warning]="scale > 3"></i>
+  <i class="far fa-star" [class.text-warning]="scale > 4"></i>
 </div>

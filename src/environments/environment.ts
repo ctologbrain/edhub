@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  server_url: 'http://edhub.in:8081',
+  server_url: 'https://edhub.in:8081',
   tokenType: 'x-access-token',
 };
 
