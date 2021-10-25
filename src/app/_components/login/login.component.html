@@ -21,7 +21,7 @@
             <ng-container *ngIf="loginForm.get('email') as control">
               <input
                 type="email"
-                class="form-control rounded-4"
+                class="form-control rounded-3"
                 id="userEmail"
                 placeholder="name@example.com"
                 [class.is-invalid]="control.touched && control.errors"
@@ -46,7 +46,7 @@
             <ng-container *ngIf="loginForm.get('password') as control">
               <input
                 type="password"
-                class="form-control rounded-4"
+                class="form-control rounded-3"
                 id="userPassword"
                 placeholder="Password"
                 [class.is-invalid]="control.touched && control.errors"
@@ -81,7 +81,7 @@
             </div>
           </div>
           <button
-            class="w-100 mb-2 btn btn-lg rounded-4 btn-primary-theme"
+            class="w-100 mb-2 btn btn-lg rounded-3 btn-primary-theme"
             type="submit"
             [disabled]="loggingIn | async"
           >

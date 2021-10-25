@@ -1182,6 +1182,154 @@ form.d-flex.flex-column.header-search-from.px-3 {
   display: none !important;
 }
 
+.profile-detail-tab .rc-SyllabusContentRating {
+  vertical-align: middle;
+  display: block;
+}
+
+.rc-ExpertiseTooltip {
+  display: inline-block;
+  position: relative;
+}
+
+.rc-ExpertiseTooltip svg {
+  fill: #363B42;
+  height: 24px;
+  width: 18px;
+  line-height: 18;
+}
+
+.rc-SyllabusContentRating .expertise-rating {
+  display: inline-block;
+  height: 20px;
+  font-family: OpenSans, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #3b3b3b;
+}
+
+.rc-SyllabusContentRating .expertise-rating__img {
+  margin-left: 2px;
+  margin-top: -2px;
+  margin-right: 4px;
+  height: 24px;
+  display: none;
+}
+
+.rc-SyllabusContentRating .expertise-rating__img svg {
+  fill: #F7BB56;
+  height: 15px;
+  width: 15px;
+}
+
+.rc-SyllabusContentRating .expertise-rating__average-rating {
+  color: #666;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.rc-ExpertiseTooltip svg {
+  display: inline-block;
+  margin-left: 5px;
+  margin-top: -1px;
+}
+
+._jyhj5r {
+  display: -webkit-flex;
+  display: flex;
+}
+
+._kzwqs27 {
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+._1tqo7r77 {
+  padding: 1.5rem 1rem;
+}
+
+._cs3pjta {
+  display: none;
+}
+
+._1ozdigc ._1nc68rjl {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--background-theme-color) !important;
+}
+
+.SyllabusModule ._1qfi0x77 {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+}
+
+._1qfi0x77 .m-r-1 {
+  display: none;
+}
+
+._1qfi0x77 ._1fe1gic7 {
+  font-weight: 400;
+  color: var(--background-theme-color) !important;
+}
+
+._1tqo7r77 .headline-2-text {
+  font-size: 1.25rem;
+  margin-top: .75rem;
+  margin-bottom: 1rem;
+}
+
+.SyllabusModuleDetails .items ._1qfi0x77, ._1qfi0x77>._wmgtrl9 {
+  display: none;
+}
+
+._wmgtrl9 {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  position: relative;
+  margin-left: 1.5rem;
+  max-width: 100%;
+  font-size: .9rem;
+}
+
+.hidden-sm-up,
+._1qfi0x77m-b-2 {
+  width: 50%;
+  float: left;
+}
+._1qfi0x77 ._1lutnh9y{
+  font-weight: 600;
+  font-size: .85rem;
+}
+.SyllabusModule>._wmgtrl9::before, ._1qfi0x77>._wmgtrl9::before, ._1ozdigc>._wmgtrl9::before {
+  content: none;
+}
+
+.SyllabusModule>._wmgtrl9, ._1qfi0x77>._wmgtrl9, ._1ozdigc>._wmgtrl9 {
+  margin-left: 0;
+}
+.link-no-style{
+  margin-right: 6px;
+}
+._wmgtrl9::before {
+  content: ">";
+  display: block;
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: -1rem;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 6px;
+  font-weight: 800;
+  line-height: 10px;
+  color: var(--background-theme-color);
+}
+.SyllabusModule .overflow-hidden{
+  overflow: inherit !important;
+}
+
 @media (max-width: 768px) {
   .popular-choice-section .pc-sec-heading {
     text-align: center;
