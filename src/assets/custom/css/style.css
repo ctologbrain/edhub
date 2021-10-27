@@ -253,7 +253,9 @@ a:hover {
 .header-search-from {
   position: relative;
 }
-
+.edhub-carousel-slide{
+  overflow: hidden;
+}
 .profile-btn-group {
   display: -webkit-flex;
   display: flex;
