@@ -19,7 +19,7 @@
   background-position: center;
   background-image: url("../../../../../assets/images/courseDetailHeader.png");
 }
-.details-ed-card{
+.details-ed-card {
   margin-top: 4.25rem;
   margin-bottom: 1.5rem;
 }
@@ -197,24 +197,26 @@
   cursor: pointer;
 }
 
-.rating-stars i {
-  color: #fff;
-  margin-right: 4px;
-  font-size: 25px;
-}
-.far.text-warning {
-  font-weight: 900;
-}
+::ng-deep {
+  .rating-stars i {
+    color: #fff;
+    margin-right: 4px;
+    font-size: 25px;
+  }
+  .far.text-warning {
+    font-weight: 900;
+  }
 
-.coursecard-footer .rating-stars i {
-  color: #000;
-  margin-right: 4px;
-  font-size: 16px;
-}
-.course-html{
-  padding-top: .85rem;
-  padding-bottom: .85rem;
-}
-.course-html ul{
-  padding-left: 0;
+  .coursecard-footer .rating-stars i {
+    color: #000;
+    margin-right: 4px;
+    font-size: 16px;
+  }
+  .course-html {
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+  .course-html ul {
+    padding-left: 0;
+  }
 }

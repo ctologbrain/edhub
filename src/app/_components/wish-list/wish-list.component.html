@@ -9,6 +9,8 @@
           <app-product
             [product]="course"
             (removeWishlist)="removeToWishlist(i)"
+            (addCompare)="course.compare_list = course.id"
+            (removeCompare)="course.compare_list = null"
             type="wishlist"
           ></app-product>
         </ng-container>

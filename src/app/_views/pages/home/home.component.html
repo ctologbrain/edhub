@@ -125,7 +125,16 @@
         <div class="col-sm-12 col-md-6 col-lg-6">
           <button
             type="button"
-            class="btn common-button btn-primary-theme mx-sm-auto ms-md-auto me-md-0 mt-sm-4 mt-md-0 mb-4"
+            class="
+              btn
+              common-button
+              btn-primary-theme
+              mx-sm-auto
+              ms-md-auto
+              me-md-0
+              mt-sm-4 mt-md-0
+              mb-4
+            "
           >
             View All
           </button>
@@ -144,7 +153,9 @@
                 <app-product
                   [product]="data.course"
                   (addWishlist)="data.course.wish_list = data.course.id"
+                  (addCompare)="data.course.compare_list = data.course.id"
                   (removeWishlist)="data.course.wish_list = null"
+                  (removeCompare)="data.course.compare_list = null"
                 ></app-product>
               </div>
             </ng-container>

@@ -10,6 +10,11 @@ import { WishListComponent } from './wish-list/wish-list.component';
 import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { RupeeScaleComponent } from './rupee-scale/rupee-scale.component';
+import {
+  GoogleLoginProvider,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -37,5 +42,6 @@ import { RupeeScaleComponent } from './rupee-scale/rupee-scale.component';
     MyCoursesComponent,
     RupeeScaleComponent,
   ],
+  providers: [],
 })
 export class ComponentModule {}

@@ -6,6 +6,8 @@ export const environment = {
   production: false,
   server_url: 'https://edhub.in:8081',
   tokenType: 'x-access-token',
+  googleClient:
+    '795928537430-tpqoclhgrgfrsumalc5dnkdvl8u4jl5k.apps.googleusercontent.com',
 };
 
 /*

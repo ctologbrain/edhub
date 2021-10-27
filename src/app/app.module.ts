@@ -9,6 +9,12 @@ import { HttpClientInterceptor } from './_core/interceptors/http-client.intercep
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpTokenInterceptor } from './_core/interceptors/http-token.interceptor';
 import { HttpLogInterceptor } from './_core/interceptors/http-log.interceptor';
+import {
+  GoogleLoginProvider,
+  SocialAuthServiceConfig,
+  SocialLoginModule,
+} from 'angularx-social-login';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,11 +24,28 @@ import { HttpLogInterceptor } from './_core/interceptors/http-log.interceptor';
     AppRoutingModule,
     HttpClientModule,
     ToastrModule.forRoot(),
+    SocialLoginModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: HttpLogInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: HttpTokenInterceptor, multi: true },
     HttpClientInterceptor,
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(environment.googleClient),
+          },
+          // {
+          //   id: FacebookLoginProvider.PROVIDER_ID,
+          //   provider: new FacebookLoginProvider('clientId')
+          // }
+        ],
+      } as SocialAuthServiceConfig,
+    },
   ],
   bootstrap: [AppComponent],
 })

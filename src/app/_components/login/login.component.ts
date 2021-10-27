@@ -5,6 +5,12 @@ import { ToastrService } from 'ngx-toastr';
 import { BehaviorSubject } from 'rxjs';
 import { UserService } from 'src/app/_core/services/user.service';
 import { environment } from 'src/environments/environment';
+import { SocialAuthService } from 'angularx-social-login';
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+} from 'angularx-social-login';
+
 declare let $: any;
 @Component({
   selector: 'app-login',
@@ -18,7 +24,8 @@ export class LoginComponent implements OnInit {
     private _builder: FormBuilder,
     private _userService: UserService,
     private _toast: ToastrService,
-    private _router: Router
+    private _router: Router,
+    private authService: SocialAuthService
   ) {
     this.loginForm = this._builder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -48,5 +55,26 @@ export class LoginComponent implements OnInit {
         this._toast.error(res.msg);
       }
     }
+  }
+
+  signInWithGoogle(): void {
+    this.authService
+      .signIn(GoogleLoginProvider.PROVIDER_ID)
+      .then(async (data) => {
+        this.loggingIn.next(true);
+        let res = await this._userService.sociallogin({ ...data });
+        this.loggingIn.next(false);
+        if (res.status == 'true') {
+          localStorage.setItem(environment.tokenType, res.token);
+          // this._userService.authState.next(true);
+          $('.modal').modal('hide');
+          this._router.navigate(['/account']);
+        } else if (res.status == 'false') {
+          this._toast.error(res.msg);
+        }
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
   }
 }

@@ -19,6 +19,14 @@ export class UserService {
   }
 
   /**
+   * @function login for login user
+   * @param {Auth} user user email & password to validare user
+   */
+  sociallogin(user: object): Promise<any> {
+    return this._http.post(`/googlesignup`, user).toPromise();
+  }
+
+  /**
    * @function signup for register user
    * @param {Auth} user user email & password to validare user
    */

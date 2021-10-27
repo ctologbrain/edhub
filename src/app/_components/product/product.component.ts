@@ -12,7 +12,9 @@ export class ProductComponent implements OnInit {
   @Input() product: any = '';
   @Input() type = 'product';
   @Output() removeWishlist = new EventEmitter();
+  @Output() removeCompare = new EventEmitter();
   @Output() addWishlist = new EventEmitter();
+  @Output() addCompare = new EventEmitter();
   serverUrl = `${environment.server_url}/`;
   constructor(private _user: UserService, private _toast: ToastrService) {}
 
@@ -34,12 +36,18 @@ export class ProductComponent implements OnInit {
     this.removeWishlist.next(course_id);
   }
 
+  async removeToCompare(course_id: number) {
+    await this._user.removeToCompare(course_id);
+    this.removeCompare.next(course_id);
+  }
+
   async addToCompare(course_id: number) {
     if (!this._user.authState.getValue()) {
       $('.login-popup').modal('show');
       return;
     }
     await this._user.addToCompare(course_id);
+    this.addCompare.next(course_id);
     this._toast.success('added to compare.');
   }
 }

@@ -4,19 +4,21 @@
       <div class="col-3 py-4">
         <div class="compare-part cp-row-1" data-parameter="type">
           <p class="ragular-text_1 mb-0">
-            <b>Compare</b> UI/UX Design | How to design with professional
-            <b>vs</b> Seth Godin's Freelancer Course <b>vs</b> others
+            <b>Course Details</b>
           </p>
         </div>
         <div class="compare-part cp-row-2" data-parameter="type">
           <p class="ragular-text_1 mb-0"><b>Course Rating</b></p>
         </div>
+        <div class="compare-part cp-row-2" data-parameter="type">
+          <p class="ragular-text_1 mb-0"><b>Course Reviews</b></p>
+        </div>
         <div class="compare-part cp-row-3" data-parameter="type">
           <p class="ragular-text_1 mb-0"><b>Course By</b></p>
         </div>
-        <div class="compare-part cp-row-4" data-parameter="type">
+        <!-- <div class="compare-part cp-row-4" data-parameter="type">
           <p class="ragular-text_1 mb-0"><b>Job Opportunities</b></p>
-        </div>
+        </div> -->
         <div class="compare-part cp-row-5" data-parameter="type">
           <p class="ragular-text_1 mb-0"><b>Skills you will gain</b></p>
         </div>
@@ -29,14 +31,14 @@
         <div class="compare-part cp-row-8" data-parameter="type">
           <p class="ragular-text_1 mb-0"><b>Instrutor</b></p>
         </div>
-        <div class="compare-part cp-row-9" data-parameter="type">
+        <!-- <div class="compare-part cp-row-9" data-parameter="type">
           <p class="ragular-text_1 mb-0"><b>Top Review</b></p>
-        </div>
-        <div class="compare-part cp-row-10" data-parameter="type"></div>
+        </div> -->
+        <!-- <div class="compare-part cp-row-10" data-parameter="type"></div> -->
       </div>
       <div class="col-9">
         <div class="compare-product-panel">
-          <div class="comp-pro-container">
+          <div class="comp-pro-container text-center">
             <div class="comp-pro-item" *ngFor="let item of items; index as i">
               <ng-container *ngIf="item?.course as course">
                 <div class="cp-card cp-row-1">
@@ -73,7 +75,7 @@
                         </div>
                       </div>
                       <div class="row pt-2">
-                        <div class="col-6">
+                        <div class="col-12">
                           <!-- {{ course.Pscale }} -->
                           <rupee-scale [scale]="course.Pscale"></rupee-scale>
                         </div>
@@ -102,6 +104,10 @@
                       [scale]="course?.rating"
                       type="ratings"
                     ></rupee-scale>
+                  </div>
+                </div>
+                <div class="cp-card cp-row-2">
+                  <div class="comp-rate justify-content-center">
                     <p class="review-text ms-3">
                       <b class="ragular-text-125 text-secondary">{{
                         course?.Reviews
@@ -118,17 +124,17 @@
                     />
                   </div>
                 </div>
-                <div class="cp-card cp-row-4">
+                <!-- <div class="cp-card cp-row-4">
                   <div class="comp-rate">
                     <p class="review-text">
                       <b class="ragular-text_1">Web Designer</b>
                     </p>
                   </div>
-                </div>
+                </div> -->
                 <div class="cp-card cp-row-5">
                   <div class="comp-rate">
                     <p class="review-text">
-                      <b class="ragular-text_1">Figma Adobe XD</b>
+                      <b class="ragular-text_1">{{ course.title }}</b>
                     </p>
                   </div>
                 </div>
@@ -143,19 +149,22 @@
                 </div>
                 <div class="cp-card cp-row-7">
                   <div class="comp-rate">
-                    <p class="review-text">
-                      <b class="ragular-text_1">Install Figma and Adobe XD</b>
-                    </p>
+                    <p
+                      class="review-text"
+                      [innerHTML]="course.prerequisites || '-'"
+                    ></p>
                   </div>
                 </div>
                 <div class="cp-card cp-row-8">
                   <div class="comp-rate">
                     <p class="review-text">
-                      <b class="ragular-text_1">Raj Sharma</b>
+                      <b class="ragular-text_1">{{
+                        course.Instructer || "-"
+                      }}</b>
                     </p>
                   </div>
                 </div>
-                <div class="cp-card cp-row-9">
+                <!-- <div class="cp-card cp-row-9">
                   <div class="comp-review">
                     <p class="review-text mb-2">
                       <b class="ragular-text_1">Raj Sharma</b>
@@ -167,7 +176,7 @@
                       >
                     </p>
                   </div>
-                </div>
+                </div> -->
                 <div class="cp-card cp-row-10">
                   <a
                     [href]="course.url"
