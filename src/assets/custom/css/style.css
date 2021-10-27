@@ -253,7 +253,9 @@ a:hover {
 .header-search-from {
   position: relative;
 }
-
+.edhub-carousel-slide{
+  overflow: hidden;
+}
 .profile-btn-group {
   display: -webkit-flex;
   display: flex;
@@ -1283,7 +1285,8 @@ form.d-flex.flex-column.header-search-from.px-3 {
   margin-bottom: 1rem;
 }
 
-.SyllabusModuleDetails .items ._1qfi0x77, ._1qfi0x77>._wmgtrl9 {
+.SyllabusModuleDetails .items ._1qfi0x77,
+._1qfi0x77>._wmgtrl9 {
   display: none;
 }
 
@@ -1305,11 +1308,15 @@ form.d-flex.flex-column.header-search-from.px-3 {
   font-weight: 600;
   font-size: .85rem;
 }
-.SyllabusModule>._wmgtrl9::before, ._1qfi0x77>._wmgtrl9::before, ._1ozdigc>._wmgtrl9::before {
+.SyllabusModule>._wmgtrl9::before,
+._1qfi0x77>._wmgtrl9::before,
+._1ozdigc>._wmgtrl9::before {
   content: none;
 }
 
-.SyllabusModule>._wmgtrl9, ._1qfi0x77>._wmgtrl9, ._1ozdigc>._wmgtrl9 {
+.SyllabusModule>._wmgtrl9,
+._1qfi0x77>._wmgtrl9,
+._1ozdigc>._wmgtrl9 {
   margin-left: 0;
 }
 .link-no-style{
