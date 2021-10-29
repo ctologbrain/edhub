@@ -1163,7 +1163,7 @@ input[type="range"].common-range-input::-moz-range-thumb {
 }
 
 .filter-card .rupee-scales {
-  font-size: 1.25rem;
+  text-align: right;
 }
 
 .breadcrumb-item {
@@ -1448,6 +1448,9 @@ form.d-flex.flex-column.header-search-from.px-3 {
   vertical-align: middle;
   margin-left: .5rem;
 }
+.rating-stars {
+  font-size: 0.8rem;
+}
 @media (max-width: 768px) {
   .popular-choice-section .pc-sec-heading {
     text-align: center;
@@ -1459,6 +1462,12 @@ form.d-flex.flex-column.header-search-from.px-3 {
   .btn-ed-lg {
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+  .common-button{
+    margin: 1.25rem auto;
+  }
+  .filter-card .rupee-scales {
+    font-size: 1rem;
   }
 }
 
@@ -1636,6 +1645,9 @@ form.d-flex.flex-column.header-search-from.px-3 {
 }
 
 @media (min-width: 768px) {
+  .common-button{
+    margin-left: auto;
+  }
   .navbar-expand-md .navbar-toggler {
     display: block;
   }
@@ -1683,6 +1695,13 @@ form.d-flex.flex-column.header-search-from.px-3 {
   .navbar-expand-md .navbar-nav .ed-menu-bookmark>* {
     padding-top: 0;
     padding-bottom: 0;
+  }
+  .filter-card .rupee-scales {
+    font-size: .85rem;
+  }
+  .rating-stars,
+  .coursecard-footer .review-text {
+    font-size: 0.65rem;
   }
 }
 
@@ -1748,6 +1767,31 @@ form.d-flex.flex-column.header-search-from.px-3 {
   }
   .sticky-on-mobile .ed-ng-nav {
     background-color: transparent;
+  }
+  .rating-stars,
+  .coursecard-footer .review-text {
+    font-size: 1rem;
+  }
+  .filter-card .rupee-scales {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1007px) {
+  .rating-stars,
+  .coursecard-footer .review-text {
+    font-size: .697rem;
+  }
+  .filter-card .rupee-scales {
+    font-size: .85rem;
+  }
+}
+@media (min-width: 1140px) {
+  .rating-stars,
+  .coursecard-footer .review-text {
+    font-size: .9rem;
+  }
+  .filter-card .rupee-scales {
+    font-size: 1.25rem;
   }
 }
 

@@ -26,6 +26,7 @@
                     type="file"
                     id="profilePicTrigger"
                     accept="image/png, image/gif, image/jpeg"
+                    (change)="updateProfileImage($event)"
                   />
                 </label>
               </div>
@@ -33,7 +34,7 @@
                 <div
                   class="profile-image"
                   style="
-                    background-image: url('https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659651_960_720.png');
+                    background-image: url('{{ user?.avatar }}');
                   "
                 ></div>
               </div>
@@ -80,11 +81,14 @@
                   user?.email
                 }}</span>
               </li>
-              <li class="list-group-item d-flex align-items-center mb-4">
+              <li
+                class="list-group-item d-flex align-items-center mb-4"
+                *ngIf="user?.phone"
+              >
                 <span class="ed-text-blue-color profile-icon">
                   <i class="fas fa-mobile"></i>
                 </span>
-                <span class="profile-text">9090909900</span>
+                <span class="profile-text">{{ user?.phone }}</span>
               </li>
               <li class="list-group-item pt-4 d-none">
                 <button class="btn btn-secondary btn-fluid" (click)="logout()">
@@ -162,44 +166,53 @@
         ></button>
       </div>
       <div class="modal-body p-5 pt-0">
-        <form class="">
-          <div class="form-floating mb-3">
+        <form class="" [formGroup]="profile" (ngSubmit)="updateProfile()">
+          <div
+            class="form-floating mb-3"
+            *ngIf="profile.get('firstname') as control"
+          >
             <input
-              type="email"
               class="form-control rounded-5 profile-input-control"
-              id="fisrtName"
-              placeholder="name@example.com"
-              value="Lussi"
+              id="firstname"
+              placeholder="Enter first name"
+              [formControl]="control"
             />
-            <label for="fisrtName">First Name</label>
+            <label for="firstname">First Name</label>
           </div>
-          <div class="form-floating mb-3">
+          <div
+            class="form-floating mb-3"
+            *ngIf="profile.get('lastname') as control"
+          >
             <input
-              type="email"
               class="form-control rounded-5 profile-input-control"
               id="lastName"
-              placeholder="name@example.com"
-              value="Nouway"
+              placeholder="Enter last name"
+              [formControl]="control"
             />
             <label for="lastName">Last Name</label>
           </div>
-          <div class="form-floating mb-3">
+          <div
+            class="form-floating mb-3"
+            *ngIf="profile.get('email') as control"
+          >
             <input
-              type="email"
+              type="text"
               class="form-control rounded-5 profile-input-control"
               id="emailId"
               placeholder="name@example.com"
-              value="lussi.nouway@noyono.com"
+              [formControl]="control"
             />
             <label for="emailId">Email id</label>
           </div>
-          <div class="form-floating mb-3">
+          <div
+            class="form-floating mb-3"
+            *ngIf="profile.get('phone') as control"
+          >
             <input
-              type="email"
               class="form-control rounded-5 profile-input-control"
               id="mobileNumber"
-              placeholder="name@example.com"
-              value="9090909900"
+              placeholder="Enter mobile number"
+              [formControl]="control"
             />
             <label for="mobileNumber">Mobile No.</label>
           </div>
@@ -207,6 +220,7 @@
           <button
             class="w-100 mb-2 btn btn-lg rounded-3 btn-primary-theme"
             type="submit"
+            data-bs-dismiss="modal"
           >
             Save
           </button>

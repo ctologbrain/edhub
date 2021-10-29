@@ -19,7 +19,6 @@ export class WishListComponent implements OnInit {
   async getWishList() {
     let res = await this._user.getWishList();
     this.wishlistData = res.data;
-    console.log(this.wishlistData);
   }
 
   async removeToWishlist(index: number) {

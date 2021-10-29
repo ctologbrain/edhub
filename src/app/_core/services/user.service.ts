@@ -82,4 +82,18 @@ export class UserService {
   getCompare(): Promise<any> {
     return this._http.get(`/GetCompare`).toPromise();
   }
+
+  /**
+   * @function removeToWishList for get authenticated user user
+   */
+  updateProfile(profile: any): Promise<any> {
+    return this._http.post(`/updateprofile`, profile).toPromise();
+  }
+
+  /**
+   * @function removeToWishList for get authenticated user user
+   */
+  updateUserDetail(formData: any): Promise<any> {
+    return this._http.post(`/updateUserdetails`, formData).toPromise();
+  }
 }
