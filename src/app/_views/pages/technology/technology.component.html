@@ -1,0 +1,125 @@
+<section class="landing-page-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div
+          id="edhubCarouselSlider"
+          class="carousel slide edhub-carousel-slide rounded-2"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#edhubCarouselSlider"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#edhubCarouselSlider"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <a
+                href="https://ad.admitad.com/g/aguipktae01356d9a94882bf971235"
+                target="_blank"
+              >
+                <img
+                  src="/assets/images/skillshare.png"
+                  class="d-block w-100"
+                  alt="Get Free access to Skillshare Subscription"
+                />
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a
+                href="https://click.linksynergy.com/deeplink?id=LwdCvlqjgQE&mid=40328&murl=https%3A%2F%2Fwww.coursera.org%2Fcourseraplus%3Faction%3Denroll%26authMode%3Dsignup%26variant%3DLbAwD6QzEeqeDWZSF5SmzA"
+                target="_blank"
+              >
+                <img
+                  src="/assets/images/top-universities.png"
+                  class="d-block w-100"
+                  alt="Free certifications from top universities via coursera"
+                />
+              </a>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#edhubCarouselSlider"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#edhubCarouselSlider"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="popular-choice-section py-3">
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="text-center" *ngIf="!products; else productItems">
+          <span
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+        </div>
+        <ng-template #productItems>
+          <div class="row">
+            <div class="col-12">
+              <div class="row product-container">
+                <ng-container *ngFor="let product of products">
+                  <div class="col-lg-3 col-md-4 col-sm-6 col mb-4">
+                    <app-product
+                      [product]="product.course"
+                      (addWishlist)="
+                        product.course.wish_list = product.course.id
+                      "
+                      (removeWishlist)="product.course.wish_list = null"
+                    ></app-product>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+            <div class="text-center" *ngIf="count > products?.length">
+              <button
+                class="btn ed-common-blue-btn"
+                type="button"
+                [disabled]="loading | async"
+                (click)="loadMore()"
+              >
+                <span
+                  *ngIf="loading | async"
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                Load More
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</section>

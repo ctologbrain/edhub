@@ -13,6 +13,10 @@ export class ProductService {
     return this._http.post('/CourseByCategory', params).toPromise();
   }
 
+  getHomePageCategoryById(params: any): Promise<any> {
+    return this._http.post('/getHomePageCategoryById', params).toPromise();
+  }
+
   getCourseDetails(params: any): Promise<any> {
     return this._http.post('/ProductDetails', params).toPromise();
   }

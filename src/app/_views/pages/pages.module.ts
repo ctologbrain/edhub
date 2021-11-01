@@ -6,6 +6,7 @@ import { CompareComponent } from './compare/compare.component';
 import { ComponentModule } from 'src/app/_components/component.module';
 import { AuthGuard } from 'src/app/_core/guard/auth.guard';
 import { CartComponent } from './cart/cart.component';
+import { TechnologyComponent } from './technology/technology.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
+  },
+  {
+    path: 'technology/:technology',
+    component: TechnologyComponent,
   },
   {
     path: 'account',
@@ -35,7 +40,12 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HomeComponent, CompareComponent, CartComponent],
+  declarations: [
+    HomeComponent,
+    CompareComponent,
+    CartComponent,
+    TechnologyComponent,
+  ],
   imports: [CommonModule, RouterModule.forChild(routes), ComponentModule],
 })
 export class PagesModule {}
