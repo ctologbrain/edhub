@@ -26,4 +26,8 @@ export class CommonService {
   courseProviders() {
     return this._http.get('/CourseProvider').toPromise();
   }
+
+  requestCall(params: { name: string; mobile_no: string }) {
+    return this._http.post('/RequestCall', params).toPromise();
+  }
 }

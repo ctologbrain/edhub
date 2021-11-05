@@ -68,8 +68,11 @@ export class CustomValidators {
 
   static isMobile() {
     return function (control: FormControl) {
-      const regex = RegExp(/[0-9]{10}/);
-      if (control && control.value && control.value.toString().match(regex)) {
+      const regex = RegExp(/^\d{10}$/g);
+      if (
+        (control && control.value && control.value.toString().match(regex)) ||
+        !control.value
+      ) {
         return null;
       } else {
         return { isMobile: { error: true } };

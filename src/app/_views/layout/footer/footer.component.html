@@ -128,24 +128,53 @@
 
       <div class="modal-body p-5 pt-0">
         <p>Let us help you guide towards your career path</p>
-        <form class="">
-          <div class="form-floating mb-3">
+        <form class="" [formGroup]="callback" (ngSubmit)="requestCall()">
+          <div
+            class="form-floating mb-3"
+            *ngIf="callback.get('name') as control"
+          >
             <input
               type="text"
               class="form-control rounded-3"
               id="userName"
+              [formControl]="control"
+              [class.is-invalid]="control.touched && control.errors"
               placeholder="Name"
             />
             <label for="userName">Name</label>
+            <ng-container *ngIf="control.touched && control.errors">
+              <small
+                *ngIf="control.hasError('required')"
+                class="invalid-feedback mb-2"
+                >Please enter name.</small
+              >
+            </ng-container>
           </div>
-          <div class="form-floating mb-3">
+          <div
+            class="form-floating mb-3"
+            *ngIf="callback.get('mobile_no') as control"
+          >
             <input
               type="number"
               class="form-control rounded-3"
               id="userMobileNumber"
               placeholder="Mobile Number"
+              [class.is-invalid]="control.touched && control.errors"
+              [formControl]="control"
             />
             <label for="userMobileNumber">Mobile Number</label>
+            <ng-container *ngIf="control.touched && control.errors">
+              <small
+                *ngIf="control.hasError('required')"
+                class="invalid-feedback mb-2"
+                >Please enter mobile number.</small
+              >
+              <small
+                *ngIf="control.hasError('isMobile')"
+                class="invalid-feedback mb-2"
+                >Please enter valid mobile number.</small
+              >
+            </ng-container>
           </div>
           <ul>
             <li class="py-2">Non-biased career guidance</li>
