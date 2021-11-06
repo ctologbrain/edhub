@@ -18,11 +18,8 @@ export class FooterComponent implements OnInit {
     private _toast: ToastrService
   ) {
     this.callback = this._builder.group({
-      name: ['Test', Validators.required],
-      mobile_no: [
-        '1234567890',
-        [Validators.required, CustomValidators.isMobile()],
-      ],
+      name: ['', Validators.required],
+      mobile_no: ['', [Validators.required, CustomValidators.isMobile()]],
     });
   }
 
