@@ -1,4 +1,4 @@
-<div class="card ed-card filter-card" *ngIf="product as course">
+<div class="card ed-card filter-card" *ngIf="product as course" data-bs-toggle="modal" data-bs-target="#tooltipModal">
   <button class="wishlist-section" [class.bg-danger]="course?.wish_list">
     <ng-container *ngIf="type == 'product'; else wishlist">
       <img
