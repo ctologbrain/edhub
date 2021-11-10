@@ -31,6 +31,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+$(document).on("click", ".forgot-password-btn", function(){
+  $(".login-popup").modal("hide");
+  $(".login-popup").on('hidden.bs.modal', function () {
+    $(".forgot-password-popup").modal("show");
+  })
+});
+
+$(document).on("click", ".forgot-pass-submit-btn", function(e){
+  e.preventDefault();
+  $(".forgot-password-popup").modal("hide");
+  $(".forgot-password-popup").on('hidden.bs.modal', function () {
+    $(".forgot-password-submit-modal").modal("show");
+  })
+});
+
 let oldUrl = '';
 
 setInterval(() => {

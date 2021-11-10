@@ -1458,6 +1458,90 @@ form.d-flex.flex-column.header-search-from.px-3 {
 .rating-stars {
   font-size: 0.8rem;
 }
+.slick-initialized .slick-slide{
+  position: relative;
+}
+.slick-initialized .slick-slide .tooltip-small-info-box{
+  display: none;
+  position: absolute;
+  width: calc(100% + 3rem);
+  z-index: 111;
+  top: 0;
+  bottom: 0;
+  height: max-content;
+  margin: auto;
+}
+.slick-initialized .slick-slide:hover .tooltip-small-info-box{
+  display: inherit;
+}
+.tooltip-small-info-body{
+  position: relative;
+  padding: 1.25rem 1.75rem;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.125);
+  box-shadow: 0 0.5em 1.5em #0000, 0 0.125em 0.5em #0000;
+}
+.tooltip-small-info-body::before{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  content: "";
+  width: 9px;
+  height: 16px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.tooltip-small-info-body h6{
+  color: #222;
+  font-weight: 700;
+}
+.tooltip-small-info-body em,
+.tooltip-small-info-body .caption{
+  font-size: .75rem;
+}
+.tooltip-small-info-body .list-unstyled .tooltip-img{
+  width: 14px;
+  height: 14px;
+  margin-top: .5rem;
+}
+.tooltip-small-info-body .list-unstyled .list-text{
+  font-size: .8rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+.tooltip-small-info-body .btn-toolbar .tooltip-btn{
+  flex: 1 1 0;
+  margin-right: .75rem;
+  font-size: .85rem;
+  padding: .25rem 1rem;
+  height: fit-content;
+}
+.tooltip-small-info-body .btn-toolbar .tootlbar-bookmark-btn{
+  padding: 0;
+  border-radius: 50%;
+  border: solid 1px #f05454;
+}
+.slick-initialized .slick-track .slick-active:first-child .tooltip-small-info-box,
+.slick-initialized .slick-track .slick-active:nth-child(2) .tooltip-small-info-box,
+.slick-initialized .slick-track .slick-active:nth-child(3) .tooltip-small-info-box{
+  left: 100%;
+}
+.slick-initialized .slick-track .slick-active:nth-child(4) .tooltip-small-info-box{
+  right: 100%;
+}
+.slick-initialized .slick-track .slick-active:first-child .tooltip-small-info-box .tooltip-small-info-body::before,
+.slick-initialized .slick-track .slick-active:nth-child(2) .tooltip-small-info-box .tooltip-small-info-body::before,
+.slick-initialized .slick-track .slick-active:nth-child(3) .tooltip-small-info-box .tooltip-small-info-body::before{
+  left: -9px;
+  background-image: url(../../images/tooltip-left-arrow.png);
+}
+.slick-initialized .slick-track .slick-active:nth-child(4) .tooltip-small-info-box .tooltip-small-info-body::before{
+  right: -9px;
+  background-image: url(../../images/tooltip-right-arrow.png);
+}
 @media (max-width: 768px) {
   .popular-choice-section .pc-sec-heading {
     text-align: center;

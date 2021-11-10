@@ -238,3 +238,90 @@
 </div>
 <app-login></app-login>
 <app-register></app-register>
+
+<div class="modal fade forgot-password-popup" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-5 shadow">
+      <div class="modal-header p-5 pb-0 border-bottom-0">
+        <!-- <h5 class="modal-title">Modal title</h5> -->
+        <h4 class="fw-bold mb-0">Recover your</h4>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-header p-5 pt-0 pb-4 border-bottom-0">
+        <h3 class="mb-0">
+          <span class="theme-color-text">EdHub Password</span>
+        </h3>
+      </div>
+      <div class="modal-body p-5 pt-0">
+        <p>Enter your email or mobile number to get changes password link.</p>
+        <form>
+          <div class="form-floating mb-3">
+            <input
+              type="email"
+              class="form-control rounded-3"
+              id="userEmail"
+              placeholder="name@example.com"
+            />
+            <label for="userEmail">Email address / Mobile Number</label>
+              <small
+                class="invalid-feedback mb-2"
+                >Please enter email address or mobile.</small
+              >
+              <small
+                class="invalid-feedback mb-2"
+                >Please enter valid email address or mobile number.</small
+              >
+          </div>
+          <button
+            class="w-100 mb-2 btn btn-lg rounded-3 btn-primary-theme forgot-pass-submit-btn"
+            type="submit"
+          >
+            <span
+              class="spinner-border spinner-border-sm"
+              role="status"
+            ></span>
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade forgot-password-submit-modal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-5 shadow">
+      <div class="modal-header p-5 pb-0 border-bottom-0">
+        <!-- <h5 class="modal-title">Modal title</h5> -->
+        <h3 class="fw-bold mb-0">Change Password</h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-header p-5 pt-0 pb-4 border-bottom-0">
+        <h4 class="mb-0">
+          <span class="theme-color-text">Link Sent Successfully !</span>
+        </h4>
+      </div>
+      <div class="modal-body p-5 pt-0">
+        <p>Your change password link have been sent to your registered email id (XXXXXXXXXX@gmail.com).</p>
+        <button
+          class="w-100 mb-2 btn btn-lg rounded-3 btn-primary-theme forgot-pass-submit-btn"
+          type="button"  data-bs-dismiss="modal"
+        >
+          Done
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
