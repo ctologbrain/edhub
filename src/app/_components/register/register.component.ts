@@ -27,7 +27,7 @@ export class RegisterComponent implements OnInit {
         '',
         [Validators.required, CustomValidators.mustMatch('password')],
       ],
-      gender: ['Male', Validators.required],
+      phone: ['', [CustomValidators.isMobile()]],
     });
   }
 

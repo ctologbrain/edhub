@@ -77,4 +77,25 @@ export class LoginComponent implements OnInit {
         console.warn(err);
       });
   }
+
+  signInWithFB(): void {
+    this.authService
+      .signIn(FacebookLoginProvider.PROVIDER_ID)
+      .then(async (data) => {
+        this.loggingIn.next(true);
+        let res = await this._userService.sociallogin({ ...data });
+        this.loggingIn.next(false);
+        if (res.status == 'true') {
+          localStorage.setItem(environment.tokenType, res.token);
+          // this._userService.authState.next(true);
+          $('.modal').modal('hide');
+          this._router.navigate(['/account']);
+        } else if (res.status == 'false') {
+          this._toast.error(res.msg);
+        }
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  }
 }

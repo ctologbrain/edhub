@@ -4,4 +4,5 @@ export const environment = {
   tokenType: 'x-access-token',
   googleClient:
     '795711991818-h23j28ombpodtn2pqtodg24lorl0rood.apps.googleusercontent.com',
+  facbookClient: '621995742334527',
 };

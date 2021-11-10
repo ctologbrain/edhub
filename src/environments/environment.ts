@@ -8,6 +8,7 @@ export const environment = {
   tokenType: 'x-access-token',
   googleClient:
     '795928537430-tpqoclhgrgfrsumalc5dnkdvl8u4jl5k.apps.googleusercontent.com',
+  facbookClient: '621995742334527',
 };
 
 /*

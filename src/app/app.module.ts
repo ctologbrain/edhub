@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpTokenInterceptor } from './_core/interceptors/http-token.interceptor';
 import { HttpLogInterceptor } from './_core/interceptors/http-log.interceptor';
 import {
+  FacebookLoginProvider,
   GoogleLoginProvider,
   SocialAuthServiceConfig,
   SocialLoginModule,
@@ -39,10 +40,10 @@ import { environment } from 'src/environments/environment';
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(environment.googleClient),
           },
-          // {
-          //   id: FacebookLoginProvider.PROVIDER_ID,
-          //   provider: new FacebookLoginProvider('clientId')
-          // }
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider(environment.facbookClient),
+          },
         ],
       } as SocialAuthServiceConfig,
     },
