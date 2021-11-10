@@ -10,6 +10,7 @@ import {
   FacebookLoginProvider,
   GoogleLoginProvider,
 } from 'angularx-social-login';
+import { CustomValidators } from 'src/app/_core/helpers/custom-validators';
 
 declare let $: any;
 @Component({
@@ -28,7 +29,7 @@ export class LoginComponent implements OnInit {
     private authService: SocialAuthService
   ) {
     this.loginForm = this._builder.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [Validators.required, CustomValidators.isEmailOrMobile()]],
       password: ['', Validators.required],
     });
   }

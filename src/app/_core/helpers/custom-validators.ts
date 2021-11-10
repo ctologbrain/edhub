@@ -112,4 +112,24 @@ export class CustomValidators {
       }
     };
   }
+
+  static isEmailOrMobile() {
+    return function (control: FormControl) {
+      if (control && !control.value) {
+        return null;
+      } else {
+        const emailRegex = RegExp(
+          /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+        // console.log(control.value.match(regex));
+        if (control.value.match(emailRegex)) {
+          return null;
+        } else if (control.value.match(/^\d{10}$/g)) {
+          return null;
+        } else {
+          return { isNotValidEmailOrMobile: { error: true } };
+        }
+      }
+    };
+  }
 }

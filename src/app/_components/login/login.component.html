@@ -27,17 +27,17 @@
                 [class.is-invalid]="control.touched && control.errors"
                 [formControl]="control"
               />
-              <label for="userEmail">Email address</label>
+              <label for="userEmail">Email address / Mobile Number</label>
               <ng-container *ngIf="control.touched && control.errors">
                 <small
                   *ngIf="control.hasError('required')"
                   class="invalid-feedback mb-2"
-                  >Please enter email address.</small
+                  >Please enter email address or mobile.</small
                 >
                 <small
-                  *ngIf="control.hasError('email')"
+                  *ngIf="control.hasError('isNotValidEmailOrMobile')"
                   class="invalid-feedback mb-2"
-                  >Please enter valid email address.</small
+                  >Please enter valid email address or mobile number.</small
                 >
               </ng-container>
             </ng-container>
