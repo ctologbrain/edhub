@@ -18,84 +18,48 @@
                     name=""
                     id=""
                     placeholder="Search your course...."
+                    [formControl]="search"
+                    (focus)="isFocused.next(true)"
+                    (blur)="focusBlur()"
                   />
                   <div
                     id="bannerSearchResult"
                     class="search-result-list banner-serach-list"
+                    *ngIf="isFocused | async"
                   >
-                    <div class="list-group">
+                    <div class="list-group" *ngIf="searchData | async as data">
+                      <ng-container *ngFor="let course of data.data">
                         <a
                           class="list-group-item"
-                          href=""
+                          [routerLink]="[
+                            '/',
+                            course?.course_category.slug,
+                            course?.course_sub_category.slug,
+                            course?.course_sub_category?.course_topics.slug ||
+                              'course-topics',
+                            course.slug
+                          ]"
                         >
                           <div class="list-content">
-                            <span class="list-course-icon h-auto d-flex align-items-center">
+                            <span class="list-course-icon">
                               <img
-                                src="/assets/images/udemy.png"
+                                src="{{ serverUrl }}/{{
+                                  course.course_provider.image
+                                }}"
                                 alt="Course Short Title"
                               />
                             </span>
                             <div class="list-course-detail">
                               <h6 class="list-item-course-title ellipsis-text">
-                                course.title
+                                {{ course.title }}
                               </h6>
+                              <!-- <p class="course-author-details text-secondary">
+                                <b>{{ course.course_provider.name }}</b>
+                              </p> -->
                             </div>
                           </div>
                         </a>
-                        <a
-                          class="list-group-item"
-                          href=""
-                        >
-                          <div class="list-content">
-                            <span class="list-course-icon h-auto d-flex align-items-center">
-                              <img
-                                src="/assets/images/udemy.png"
-                                alt="Course Short Title"
-                              />
-                            </span>
-                            <div class="list-course-detail">
-                              <h6 class="list-item-course-title ellipsis-text">
-                                course.title
-                              </h6>
-                            </div>
-                          </div>
-                        </a>
-                        <a
-                          class="list-group-item"
-                          href=""
-                        >
-                          <div class="list-content">
-                            <span class="list-course-icon h-auto d-flex align-items-center">
-                              <img
-                                src="/assets/images/udemy.png"
-                                alt="Course Short Title"
-                              />
-                            </span>
-                            <div class="list-course-detail">
-                              <h6 class="list-item-course-title ellipsis-text">
-                                course.title
-                              </h6>
-                            </div>
-                          </div>
-                        </a>
-                        <a
-                          class="list-group-item"
-                          href=""
-                        >
-                          <div class="list-content">
-                            <span class="list-course-icon h-auto d-flex align-items-center">
-                              <img
-                                src="/assets/images/udemy.png"
-                                alt="Course Short Title"
-                              />
-                            </span>
-                            <div class="list-course-detail">
-                              <h6 class="list-item-course-title ellipsis-text">
-                                course.title
-                              </h6>
-                            </div>
-                          </div>
-                        </a>
+                      </ng-container>
                     </div>
                   </div>
                   <button type="submit"><i class="fas fa-search"></i></button>

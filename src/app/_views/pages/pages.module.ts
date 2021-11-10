@@ -7,6 +7,7 @@ import { ComponentModule } from 'src/app/_components/component.module';
 import { AuthGuard } from 'src/app/_core/guard/auth.guard';
 import { CartComponent } from './cart/cart.component';
 import { TechnologyComponent } from './technology/technology.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -46,6 +47,11 @@ const routes: Routes = [
     CartComponent,
     TechnologyComponent,
   ],
-  imports: [CommonModule, RouterModule.forChild(routes), ComponentModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(routes),
+    ComponentModule,
+    ReactiveFormsModule,
+  ],
 })
 export class PagesModule {}

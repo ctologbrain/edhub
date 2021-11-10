@@ -1,4 +1,6 @@
-<div class="card ed-card filter-card" *ngIf="product as course" data-bs-toggle="modal" data-bs-target="#tooltipModal">
+<!-- data-bs-toggle="modal"
+  data-bs-target="#tooltipModal" -->
+<div class="card ed-card filter-card" *ngIf="product as course">
   <button class="wishlist-section" [class.bg-danger]="course?.wish_list">
     <ng-container *ngIf="type == 'product'; else wishlist">
       <img
@@ -20,12 +22,24 @@
   </button>
   <div class="card-body">
     <div class="course-banner">
-      <img
-        class="fix-image"
-        [src]="course.image"
-        onerror="this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081'"
-        [alt]="course.title"
-      />
+      <a
+        [routerLink]="
+          course.course_category && [
+            '/',
+            course.course_category.slug,
+            course.course_sub_category.slug,
+            'course-topic',
+            course.slug
+          ]
+        "
+      >
+        <img
+          class="fix-image"
+          [src]="course.image"
+          onerror="this.src='https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081'"
+          [alt]="course.title"
+        />
+      </a>
     </div>
     <div class="row pt-2">
       <div class="col-6 d-flex align-items-center">
@@ -113,13 +127,23 @@
         </div>
       </div>
       <div class="col-3 text-end">
-        <div class="btn-group dropend card-redirection-ele">
+        <div class="btn-group card-redirection-ele">
           <a
             class="d-flex justify-content-end"
             href="javascript:void(0)"
-            data-bs-toggle="dropdown"
+            [routerLink]="
+              (course.course_category && [
+                '/',
+                course.course_category.slug,
+                course.course_sub_category.slug,
+                'course-topic',
+                course.slug
+              ]) ||
+              []
+            "
             aria-expanded="false"
           >
+            <!-- data-bs-toggle="dropdown" -->
             <img src="./assets/images/reviewArrow.png" alt="reviewArrow" />
           </a>
           <ul class="dropdown-menu p-1">
