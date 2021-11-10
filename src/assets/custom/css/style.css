@@ -893,11 +893,17 @@ img[alt="Arrow"] {
 .search-result-list {
   background-color: #eee;
   position: absolute;
-  z-index: 9999;
+  z-index: 111;
   top: 100%;
   left: 1rem;
   right: 1rem;
-  min-width: cals(100% - 2rem);
+  min-width: calc(100% - 2rem);
+}
+
+.search-result-list.banner-serach-list{
+  left: .5rem;
+  right: .5rem;
+  min-width: calc(100% - 1rem);
 }
 
 .search-result-list .list-group-item {
