@@ -34,11 +34,7 @@ export class ProfileComponent implements OnInit {
     this._user.authUser.subscribe((data) => {
       if (!data) return;
       this.user = data;
-      this.user.avatar =
-        (this.user.avatar && `${this.serverUrl}/${this.user.avatar}`) ||
-        'https://cdn.pixabay.com/photo/2015/03/04/22/35/head-659651_960_720.png';
       let name = this.user.name.split(' ') || ['', ''];
-      console.log(this.user.email);
       this.profile.patchValue({
         email: this.user.email,
         firstname: name[0],

@@ -33,8 +33,12 @@
               <div class="profile-pic-circle">
                 <div
                   class="profile-image"
-                  style="
-                    background-image: url('{{ user?.avatar }}');
+                  [style.backgroundImage]="
+                    'url(' +
+                    (user?.avatar
+                      ? serverUrl + '/' + user.avatar
+                      : '../../../assets/images/default.png') +
+                    ')'
                   "
                 ></div>
               </div>
