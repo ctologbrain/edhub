@@ -176,10 +176,13 @@
   </div>
   <div class="tooltip-small-info-box">
     <div class="tooltip-small-info-body">
-      <h6 class="mb-0">Learning How to Learn: Powerful mental tools to help you master tough subjects</h6>
-      <em class="text-success">Updated On March 2021</em><br/>
-      <span class="caption">All levels, Subtitle</span>
-      <ul class="d-grid gap-1 my-2 list-unstyled">
+      <h6 class="mb-0">{{ course.title }}</h6>
+      <em class="text-success"
+        >Updated On {{ course.updatedAt | date: "MMMM, Y" }}</em
+      ><br />
+      <span class="caption">{{ course.difficulty_level }}</span>
+      <div [innerHTML]="course.description"></div>
+      <!-- <ul class="d-grid gap-1 my-2 list-unstyled">
         <li class="d-flex gap-2">
           <img src="/assets/images/check-icon.png" class="tooltip-img bi text-muted flex-shrink-0" />
           <div>
@@ -204,7 +207,7 @@
           <button type="button" class="btn tootlbar-bookmark-btn">
             <img src="./assets/images/bookmark.png" alt="bookmark" width="28px">
           </button>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

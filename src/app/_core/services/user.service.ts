@@ -8,7 +8,16 @@ import { HttpClientInterceptor } from '../interceptors/http-client.interceptor';
 export class UserService {
   authUser = new BehaviorSubject<any>(null);
   authState = new BehaviorSubject<boolean>(false);
-  constructor(private _http: HttpClientInterceptor) {}
+  wishlistCount = new BehaviorSubject<number>(0);
+  constructor(private _http: HttpClientInterceptor) {
+    this.authUser.subscribe((user) => {
+      if (user) {
+        this.wishlistCount.next(user.wish_lists.length);
+      } else {
+        this.wishlistCount.next(0);
+      }
+    });
+  }
 
   /**
    * @function login for login user

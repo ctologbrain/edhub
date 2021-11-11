@@ -214,7 +214,11 @@
             <a class="nav-link" routerLink="/account/wishlist">
               <img
                 class="img-fluid"
-                src="./assets/images/bookmark.png"
+                [src]="
+                  (_user.wishlistCount | async)
+                    ? './assets/images/bookmark_filled.png'
+                    : './assets/images/bookmark.png'
+                "
                 alt="bookmark"
               />
             </a>

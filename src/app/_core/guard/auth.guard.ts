@@ -31,7 +31,6 @@ export class AuthGuard implements CanActivate, CanActivateChild {
       if (!this._user.authState.getValue()) {
         this._user.authState.next(true);
         this._user.authuser().then((res: any) => {
-          console.log(res);
           if (res.status == 'true') {
             this._user.authUser.next(res.data);
           } else {

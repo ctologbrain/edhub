@@ -25,14 +25,15 @@ export class ProductComponent implements OnInit {
       $('.login-popup').modal('show');
       return;
     }
-    // if (confirm('Add this item to wishlist ?')) {
+    this._user.wishlistCount.next(this._user.wishlistCount.getValue() + 1);
     await this._user.addToWishList(course_id);
     this.addWishlist.next(course_id);
     // }
   }
 
   async removeToWishlist(course_id: number) {
-    await this._user.removeToWishList(course_id);
+    this._user.wishlistCount.next(this._user.wishlistCount.getValue() - 1);
+    this._user.removeToWishList(course_id);
     this.removeWishlist.next(course_id);
   }
 
